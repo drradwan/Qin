@@ -33,7 +33,7 @@
 
 QPushButton {
     min-height: 1.5em;
-    font: 1em;
+    font: 2em;
     font-weight: bold;
     margin: 0 1px 0 1px;
     color: #292929;
@@ -114,35 +114,6 @@ QToolButton:on {
        <property name="spacing">
         <number>1</number>
        </property>
-       <item>
-        <widget class="QToolButton" name="btnTab">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <italic>false</italic>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="whatsThis">
-          <string>0x01000001</string>
-         </property>
-         <property name="text">
-          <string>  Tab   </string>
-         </property>
-         <property name="checkable">
-          <bool>false</bool>
-         </property>
-         <property name="autoRepeat">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
        <item>
         <widget class="QToolButton" name="btnQ">
          <property name="sizePolicy">
@@ -446,35 +417,6 @@ QToolButton:on {
        <property name="rightMargin">
         <number>30</number>
        </property>
-       <item>
-        <widget class="QToolButton" name="btnCaps">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <italic>false</italic>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="whatsThis">
-          <string>0x01000024</string>
-         </property>
-         <property name="text">
-          <string>    Caps   </string>
-         </property>
-         <property name="checkable">
-          <bool>false</bool>
-         </property>
-         <property name="autoRepeat">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
        <item>
         <widget class="QToolButton" name="btnA">
          <property name="sizePolicy">
@@ -976,8 +918,8 @@ QToolButton:on {
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QToolButton" name="btnDelete">
+              <item>
+        <widget class="QToolButton" name="btnBackSpace">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -992,13 +934,44 @@ QToolButton:on {
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x01000020</string>
+          <string>0x01000003</string>
          </property>
          <property name="text">
-          <string>Backsp</string>
+          <string>Backspace</string>
          </property>
          <property name="checkable">
-          <bool>true</bool>
+          <bool>false</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+        <widget class="QToolButton" name="btnBackSpace">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="whatsThis">
+          <string>0x01000003</string>
+         </property>
+         <property name="text">
+          <string>Backspace</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
          </property>
          <property name="autoRepeat">
           <bool>false</bool>

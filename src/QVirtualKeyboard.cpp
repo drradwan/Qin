@@ -119,7 +119,7 @@ void QVirtualKeyboard::on_btnLoc_clicked(void) {
 }
 
 void QVirtualKeyboard::s_on_btn_clicked(int btn) {
-  QString strKeyId = allButtons.at(btn)->accessibleName();
+  QString strKeyId = allButtons.at(btn)->whatsThis();
   bool isOk;
   int keyId = strKeyId.toInt(&isOk, 16);
   int involvedKeys = 1;
@@ -350,7 +350,7 @@ bool QVirtualKeyboard::isTextKey(int keyId)
 }
 
 void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
-  QString strKeyId = candButtons[btn]->accessibleName();
+  QString strKeyId = candButtons[btn]->whatsThis();
   bool isOk;
   int keyId = strKeyId.toInt(&isOk, 16);
 
@@ -407,7 +407,7 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
   candSignalMapper = new QSignalMapper(selectPanel);
 
   for (int i = 0; i < candButtons.size(); i++) {
-    candButtons[i]->setAccessibleName(QString("%1").arg(keys[i], 2, 16));
+    candButtons[i]->setWhatsThis(QString("%1").arg(keys[i], 2, 16));
     connect(candButtons[i], SIGNAL(clicked()), candSignalMapper, SLOT(map()));
     candSignalMapper->setMapping(candButtons[i], i);
   }

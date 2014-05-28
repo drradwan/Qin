@@ -129,7 +129,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x60</string>
          </property>
          <property name="text">
@@ -158,7 +158,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x31</string>
          </property>
          <property name="text">
@@ -187,7 +187,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x32</string>
          </property>
          <property name="text">
@@ -216,7 +216,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x33</string>
          </property>
          <property name="text">
@@ -245,7 +245,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x34</string>
          </property>
          <property name="text">
@@ -274,7 +274,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x35</string>
          </property>
          <property name="text">
@@ -303,7 +303,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x36</string>
          </property>
          <property name="text">
@@ -332,7 +332,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x37</string>
          </property>
          <property name="text">
@@ -361,7 +361,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x38</string>
          </property>
          <property name="text">
@@ -390,7 +390,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x39</string>
          </property>
          <property name="text">
@@ -419,7 +419,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x30</string>
          </property>
          <property name="text">
@@ -448,7 +448,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x2d</string>
          </property>
          <property name="text">
@@ -477,7 +477,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x3d</string>
          </property>
          <property name="text">
@@ -506,7 +506,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x01000003</string>
          </property>
          <property name="text">
@@ -542,7 +542,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x01000001</string>
          </property>
          <property name="text">
@@ -571,7 +571,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x71</string>
          </property>
          <property name="text">
@@ -600,7 +600,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x77</string>
          </property>
          <property name="text">
@@ -629,7 +629,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x65</string>
          </property>
          <property name="text">
@@ -658,7 +658,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x72</string>
          </property>
          <property name="text">
@@ -687,7 +687,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x74</string>
          </property>
          <property name="text">
@@ -716,7 +716,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x79</string>
          </property>
          <property name="text">
@@ -745,7 +745,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x75</string>
          </property>
          <property name="text">
@@ -774,7 +774,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x69</string>
          </property>
          <property name="text">
@@ -803,7 +803,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x6f</string>
          </property>
          <property name="text">
@@ -832,7 +832,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x70</string>
          </property>
          <property name="text">
@@ -861,7 +861,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x5b</string>
          </property>
          <property name="text">
@@ -890,7 +890,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x5d</string>
          </property>
          <property name="text">
@@ -919,7 +919,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x5c</string>
          </property>
          <property name="text">
@@ -955,7 +955,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x01000024</string>
          </property>
          <property name="text">
@@ -984,7 +984,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x61</string>
          </property>
          <property name="text">
@@ -1013,7 +1013,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x73</string>
          </property>
          <property name="text">
@@ -1042,7 +1042,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x64</string>
          </property>
          <property name="text">
@@ -1071,7 +1071,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x66</string>
          </property>
          <property name="text">
@@ -1100,7 +1100,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x67</string>
          </property>
          <property name="text">
@@ -1129,7 +1129,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x68</string>
          </property>
          <property name="text">
@@ -1159,7 +1159,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x6a</string>
          </property>
          <property name="text">
@@ -1188,7 +1188,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x6b</string>
          </property>
          <property name="text">
@@ -1217,7 +1217,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x6c</string>
          </property>
          <property name="text">
@@ -1246,7 +1246,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x3b</string>
          </property>
          <property name="text">
@@ -1275,7 +1275,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x27</string>
          </property>
          <property name="text">
@@ -1304,7 +1304,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x01000004</string>
          </property>
          <property name="text">
@@ -1340,7 +1340,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x01000020</string>
          </property>
          <property name="text">
@@ -1369,7 +1369,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x7a</string>
          </property>
          <property name="text">
@@ -1398,7 +1398,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x78</string>
          </property>
          <property name="text">
@@ -1427,7 +1427,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x63</string>
          </property>
          <property name="text">
@@ -1456,7 +1456,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x76</string>
          </property>
          <property name="text">
@@ -1485,7 +1485,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x62</string>
          </property>
          <property name="text">
@@ -1514,7 +1514,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x6e</string>
          </property>
          <property name="text">
@@ -1543,7 +1543,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x6d</string>
          </property>
          <property name="text">
@@ -1572,7 +1572,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x2c</string>
          </property>
          <property name="text">
@@ -1601,7 +1601,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x2e</string>
          </property>
          <property name="text">
@@ -1630,7 +1630,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x2f</string>
          </property>
          <property name="text">
@@ -1659,7 +1659,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x01000020</string>
          </property>
          <property name="text">
@@ -1714,7 +1714,7 @@ QToolButton:on {
            <bold>true</bold>
           </font>
          </property>
-         <property name="accessibleName">
+         <property name="whatsThis">
           <string>0x20</string>
          </property>
          <property name="text">

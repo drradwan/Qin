@@ -7,7 +7,7 @@ QT += sql xml
 TARGET = qin
 DEPENDPATH += . plugins
 INCLUDEPATH += . plugins
-#LIBS += -lchewing -lsunpinyin-3.0
+LIBS += -lchewing -lsunpinyin-3.0
 
 # Input
 RESOURCES += qin.qrc

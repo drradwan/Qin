@@ -32,9 +32,9 @@
 QinEngine::QinEngine() {
   vkeyboard = new QVirtualKeyboard(this);
   regInputMethod(new QinIMBase(":/data/English.xml"));
-  regInputMethod(new QinChewing());
-  regInputMethod(new QinPinyin());
-  regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
+  //regInputMethod(new QinChewing());
+  //regInputMethod(new QinPinyin());
+  //regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
   defaultIM = inputMethods[0];
 }
 

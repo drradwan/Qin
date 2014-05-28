@@ -23,7 +23,7 @@
 #ifndef __QIN_SRC_QIN_IM_BASE_H__
 #define __QIN_SRC_QIN_IM_BASE_H__
 
-#include <QDomElement>
+#include <QtXml/QDomElement>
 #include <QHash>
 #include <QSqlDatabase>
 #include <QStringList>

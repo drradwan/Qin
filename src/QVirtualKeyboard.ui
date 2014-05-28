@@ -52,7 +52,7 @@ QPushButton:pressed {
 }
 
 QToolButton {
-    font: 1em;
+    font: 1.5em;
     font-weight: bold;
     margin: 0 1px 0 1px;
 

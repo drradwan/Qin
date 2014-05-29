@@ -335,6 +335,7 @@ void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
   //btnComma->setText(imb->fromShiftStdKB(","));
   //btnPeriod->setText(imb->fromShiftStdKB("."));
   //btnSlash->setText(imb->fromShiftStdKB("/"));
+  btnSpace->setText(imb->fromShiftStdKB(" "));
 }
 
 bool QVirtualKeyboard::isTextKey(int keyId)

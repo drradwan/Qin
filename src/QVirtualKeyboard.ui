@@ -705,7 +705,7 @@ QToolButton:on {
           <string>0x01000020</string>
          </property>
          <property name="text">
-          <string>     Shift     </string>
+          <string>⇧</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -937,7 +937,7 @@ QToolButton:on {
           <string>0x01000003</string>
          </property>
          <property name="text">
-          <string>Backspace</string>
+          <string>⌫</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -1039,7 +1039,7 @@ QToolButton:on {
           </size>
          </property>
          <property name="text">
-          <string>↥</string>
+          <string>⇣</string>
          </property>
         </widget>
        </item>

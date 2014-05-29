@@ -33,7 +33,7 @@
 
 QPushButton {
     min-height: 1.5em;
-    font: 2em;
+    font: 24px;
     font-weight: bold;
     margin: 0 1px 0 1px;
     color: #292929;
@@ -52,7 +52,7 @@ QPushButton:pressed {
 }
 
 QToolButton {
-    font: 2em;
+    font: 24px;
     font-weight: bold;
     margin: 0 1px 0 1px;
 

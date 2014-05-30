@@ -203,7 +203,7 @@ void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
 void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
   IMIndex = (IMIndex + 1) % regedIMs.size();
   imEngine->setCurrentIM(IMIndex);
-  btnIMToggle->setText(imEngine->currentIM->name());
+  btnIMToggle->setText(imEngine->nextIM->name());
 
   if (imEngine->currentIM->getUseCustomKeyMap()) {
     if (Capsed || Shifted)

@@ -67,11 +67,8 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
   private slots:
     void s_on_btn_clicked(int btn);
     void s_on_btnCands_clicked(int btn);
-    void on_btnCaps_toggled(bool checked);
     void on_btnShiftLeft_toggled(bool checked);
-    void on_btnShiftRight_toggled(bool checked);
     void on_btnIMToggle_clicked(void);
-    void on_opacitySlide_valueChanged(int value);
     void on_btnLoc_clicked(void);
     bool isTextKey(int keyId);
     void changeNormalKeyMap(QinIMBase* imb);

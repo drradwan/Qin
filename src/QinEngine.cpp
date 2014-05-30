@@ -58,6 +58,9 @@ void QinEngine::regInputMethod(QinIMBase* imb) {
 
 void QinEngine::setCurrentIM(int index) {
   currentIM = inputMethods[index];
+  nextIM = inputMethods[index+1];
+  if (!nextIM)
+    nextIM = inputMethods[0];
   currentIM->reset();
 }
 

@@ -182,22 +182,22 @@ void QVirtualKeyboard::on_btnCaps_toggled(bool checked) {
 }
 
 void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
-  Shifted = checked;
-  if (Shifted) {
-    if (Capsed)
-      changeNormalKeyMap(imEngine->currentIM);
-    else
-      changeShiftKeyMap(imEngine->currentIM);
+  if (Capsed) {
+    Capsed = false;
+    Shifted = false;
+    changeNormalKeyMap(imEngine->currentIM);
+    btnShiftLeft->setText("⇧");
+  } else if (Shifted) {
+    Shifted = false;
+    Capsed = checked;
+    changeShiftKeyMap(imEngine->currentIM);
+    btnShiftLeft->setText("⇪");
   } else {
-    if (Capsed)
-      changeShiftKeyMap(imEngine->currentIM);
-    else
-      changeNormalKeyMap(imEngine->currentIM);
+    Capsed = false;
+    Shifted = checked;
+    changeShiftKeyMap(imEngine->currentIM);
+    btnShiftLeft->setText("⇧");
   }
-}
-
-void QVirtualKeyboard::on_btnShiftRight_toggled(bool checked) {
-  on_btnShiftLeft_toggled(checked);
 }
 
 void QVirtualKeyboard::on_btnIMToggle_clicked(void) {

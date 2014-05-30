@@ -160,9 +160,8 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
   uni = ch.unicode()[0].unicode();
   QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
 
-  if (istextkey) {
+  if (istextkey && !Capsed) {
     btnShiftLeft->setChecked(false);
-    //btnShiftRight->setChecked(false);
   }
 }
 

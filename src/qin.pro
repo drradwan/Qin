@@ -8,6 +8,7 @@ TARGET = qin
 DEPENDPATH += . plugins
 INCLUDEPATH += . plugins
 LIBS += -lchewing -lsunpinyin-3.0
+DEBUG = true
 
 # Input
 RESOURCES += qin.qrc

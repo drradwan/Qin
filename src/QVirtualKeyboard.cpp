@@ -144,6 +144,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
   }
 
   QString ch = allButtons.at(btn)->text().trimmed();
+  int uni = 0;
 
   if (!istextkey) {
     ch = QString();
@@ -156,7 +157,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
   if (keyId == Qt::Key_Space)
     ch = QString(" ");
 
-  int uni = ch.unicode()[0].unicode();
+  uni = ch.unicode()[0].unicode();
   QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
 
   if (istextkey) {

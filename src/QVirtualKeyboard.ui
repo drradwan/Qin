@@ -992,7 +992,7 @@ QToolButton:on {
           <string>0x20</string>
          </property>
          <property name="text">
-          <string>&nbsp;</string>
+          <string> </string>
          </property>
          <property name="checkable">
           <bool>false</bool>

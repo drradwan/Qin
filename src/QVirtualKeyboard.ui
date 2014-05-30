@@ -937,13 +937,13 @@ QToolButton:on {
           <string>0x01000003</string>
          </property>
          <property name="text">
-          <string>⌫</string>
+          <string>←</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
          </property>
          <property name="autoRepeat">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -992,7 +992,7 @@ QToolButton:on {
           <string>0x20</string>
          </property>
          <property name="text">
-          <string/>
+          <string>&nbsp;</string>
          </property>
          <property name="checkable">
           <bool>false</bool>

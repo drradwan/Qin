@@ -175,11 +175,19 @@ void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
     btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->setChecked(false);
   } else if (Shifted) {
-    Shifted = false;
-    Capsed = true;
-    changeShiftKeyMap(imEngine->currentIM);
-    btnShiftLeft->setText(QString::fromUtf8("⇪"));
-    btnShiftLeft->setChecked(true);
+    if (checked) {
+      Shifted = false;
+      Capsed = true;
+      changeShiftKeyMap(imEngine->currentIM);
+      btnShiftLeft->setText(QString::fromUtf8("⇪"));
+      btnShiftLeft->setChecked(true);
+    } else {
+      Shifted = false;
+      Capsed = false;
+      changeNormalKeyMap(imEngine->currentIM);
+      btnShiftLeft->setText(QString::fromUtf8("⇧"));
+      btnShiftLeft->setChecked(false);
+    }
   } else {
     Capsed = false;
     Shifted = true;

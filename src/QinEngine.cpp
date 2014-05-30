@@ -32,6 +32,7 @@
 QinEngine::QinEngine() {
   vkeyboard = new QVirtualKeyboard(this);
   regInputMethod(new QinIMBase(":/data/English.xml"));
+  regInputMethod(new QinIMBase(":/data/Symbols.xml"));
   //regInputMethod(new QinChewing());
   //regInputMethod(new QinPinyin());
   //regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));

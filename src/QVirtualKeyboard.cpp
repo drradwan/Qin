@@ -166,21 +166,6 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
   }
 }
 
-void QVirtualKeyboard::on_btnCaps_toggled(bool checked) {
-  Capsed = checked;
-  if (Capsed) {
-    if (Shifted)
-      changeNormalKeyMap(imEngine->currentIM);
-    else
-      changeShiftKeyMap(imEngine->currentIM);
-  } else {
-    if (Shifted)
-      changeShiftKeyMap(imEngine->currentIM);
-    else
-      changeNormalKeyMap(imEngine->currentIM);
-  }
-}
-
 void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
   if (Capsed) {
     Capsed = false;

@@ -93,29 +93,13 @@ void QVirtualKeyboard::insertInputMethod(const QinIMBase* im) {
   imEngine->setCurrentIM(0);
 }
 
-void QVirtualKeyboard::on_opacitySlide_valueChanged(int value) {
-  setWindowOpacity((120.0 - value) / 100.0);
-}
-
 void QVirtualKeyboard::hideAll(void) {
   clearCandStrBar();
   hide();
 }
 
 void QVirtualKeyboard::on_btnLoc_clicked(void) {
-  location = !location;
-  if (location) {
-    btnLoc->setText("↯");
-    this->move((QApplication::desktop()->width() - width())/2, 0);
-    selectPanel->move((QApplication::desktop()->width() - width())/2,
-        height() + 1);
-  } else {
-    btnLoc->setText("↥");
-    this->move((QApplication::desktop()->width() - width())/2,
-        QApplication::desktop()->height() - height());
-    selectPanel->move((QApplication::desktop()->width() - width())/2,
-        QApplication::desktop()->height() - height() - 27);
-  }
+  hideAll();
 }
 
 void QVirtualKeyboard::s_on_btn_clicked(int btn) {
@@ -160,7 +144,6 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
   }
 
   QString ch = allButtons.at(btn)->text().trimmed();
-  int uni = ch.unicode()[0].unicode();
 
   if (!istextkey) {
     ch = QString();
@@ -173,6 +156,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
   if (keyId == Qt::Key_Space)
     ch = QString(" ");
 
+  int uni = ch.unicode()[0].unicode();
   QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
 
   if (istextkey) {
@@ -335,7 +319,7 @@ void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
   //btnComma->setText(imb->fromShiftStdKB(","));
   //btnPeriod->setText(imb->fromShiftStdKB("."));
   //btnSlash->setText(imb->fromShiftStdKB("/"));
-  btnSpace->setText(imb->fromShiftStdKB(" "));
+  //btnSpace->setText(imb->fromShiftStdKB(" ")); // Not needed since shift doesn't change spacebar
 }
 
 bool QVirtualKeyboard::isTextKey(int keyId)

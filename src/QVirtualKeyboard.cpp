@@ -167,6 +167,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
 }
 
 void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
+  qDebug() << "Shift left checked: " << checked;
   if (Capsed) {
     Capsed = false;
     Shifted = false;

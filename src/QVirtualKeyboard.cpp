@@ -162,6 +162,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
 
   if (istextkey && Shifted) {
     btnShiftLeft->setChecked(false);
+    changeNormalKeyMap(imEngine->currentIM);
   }
 }
 

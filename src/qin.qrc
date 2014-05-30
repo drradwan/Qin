@@ -3,6 +3,7 @@
     <file>data/selectPanel.qss</file>
     <file>data/English.xml</file>
     <file>data/Symbols.xml</file>
+    <file>data/Latin.xml</file>
     <file>data/Chewing.xml</file>
     <file>data/Boshiamy.xml</file>
     <file>data/Pinyin.xml</file>

@@ -103,7 +103,6 @@ void QVirtualKeyboard::on_btnLoc_clicked(void) {
 }
 
 void QVirtualKeyboard::s_on_btn_clicked(int btn) {
-  Pressed = true;
   QString strKeyId = allButtons.at(btn)->whatsThis();
   bool isOk;
   int keyId = strKeyId.toInt(&isOk, 16);
@@ -153,6 +152,8 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
       uni = 9;
     else
       uni = 65535;
+  } else {
+      Pressed = true;
   }
 
   if (keyId == Qt::Key_Space)

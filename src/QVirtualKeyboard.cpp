@@ -103,6 +103,7 @@ void QVirtualKeyboard::on_btnLoc_clicked(void) {
 }
 
 void QVirtualKeyboard::s_on_btn_clicked(int btn) {
+  Pressed = true;
   QString strKeyId = allButtons.at(btn)->whatsThis();
   bool isOk;
   int keyId = strKeyId.toInt(&isOk, 16);
@@ -175,22 +176,23 @@ void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
     btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->setChecked(false);
   } else if (Shifted) {
-    //if (checked) {
+    if (Pressed) {
+      Shifted = false;
+      Capsed = false;
+      changeNormalKeyMap(imEngine->currentIM);
+      btnShiftLeft->setText(QString::fromUtf8("⇧"));
+      btnShiftLeft->setChecked(false);
+    } else {
       Shifted = false;
       Capsed = true;
       changeShiftKeyMap(imEngine->currentIM);
       btnShiftLeft->setText(QString::fromUtf8("⇪"));
       btnShiftLeft->setChecked(true);
-    //} else {
-    //  Shifted = false;
-    //  Capsed = false;
-    //  changeNormalKeyMap(imEngine->currentIM);
-    //  btnShiftLeft->setText(QString::fromUtf8("⇧"));
-    //  btnShiftLeft->setChecked(false);
-    //}
+    }
   } else {
     Capsed = false;
     Shifted = true;
+    Pressed = false;
     changeShiftKeyMap(imEngine->currentIM);
     btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->setChecked(true);

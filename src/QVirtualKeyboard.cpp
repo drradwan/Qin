@@ -89,7 +89,10 @@ QVirtualKeyboard::~QVirtualKeyboard() {
 
 void QVirtualKeyboard::insertInputMethod(const QinIMBase* im) {
   regedIMs.push_back(im->name());
-  btnIMToggle->setText(regedIMs[0]);
+  if (regedIMs[1])
+    btnIMToggle->setText(regedIMs[1]);
+  else
+    btnIMToggle->setText(regedIMs[0]);
   imEngine->setCurrentIM(0);
 }
 

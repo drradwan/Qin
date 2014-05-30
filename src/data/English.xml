@@ -129,6 +129,7 @@
       <key value=",">&lt;</key>
       <key value=".">&gt;</key>
       <key value="/">?</key>
+      <key value=" "> </key>
     </shift>
   </keymap>
 </QinIM>

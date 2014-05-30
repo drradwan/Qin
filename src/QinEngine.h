@@ -48,6 +48,7 @@ class QinEngine: public QWSInputMethod {
     QVector<QinIMBase*> inputMethods;
     QinIMBase* defaultIM;
     QinIMBase* currentIM;
+    QinIMBase* nextIM;
     int selected;
 
     bool filter(int uni, int keyId, int mod, bool isPress, bool autoRepeat);

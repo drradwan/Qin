@@ -54,6 +54,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     QWidget* selectPanel;
     bool Capsed;
     bool Shifted;
+    bool Pressed;
     bool location;
     int IMIndex;
     int opacity;

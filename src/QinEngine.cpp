@@ -118,7 +118,11 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
     default:
       if (keyId & Qt::Key_Escape)
         return true;
-      currentIM->handle_Default(keyId);
+      if (getMaxKeyStrokes() <= 1) {
+        currentIM->handle_Space(keyId);
+      } else {
+        currentIM->handle_Default(keyId);
+      }
       doSendEvent = false;
   }
 

@@ -23,7 +23,7 @@
 <QinIM>
   <name>ÀBÇ</name>
   <tableim>true</tableim>
-  <preeditable>true</preeditable>
+  <preeditable>false</preeditable>
   <customkeymap>false</customkeymap>
   <database>/opt/vsd/latin.db</database>
   <maxkeystrokes>1</maxkeystrokes>

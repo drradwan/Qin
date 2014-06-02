@@ -21,7 +21,7 @@
 -->
 
 <QinIM>
-  <name>ÀBÇ</name>
+  <name>Int'l</name>
   <tableim>true</tableim>
   <preeditable>true</preeditable>
   <customkeymap>false</customkeymap>
@@ -29,31 +29,57 @@
   <maxkeystrokes>1</maxkeystrokes>
   <querytemplate>SELECT phrase FROM phrases WHERE %1 ORDER BY -freq;</querytemplate>
   <keytransform>
-    <key value="a">1</key>
-    <key value="b">2</key>
-    <key value="c">3</key>
-    <key value="d">4</key>
-    <key value="e">5</key>
-    <key value="f">6</key>
-    <key value="g">7</key>
-    <key value="h">8</key>
-    <key value="i">9</key>
-    <key value="j">10</key>
-    <key value="k">11</key>
-    <key value="l">12</key>
-    <key value="m">13</key>
-    <key value="n">14</key>
-    <key value="o">15</key>
-    <key value="p">16</key>
-    <key value="q">17</key>
-    <key value="r">18</key>
-    <key value="s">19</key>
-    <key value="t">20</key>
-    <key value="u">21</key>
-    <key value="v">22</key>
-    <key value="w">23</key>
-    <key value="x">24</key>
-    <key value="y">25</key>
-    <key value="z">26</key>
+    <key value="A">65</key>
+    <key value="B">66</key>
+    <key value="C">67</key>
+    <key value="D">68</key>
+    <key value="E">69</key>
+    <key value="F">70</key>
+    <key value="G">71</key>
+    <key value="H">72</key>
+    <key value="I">73</key>
+    <key value="J">74</key>
+    <key value="K">75</key>
+    <key value="L">76</key>
+    <key value="M">77</key>
+    <key value="N">78</key>
+    <key value="O">79</key>
+    <key value="P">80</key>
+    <key value="Q">81</key>
+    <key value="R">82</key>
+    <key value="S">83</key>
+    <key value="T">84</key>
+    <key value="U">85</key>
+    <key value="V">86</key>
+    <key value="W">87</key>
+    <key value="X">88</key>
+    <key value="Y">89</key>
+    <key value="Z">90</key>
+    <key value="a">97</key>
+    <key value="b">98</key>
+    <key value="c">99</key>
+    <key value="d">100</key>
+    <key value="e">101</key>
+    <key value="f">102</key>
+    <key value="g">103</key>
+    <key value="h">104</key>
+    <key value="i">105</key>
+    <key value="j">106</key>
+    <key value="k">107</key>
+    <key value="l">108</key>
+    <key value="m">109</key>
+    <key value="n">110</key>
+    <key value="o">111</key>
+    <key value="p">112</key>
+    <key value="q">113</key>
+    <key value="r">114</key>
+    <key value="s">115</key>
+    <key value="t">116</key>
+    <key value="u">117</key>
+    <key value="v">118</key>
+    <key value="w">119</key>
+    <key value="x">120</key>
+    <key value="y">121</key>
+    <key value="z">122</key>
   </keytransform>
 </QinIM>

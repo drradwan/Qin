@@ -36,7 +36,7 @@ QinEngine::QinEngine() {
   regInputMethod(new QinTableIMBase(":/data/Latin.xml"));
   //regInputMethod(new QinChewing());
   //regInputMethod(new QinPinyin());
-  //regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
+  regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
   defaultIM = inputMethods[0];
 }
 

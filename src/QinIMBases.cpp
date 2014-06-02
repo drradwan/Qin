@@ -156,10 +156,6 @@ char* QinIMBase::getCommitString(void) {
   return NULL;
 }
 
-int QinIMBase::getMaxKeyStrokes(void) {
-  return maxKeyStrokes;
-}
-
 int QinIMBase::cursorCurrent(void) {
   return -1;
 }
@@ -282,6 +278,10 @@ bool QinTableIMBase::getDoPopUp(void) {
 
 QStringList QinTableIMBase::getPopUpStrings(void) {
   return results;
+}
+
+int QinTableIMBase::getMaxKeyStrokes(void) {
+  return maxKeyStrokes;
 }
 
 void QinTableIMBase::doQuery(void) {

@@ -58,13 +58,13 @@ class QinIMBase {
     bool getUseCustomKeyMap(void);
     void setPreEditable(bool s);
     bool getPreEditable(void);
-    int getMaxKeyStrokes(void);
 
 
     void setupKeyMap(const QDomElement& keymap);
     virtual bool isPreEditing(void);
     virtual bool getDoPopUp(void);
     virtual QStringList getPopUpStrings(void);
+    virtual int getMaxKeyStrokes(void);
 
     /** I/O related **/
     /* Caller must free it */

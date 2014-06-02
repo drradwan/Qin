@@ -376,7 +376,7 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
   for (int i = 0; i < strlist.size(); ++i) {
     button = new QPushButton(strlist[i]);
-    button->setFont(QFont("WenQuanYiMicroHeiLight", 13));
+    //button->setFont(QFont("WenQuanYiMicroHeiLight", 13));
     candButtons.push_back(button);
     selectPanel->layout()->addWidget(button);
     button->show();

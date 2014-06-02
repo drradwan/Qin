@@ -121,6 +121,7 @@ class QinTableIMBase: public QinIMBase {
     virtual QStringList getPopUpStrings(void);
     virtual void doQuery(void);
     virtual QString getQueryTemplate(void);
+    virtual int getMaxKeyStrokes(void);
 
     /** I/O related **/
     /* Caller must free it */

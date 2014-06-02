@@ -101,7 +101,7 @@ bool QinIMBase::getPreEditable(void) {
   return preEditable;
 }
 
-void QinIMBase::getMaxKeyStrokes(void) {
+int QinIMBase::getMaxKeyStrokes(void) {
   return 0;
 }
 

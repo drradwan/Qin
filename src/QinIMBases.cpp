@@ -101,6 +101,10 @@ bool QinIMBase::getPreEditable(void) {
   return preEditable;
 }
 
+void QinIMBase::getMaxKeyStrokes(void) {
+  return 0;
+}
+
 void QinIMBase::setupKeyMap(const QDomElement& keymap) {
   if (keymap.isNull()) return;
 

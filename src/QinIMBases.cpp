@@ -156,7 +156,7 @@ char* QinIMBase::getCommitString(void) {
   return NULL;
 }
 
-int getMaxKeyStrokes(void) {
+int QinIMBase::getMaxKeyStrokes(void) {
   return maxKeyStrokes;
 }
 

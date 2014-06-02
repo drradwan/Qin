@@ -311,6 +311,11 @@ void QinTableIMBase::doQuery(void) {
   results.clear();
   QSqlQuery queryResults = database.exec(query);
   
+  if (!queryResults.isValid()) {
+    results += (char) keyTransform[tolower(keyStrokes[i])];
+    return;
+  }
+  
   while (queryResults.next() && count++ < 10)
     results += queryResults.value(0).toString();
 }

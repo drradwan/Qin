@@ -378,7 +378,7 @@ void QinTableIMBase::handle_Default(int keyId) {
     doQuery();
   } else {
     handle_Space();
-    if (results.isEmpty()) {
+    if (commitString.isEmpty()) {
       commitString = (char) keyId;
     }
   }

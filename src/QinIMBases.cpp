@@ -378,6 +378,10 @@ void QinTableIMBase::handle_Default(int keyId) {
   keyStrokes[keyIndex++] = keyId;
 
   doQuery();
+  
+  if (commitString.isEmpty()) {
+    commitString = QString::fromUtf8(keyId);
+  }
 }
 
 void QinTableIMBase::handle_Space(void) {

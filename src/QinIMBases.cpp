@@ -380,7 +380,7 @@ void QinTableIMBase::handle_Default(int keyId) {
   doQuery();
   
   if (commitString.isEmpty()) {
-    commitString = QString::fromUtf8((char) keyId);
+    commitString += (char) keyId;
   }
 }
 

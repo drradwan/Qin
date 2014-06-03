@@ -354,26 +354,27 @@ char* QinTableIMBase::getCommitString(void) {
 }
 
 void QinTableIMBase::handle_Default(int keyId) {
+  int keys[] = SELKEYS;
+
+  if (keyIndex == maxKeyStrokes)
+    return;
+
+  if (results.size()) {
+    for (size_t i = 0; i < SELKEY_COUNT; ++i)
+      if (keyId == keys[i]) {
+        commitString = results[i];
+        results.clear();
+        keyIndex = 0;
+        return;
+      }
+  }
+
+  if (keyTransform.find(tolower(keyId)) == keyTransform.end())
+    return;
+
+  keyStrokes[keyIndex++] = keyId;
+
   if (maxKeyStrokes > 1) {
-    int keys[] = SELKEYS;
-  
-    if (keyIndex == maxKeyStrokes)
-      return;
-  
-    if (results.size()) {
-      for (size_t i = 0; i < SELKEY_COUNT; ++i)
-        if (keyId == keys[i]) {
-          commitString = results[i];
-          results.clear();
-          keyIndex = 0;
-          return;
-        }
-    }
-  
-    if (keyTransform.find(tolower(keyId)) == keyTransform.end())
-      return;
-  
-    keyStrokes[keyIndex++] = keyId;
     doQuery();
   } else {
     handle_Space();

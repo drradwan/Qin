@@ -314,8 +314,8 @@ void QinTableIMBase::doQuery(void) {
   while (queryResults.next() && count++ < 10)
     results += queryResults.value(0).toString();
     
-  if (count < 1)
-    results += QString::fromUtf8(keyStrokes[0]);
+  //if (count < 1)
+  //  results += QString::fromUtf8(keyTransform[tolower(keyStrokes[0])]));
 }
 
 char* QinTableIMBase::getPreEditString(void) {
@@ -354,33 +354,39 @@ char* QinTableIMBase::getCommitString(void) {
 }
 
 void QinTableIMBase::handle_Default(int keyId) {
-  int keys[] = SELKEYS;
-
-  if (keyIndex == maxKeyStrokes)
-    return;
-
-  if (results.size()) {
-    for (size_t i = 0; i < SELKEY_COUNT; ++i)
-      if (keyId == keys[i]) {
-        commitString = results[i];
-        results.clear();
-        keyIndex = 0;
-        return;
-      }
+  if (maxKeyStrokes > 1) {
+    int keys[] = SELKEYS;
+  
+    if (keyIndex == maxKeyStrokes)
+      return;
+  
+    if (results.size()) {
+      for (size_t i = 0; i < SELKEY_COUNT; ++i)
+        if (keyId == keys[i]) {
+          commitString = results[i];
+          results.clear();
+          keyIndex = 0;
+          return;
+        }
+    }
+  
+    if (keyTransform.find(tolower(keyId)) == keyTransform.end())
+      return;
+  
+    keyStrokes[keyIndex++] = keyId;
   }
-
-  if (keyTransform.find(tolower(keyId)) == keyTransform.end())
-    return;
-
-  keyStrokes[keyIndex++] = keyId;
   doQuery();
+  if (maxKeyStrokes <= 1 && results.isEmpty()) {
+    commitString = (char) keyId;
+  }
 }
 
 void QinTableIMBase::handle_Space(void) {
   doQuery();
-  if (results.isEmpty())
+  if (results.isEmpty()) {
     commitString.clear();
-  else {
+    
+  } else {
     commitString = results[0];
     results.clear();
   }

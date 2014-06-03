@@ -374,14 +374,14 @@ void QinTableIMBase::handle_Default(int keyId) {
 
   keyStrokes[keyIndex++] = keyId;
 
-  if (maxKeyStrokes > 1) {
+//  if (maxKeyStrokes > 1) {
     doQuery();
-  } else {
-    handle_Space();
-    if (commitString.isEmpty()) {
-      commitString = (char) keyId;
-    }
-  }
+//  } else {
+//    handle_Space();
+//    if (commitString.isEmpty()) {
+//      commitString = (char) keyId;
+//    }
+//  }
 }
 
 void QinTableIMBase::handle_Space(void) {

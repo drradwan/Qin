@@ -356,6 +356,9 @@ char* QinTableIMBase::getCommitString(void) {
 void QinTableIMBase::handle_Default(int keyId) {
   int keys[] = SELKEYS;
 
+  if (maxKeyStrokes == 1)
+    handle_Space();
+
   if (keyIndex == maxKeyStrokes)
     return;
 
@@ -375,13 +378,6 @@ void QinTableIMBase::handle_Default(int keyId) {
   keyStrokes[keyIndex++] = keyId;
 
   doQuery();
-  if (maxKeyStrokes == 1) {
-  //} else {
-    handle_Space();
-//    if (commitString.isEmpty()) {
-//      commitString = (char) keyId;
-//    }
-  }
 }
 
 void QinTableIMBase::handle_Space(void) {

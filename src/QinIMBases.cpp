@@ -314,7 +314,7 @@ void QinTableIMBase::doQuery(void) {
   while (queryResults.next() && count++ < 10)
     results += queryResults.value(0).toString();
     
-  if (count <= 1)
+  if (count < 1)
     results += (char) keyStrokes[0];
 }
 

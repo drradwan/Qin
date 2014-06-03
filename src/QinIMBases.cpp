@@ -311,13 +311,11 @@ void QinTableIMBase::doQuery(void) {
   results.clear();
   QSqlQuery queryResults = database.exec(query);
   
-  if (queryResults.size() < 1) {
-    results += (char) keyTransform[tolower(keyStrokes[i])];
-    return;
-  }
-  
   while (queryResults.next() && count++ < 10)
     results += queryResults.value(0).toString();
+    
+  if (count <= 1)
+    results += (char) keyStrokes[0];
 }
 
 char* QinTableIMBase::getPreEditString(void) {

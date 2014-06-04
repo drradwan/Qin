@@ -377,6 +377,11 @@ void QinTableIMBase::handle_Default(int keyId) {
       }
     }
   }
+  
+  if (maxKeyStrokes == 1 && commitString.isEmpty()) {
+    commitString = results[0];
+    results.clear();
+  }
 
   if (keyTransform.find(tolower(keyId)) == keyTransform.end())
     return;

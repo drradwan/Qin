@@ -356,7 +356,7 @@ void QinTableIMBase::handle_Default(int keyId) {
     return;
 
   if (results.size()) {
-    for (size_t i = 0; i < SELKEY_COUNT; ++i)
+    for (size_t i = 0; i < SELKEY_COUNT; ++i) {
       qDebug() << "Commit String = " << keys[i] << " Key Id = " << keyId;
       if (keyId == keys[i]) {
         commitString = results[i];
@@ -364,6 +364,7 @@ void QinTableIMBase::handle_Default(int keyId) {
         keyIndex = 0;
         return;
       }
+    }
   }
 
   if (keyTransform.find(tolower(keyId)) == keyTransform.end())

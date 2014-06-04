@@ -288,7 +288,7 @@ int QinTableIMBase::getMaxKeyStrokes(void) {
   return maxKeyStrokes;
 }
 
-void QinTableIMBase::doQuery(void) {
+int QinTableIMBase::doQuery(void) {
   int count = 0;
   QString queryTemplate = getQueryTemplate();
   QString query = queryTemplate;
@@ -314,8 +314,7 @@ void QinTableIMBase::doQuery(void) {
   while (queryResults.next() && count++ < 10)
     results += queryResults.value(0).toString();
     
-  //if (count < 1)
-  //  results += QString::fromUtf8(keyTransform[tolower(keyStrokes[0])]));
+  return count;
 }
 
 char* QinTableIMBase::getPreEditString(void) {

@@ -356,7 +356,7 @@ void QinTableIMBase::handle_Default(int keyId) {
     //} else {
       commitString = results[0];
       results.clear();
-    }
+    //}
   }
 
   /* reset keyStrokes */

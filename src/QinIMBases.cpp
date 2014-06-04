@@ -101,10 +101,6 @@ bool QinIMBase::getPreEditable(void) {
   return preEditable;
 }
 
-int QinIMBase::getMaxKeyStrokes(void) {
-  return 0;
-}
-
 void QinIMBase::setupKeyMap(const QDomElement& keymap) {
   if (keymap.isNull()) return;
 
@@ -282,10 +278,6 @@ bool QinTableIMBase::getDoPopUp(void) {
 
 QStringList QinTableIMBase::getPopUpStrings(void) {
   return results;
-}
-
-int QinTableIMBase::getMaxKeyStrokes(void) {
-  return maxKeyStrokes;
 }
 
 int QinTableIMBase::doQuery(void) {

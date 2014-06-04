@@ -48,9 +48,9 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
                                   Qt::FramelessWindowHint |
                                   Qt::WindowStaysOnTopHint);
   selectPanel->move((QApplication::desktop()->width() - width())/2,
-      QApplication::desktop()->height() - height() - 27);
-  selectPanel->setMinimumSize(width(), 27);
-  selectPanel->setMaximumSize(width(), 27);
+      QApplication::desktop()->height() - height() - 32);
+  selectPanel->setMinimumSize(width(), 32);
+  selectPanel->setMaximumSize(width(), 32);
   selectPanel->setLayout(layout);
   selectPanel->hide();
 

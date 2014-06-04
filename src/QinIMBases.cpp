@@ -379,7 +379,7 @@ void QinTableIMBase::handle_Default(int keyId) {
     }
   }
   
-  if (maxKeyStrokes == 1) {
+  if (maxKeyStrokes == 1 && results[0]) {
     commitString = results[0];
     results.clear();
   }

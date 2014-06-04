@@ -376,9 +376,8 @@ void QinTableIMBase::handle_Default(int keyId) {
 
   keyStrokes[keyIndex++] = keyId;
 
-  if (doQuery() < 1) {
+  if (doQuery() < 1 && maxKeyStrokes == 1)
     commitString += (char) keyId;
-  }
 }
 
 void QinTableIMBase::handle_Space(void) {

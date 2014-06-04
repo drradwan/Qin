@@ -345,7 +345,7 @@ char* QinTableIMBase::getCommitString(void) {
 }
 
 void QinTableIMBase::handle_Default(int keyId) {
-  qDebug() << "handle_Default called with keyId = " << keyID;
+  qDebug() << "handle_Default called with keyId = " << keyId;
   int keys[] = SELKEYS;
 
   // Added so that way spacebar isn't needed between chars if we're only working with single letters

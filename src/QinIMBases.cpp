@@ -353,9 +353,9 @@ void QinTableIMBase::handle_Default(int keyId) {
     //handle_Space();
     if (results.isEmpty()) {
       commitString.clear();
-    } else {
-      commitString = results[0];
-      results.clear();
+    //} else {
+    //  commitString = results[0];
+    //  results.clear();
     }
   }
 

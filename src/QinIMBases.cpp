@@ -378,7 +378,7 @@ void QinTableIMBase::handle_Default(int keyId) {
     }
   }
   
-  if (maxKeyStrokes == 1 && commitString && commitString.size() > 0) {
+  if (maxKeyStrokes == 1 && commitString.size() > 0) {
     commitString = results[0];
     results.clear();
   }

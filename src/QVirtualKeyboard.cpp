@@ -396,7 +396,6 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
   for (int i = 0; i < candButtons.size(); i++) {
     candButtons[i]->setWhatsThis(QString("%1").arg(keys[i], 2, 16));
-    qDebug() << "Setting candButtons[" << i <<"] to " << candButtons[i]->whatsThis();
     connect(candButtons[i], SIGNAL(clicked()), candSignalMapper, SLOT(map()));
     candSignalMapper->setMapping(candButtons[i], i);
   }

@@ -343,7 +343,7 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
   int keyId = strKeyId.toInt(&isOk, 16);
 
 #ifdef DEBUG
-  qDebug() << "DEBUG: selected = " << btn << "(" << keyId << ")";
+  qDebug() << "DEBUG: selected = " << btn << "(" << strKeyId << ")";
 #endif
 
   QWSServer::sendKeyEvent(0, keyId, Qt::NoModifier, true, false);

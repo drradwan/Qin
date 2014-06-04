@@ -352,8 +352,9 @@ void QinTableIMBase::handle_Default(int keyId) {
   //if (maxKeyStrokes == 1)
     //handle_Space();
 
-  if (keyIndex == maxKeyStrokes)
-    return;
+  // Test to see if this is the issue
+  //if (keyIndex == maxKeyStrokes)
+  //  return;
 
   if (results.size()) {
     for (size_t i = 0; i < SELKEY_COUNT; ++i) {

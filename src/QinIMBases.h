@@ -64,7 +64,6 @@ class QinIMBase {
     virtual bool isPreEditing(void);
     virtual bool getDoPopUp(void);
     virtual QStringList getPopUpStrings(void);
-    virtual int getMaxKeyStrokes(void);
 
     /** I/O related **/
     /* Caller must free it */

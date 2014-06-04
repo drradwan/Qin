@@ -347,6 +347,7 @@ char* QinTableIMBase::getCommitString(void) {
 void QinTableIMBase::handle_Default(int keyId) {
   int keys[] = SELKEYS;
 
+  // Added so that way spacebar isn't needed between chars if we're only working with single letters
   if (maxKeyStrokes == 1)
     handle_Space();
 
@@ -368,8 +369,11 @@ void QinTableIMBase::handle_Default(int keyId) {
 
   keyStrokes[keyIndex++] = keyId;
 
-  if (doQuery() < 1 && maxKeyStrokes == 1)
+  if (doQuery() < 1 && maxKeyStrokes == 1) {
     commitString += (char) keyId;
+    results.clear();
+    keyIndex = 0;
+  }
 }
 
 void QinTableIMBase::handle_Space(void) {

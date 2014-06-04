@@ -349,7 +349,8 @@ void QinTableIMBase::handle_Default(int keyId) {
   int keys[] = SELKEYS;
 
   // Added so that way spacebar isn't needed between chars if we're only working with single letters
-  if (maxKeyStrokes == 1 && keyId >= 0x30 && keyId <= 0x39 ) {
+  
+  if (maxKeyStrokes == 1 && keyId >= 48 && keyId <= 0x57 ) {
     //handle_Space();
     //if (!results.isEmpty()) {
     //  commitString.clear();

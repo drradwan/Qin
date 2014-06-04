@@ -357,9 +357,9 @@ void QinTableIMBase::handle_Default(int keyId) {
 
   if (results.size()) {
     for (size_t i = 0; i < SELKEY_COUNT; ++i)
+      qDebug() << "Commit String = " << keys[i] << " Key Id = " << keyId;
       if (keyId == keys[i]) {
         commitString = results[i];
-        qDebug() << "Commit String = " << QString::number(commitString, 16);
         results.clear();
         keyIndex = 0;
         return;

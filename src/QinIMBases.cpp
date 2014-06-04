@@ -376,9 +376,7 @@ void QinTableIMBase::handle_Default(int keyId) {
 
   keyStrokes[keyIndex++] = keyId;
 
-  doQuery();
-  
-  if (commitString.isEmpty()) {
+  if (doQuery() < 1) {
     commitString += (char) keyId;
   }
 }

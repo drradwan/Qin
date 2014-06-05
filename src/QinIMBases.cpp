@@ -351,19 +351,14 @@ void QinTableIMBase::handle_Default(int keyId) {
   // Added so that way spacebar isn't needed between chars if we're only working with single letters
   
   if (maxKeyStrokes == 1 && keyId > 57 && results.count() > 1 && !results[0].isEmpty()) {
-    //handle_Space();
-    //if (!results.isEmpty()) {
-    //  commitString.clear();
-    //} else {
-      commitString = results[0];
-      results.clear();
-    //}
+    commitString = results[0];
+    results.clear();
   }
 
   /* reset keyStrokes */
   keyIndex = 0;
 
-  if (/*maxKeyStrokes > 1 &&*/ keyIndex == maxKeyStrokes)
+  if (keyIndex == maxKeyStrokes)
     return;
 
   if (results.size()) {
@@ -378,11 +373,6 @@ void QinTableIMBase::handle_Default(int keyId) {
     }
   }
   
-  //if (maxKeyStrokes == 1 && !commitString.isEmpty() && !results[0].isEmpty()) {
-  //  commitString = results[0];
-  //  results.clear();
-  //}
-
   if (keyTransform.find(tolower(keyId)) == keyTransform.end())
     return;
 

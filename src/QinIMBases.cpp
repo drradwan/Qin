@@ -345,18 +345,15 @@ char* QinTableIMBase::getCommitString(void) {
 }
 
 void QinTableIMBase::handle_Default(int keyId) {
+#ifdef DEBUG
   qDebug() << "handle_Default called with keyId = " << keyId;
+#endif
   int keys[] = SELKEYS;
 
-  // Added so that way spacebar isn't needed between chars if we're only working with single letters
-  
   if (maxKeyStrokes == 1 && keyId > 57 && results.count() > 1 && !results[0].isEmpty()) {
     commitString = results[0];
     results.clear();
   }
-
-  /* reset keyStrokes */
-  keyIndex = 0;
 
   if (keyIndex == maxKeyStrokes)
     return;
@@ -403,10 +400,13 @@ void QinTableIMBase::handle_Enter(void) {
 }
 
 void QinTableIMBase::handle_Backspace(void) {
-  if (keyIndex > 0)
-    --keyIndex;
-  if (maxKeyStrokes > 1)
+  if (keyIndex > 0) {
+    keyStrokes[keyIndex--].clear();
+  }
+  if (maxKeyStrokes > 1) {
     doQuery();
-  else
+  } else {
+    commitString.clear();
     results.clear();
+  }
 }

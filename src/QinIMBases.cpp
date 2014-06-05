@@ -401,7 +401,7 @@ void QinTableIMBase::handle_Enter(void) {
 
 void QinTableIMBase::handle_Backspace(void) {
   if (keyIndex > 0) {
-    keyStrokes[keyIndex--].clear();
+    keyStrokes[keyIndex--] = 0;
   }
   if (maxKeyStrokes > 1) {
     doQuery();

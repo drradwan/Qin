@@ -694,6 +694,12 @@ QToolButton:on {
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>118</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <weight>75</weight>
@@ -925,6 +931,12 @@ QToolButton:on {
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>118</width>
+           <height>0</height>
+          </size>
          </property>
          <property name="font">
           <font>

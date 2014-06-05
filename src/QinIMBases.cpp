@@ -350,7 +350,7 @@ void QinTableIMBase::handle_Default(int keyId) {
 
   // Added so that way spacebar isn't needed between chars if we're only working with single letters
   
-  if (maxKeyStrokes == 1 && keyId > 57 && !results[0].isEmpty()) {
+  if (maxKeyStrokes == 1 && keyId > 57 && results.count() > 1 && !results[0].isEmpty()) {
     //handle_Space();
     //if (!results.isEmpty()) {
     //  commitString.clear();

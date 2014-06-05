@@ -412,10 +412,10 @@ QToolButton:on {
         <number>1</number>
        </property>
        <property name="leftMargin">
-        <number>30</number>
+        <number>40</number>
        </property>
        <property name="rightMargin">
-        <number>30</number>
+        <number>40</number>
        </property>
        <item>
         <widget class="QToolButton" name="btnA">

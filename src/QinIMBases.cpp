@@ -355,6 +355,11 @@ void QinTableIMBase::handle_Default(int keyId) {
     results.clear();
   }
 
+  if (maxKeyStrokes == 1) {
+    /* reset keyStrokes */
+    keyIndex = 0;
+  }
+
   if (keyIndex == maxKeyStrokes)
     return;
 

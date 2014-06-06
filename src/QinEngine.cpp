@@ -70,6 +70,7 @@ void QinEngine::setCurrentIM(int index) {
 bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
     bool autoRepeat) {
   bool doSendEvent = true;
+  bool shifted = (mod & Qt::ShiftModifier) ? true : false
 
   if (!isPress)
     return false;
@@ -84,13 +85,13 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
   switch (keyId) {
     case Qt::Key_Space:
       if (currentIM->isPreEditing()) doSendEvent = false;
-      currentIM->handle_Space((mod & Qt::ShiftModifier) ? true : false);
+      currentIM->handle_Space(shifted);
       break;
     case Qt::Key_Escape: currentIM->handle_Esc(); break;
     case Qt::Key_Enter:
     case Qt::Key_Return:
       if (currentIM->isPreEditing()) doSendEvent = false;
-      currentIM->handle_Enter();
+      currentIM->handle_Enter(shifted);
       break;
     case Qt::Key_Delete: currentIM->handle_Del(); break;
     case Qt::Key_Backspace:
@@ -118,7 +119,7 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
     default:
       if (keyId & Qt::Key_Escape)
         return true;
-      currentIM->handle_Default(keyId, (mod & Qt::ShiftModifier) ? true : false);
+      currentIM->handle_Default(keyId, shifted);
 
       doSendEvent = false;
   }

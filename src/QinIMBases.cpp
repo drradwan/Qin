@@ -344,6 +344,14 @@ char* QinTableIMBase::getCommitString(void) {
   return commitStr;
 }
 
+QString QinTableIMBase::fromStdKB(QString str) {
+  return str;
+}
+
+QString QinTableIMBase::fromShiftStdKB(QString str) {
+  return str.toUpper();
+}
+
 void QinTableIMBase::handle_Default(int keyId) {
 #ifdef DEBUG
   qDebug() << "handle_Default called with keyId = " << keyId;

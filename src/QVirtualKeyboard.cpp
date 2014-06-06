@@ -161,6 +161,9 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
 
   if (keyId == Qt::Key_Space)
     ch = QString(" ");
+    
+  if (keyId == Qt::Key_Backspace)
+    clearCandStrBar();
 
   uni = ch.unicode()[0].unicode();
   QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);

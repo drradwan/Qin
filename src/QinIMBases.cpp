@@ -396,9 +396,9 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
 
   if (doQuery() < 1 && maxKeyStrokes == 1) {
     if (shifted)
-      commitString = QString((char) keyId).toUpper();
+      commitString += QString((char) keyId).toUpper();
     else
-      commitString = QString((char) keyId);
+      commitString += QString((char) keyId);
     results.clear();
     keyIndex = 0;
   }

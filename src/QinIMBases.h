@@ -127,6 +127,8 @@ class QinTableIMBase: public QinIMBase {
     /* Caller must free it */
     virtual char* getPreEditString(void);
     virtual char* getCommitString(void);
+    QString fromStdKB(QString str);
+    QString fromShiftStdKB(QString str);
 
     /** Key handling APIs **/
     virtual void handle_Default(int keyId);

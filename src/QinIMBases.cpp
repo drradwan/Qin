@@ -176,7 +176,7 @@ void QinIMBase::handle_Alt(void) {}
 void QinIMBase::handle_Backspace(void) {}
 void QinIMBase::handle_Capslock(void) {}
 void QinIMBase::handle_Ctrl(void) {}
-void QinIMBase::handle_Default(int) {}
+void QinIMBase::handle_Default(int, bool) {}
 void QinIMBase::handle_Del(void) {}
 void QinIMBase::handle_Down(void) {}
 void QinIMBase::handle_End(void) {}

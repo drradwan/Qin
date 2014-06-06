@@ -84,7 +84,7 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
   switch (keyId) {
     case Qt::Key_Space:
       if (currentIM->isPreEditing()) doSendEvent = false;
-      currentIM->handle_Space();
+      currentIM->handle_Space((mod & Qt::ShiftModifier) ? true : false);
       break;
     case Qt::Key_Escape: currentIM->handle_Esc(); break;
     case Qt::Key_Enter:

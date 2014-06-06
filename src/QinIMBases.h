@@ -91,7 +91,7 @@ class QinIMBase {
     virtual void handle_PageDown(void);
     virtual void handle_PageUp(void);
     virtual void handle_Right(void);
-    virtual void handle_Space(void);
+    virtual void handle_Space(bool);
     virtual void handle_Tab(void);
     virtual void handle_Up(void);
 };
@@ -133,7 +133,7 @@ class QinTableIMBase: public QinIMBase {
     /** Key handling APIs **/
     virtual void handle_Default(int keyId, bool shifted);
     virtual void handle_Enter(void);
-    virtual void handle_Space(void);
+    virtual void handle_Space(bool shifted);
     virtual void handle_Backspace(void);
 };
 

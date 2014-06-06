@@ -425,6 +425,8 @@ void QinTableIMBase::handle_Enter(void) {
 }
 
 void QinTableIMBase::handle_Backspace(void) {
+  results.clear();
+  commitString.clear();
   if (keyIndex > 0)
     --keyIndex;
   if (maxKeyStrokes > 1)

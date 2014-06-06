@@ -394,6 +394,7 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
   if (shifted) {
     bool isOk;
     keyStrokes[keyIndex++] = QString((char) keyId).toUpper().toInt(&isOk, 16);
+    qDebug() << "handle_Default called for Upper case character: " << keyStrokes[keyIndex-1];
   } else { 
     keyStrokes[keyIndex++] = keyId;
   }

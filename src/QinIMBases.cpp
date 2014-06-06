@@ -169,7 +169,7 @@ QString QinIMBase::fromStdKB(QString str) {
 
 QString QinIMBase::fromShiftStdKB(QString str) {
   return (fromShiftStdKB_hash.find(str) != fromShiftStdKB_hash.end())?
-    fromShiftStdKB_hash[str]: str;
+    fromShiftStdKB_hash[str]: str.toUpper();
 }
 
 void QinIMBase::reset(void) {}

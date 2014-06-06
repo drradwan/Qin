@@ -120,7 +120,7 @@ class QinTableIMBase: public QinIMBase {
     virtual bool isPreEditing(void);
     virtual bool getDoPopUp(void);
     virtual QStringList getPopUpStrings(void);
-    virtual int doQuery(bool);
+    virtual int doQuery(void);
     virtual QString getQueryTemplate(void);
 
     /** I/O related **/

@@ -283,14 +283,18 @@ QStringList QinTableIMBase::getPopUpStrings(void) {
   return results;
 }
 
-int QinTableIMBase::doQuery(void) {
+int QinTableIMBase::doQuery(bool shifted) {
   int count = 0;
   QString queryTemplate = getQueryTemplate();
   QString query = queryTemplate;
   
   for (int i = 0; i < maxKeyStrokes; ++i) {
     if (i < keyIndex) {
-      query = query.arg("m%1=%2%3").arg(i).arg(
+      if (shifted)
+        query = query.arg("m%1=%2%3").arg(i).arg(
+          keyTransform[keyStrokes[i]].toUpper());
+      else
+        query = query.arg("m%1=%2%3").arg(i).arg(
           keyTransform[keyStrokes[i]]);
       if (i != keyIndex -1)
         query = query.arg(" AND %1");
@@ -394,7 +398,7 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
 
   keyStrokes[keyIndex++] = keyId;
 
-  if (doQuery() < 1 && maxKeyStrokes == 1) {
+  if (doQuery(shifted) < 1 && maxKeyStrokes == 1) {
     if (shifted)
       commitString += QString((char) keyId).toUpper();
     else
@@ -404,8 +408,8 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
   }
 }
 
-void QinTableIMBase::handle_Space(void) {
-  doQuery();
+void QinTableIMBase::handle_Space(bool shifted) {
+  doQuery(shifted);
   if (results.isEmpty()) {
     commitString.clear();
   } else {
@@ -427,7 +431,7 @@ void QinTableIMBase::handle_Backspace(void) {
     //keyStrokes[keyIndex--] = 0;
   }
   if (maxKeyStrokes > 1) {
-    doQuery();
+    doQuery(false);
   } else {
     //commitString.clear();
     //results.clear();

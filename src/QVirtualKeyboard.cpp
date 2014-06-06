@@ -117,7 +117,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
 
   Qt::KeyboardModifiers Modifier = Qt::NoModifier;
 
-  if (Shifted) {
+  if (Shifted || Capsed) {
     Modifier = Modifier | Qt::ShiftModifier;
     involvedKeys++;
 

@@ -70,7 +70,7 @@ void QinEngine::setCurrentIM(int index) {
 bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
     bool autoRepeat) {
   bool doSendEvent = true;
-  bool shifted = (mod & Qt::ShiftModifier) ? true : false
+  bool shifted = (mod & Qt::ShiftModifier) ? true : false;
 
   if (!isPress)
     return false;

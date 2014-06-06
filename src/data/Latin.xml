@@ -24,7 +24,7 @@
   <name>Int'l</name>
   <tableim>true</tableim>
   <preeditable>true</preeditable>
-  <customkeymap>false</customkeymap>
+  <customkeymap>true</customkeymap>
   <database>/opt/vsd/latin.db</database>
   <maxkeystrokes>1</maxkeystrokes>
   <querytemplate>SELECT phrase FROM phrases WHERE %1 ORDER BY -freq;</querytemplate>

@@ -292,7 +292,7 @@ int QinTableIMBase::doQuery(bool shifted) {
     if (i < keyIndex) {
       if (shifted)
         query = query.arg("m%1=%2%3").arg(i).arg(
-          keyTransform[keyStrokes[i]].toUpper());
+          keyTransform[keyStrokes[i].toUpper()]);
       else
         query = query.arg("m%1=%2%3").arg(i).arg(
           keyTransform[keyStrokes[i]]);

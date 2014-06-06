@@ -395,8 +395,12 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
   
   if (keyTransform.find(tolower(keyId)) == keyTransform.end())
     return;
-
-  keyStrokes[keyIndex++] = keyId;
+  if (shifted) {
+    bool isOk;
+    keyStrokes[keyIndex++] = QString((char) keyId).toUpper().toInt(&isOk, 16);
+  } else { 
+    keyStrokes[keyIndex++] = keyId;
+  }
 
   if (doQuery(shifted) < 1 && maxKeyStrokes == 1) {
     if (shifted)

@@ -413,6 +413,8 @@ void QinTableIMBase::handle_Space(void) {
     commitString.clear();
   } else {
     commitString = results[0];
+    if (maxKeyStrokes == 1)
+      commitString += " ";
     results.clear();
   }
 

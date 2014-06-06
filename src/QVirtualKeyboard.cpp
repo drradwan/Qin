@@ -221,19 +221,6 @@ void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
 }
 
 void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
-  //btnTilt->setText(imb->fromStdKB("`"));
-  //btn1->setText(imb->fromStdKB("1"));
-  //btn2->setText(imb->fromStdKB("2"));
-  //btn3->setText(imb->fromStdKB("3"));
-  //btn4->setText(imb->fromStdKB("4"));
-  //btn5->setText(imb->fromStdKB("5"));
-  //btn6->setText(imb->fromStdKB("6"));
-  //btn7->setText(imb->fromStdKB("7"));
-  //btn8->setText(imb->fromStdKB("8"));
-  //btn9->setText(imb->fromStdKB("9"));
-  //btn0->setText(imb->fromStdKB("0"));
-  //btnHiphen->setText(imb->fromStdKB("-"));
-
   btnQ->setText(imb->fromStdKB("q"));
   btnW->setText(imb->fromStdKB("w"));
   btnE->setText(imb->fromStdKB("e"));
@@ -244,9 +231,6 @@ void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
   btnI->setText(imb->fromStdKB("i"));
   btnO->setText(imb->fromStdKB("o"));
   btnP->setText(imb->fromStdKB("p"));
-  //btnStartSquare->setText(imb->fromStdKB("["));
-  //btnCloseSquare->setText(imb->fromStdKB("]"));
-  //btnBckSlash->setText(imb->fromStdKB("\\"));
 
   btnA->setText(imb->fromStdKB("a"));
   btnS->setText(imb->fromStdKB("s"));
@@ -257,8 +241,6 @@ void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
   btnJ->setText(imb->fromStdKB("j"));
   btnK->setText(imb->fromStdKB("k"));
   btnL->setText(imb->fromStdKB("l"));
-  //btnSemiColon->setText(imb->fromStdKB(";"));
-  //btnSp->setText(imb->fromStdKB("'"));
 
   btnZ->setText(imb->fromStdKB("z"));
   btnX->setText(imb->fromStdKB("x"));
@@ -267,25 +249,9 @@ void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
   btnB->setText(imb->fromStdKB("b"));
   btnN->setText(imb->fromStdKB("n"));
   btnM->setText(imb->fromStdKB("m"));
-  //btnComma->setText(imb->fromStdKB(","));
-  //btnPeriod->setText(imb->fromStdKB("."));
-  //btnSlash->setText(imb->fromStdKB("/"));
 }
 
 void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
-  //btnTilt->setText(imb->fromShiftStdKB("`"));
-  //btn1->setText(imb->fromShiftStdKB("1"));
-  //btn2->setText(imb->fromShiftStdKB("2"));
-  //btn3->setText(imb->fromShiftStdKB("3"));
-  //btn4->setText(imb->fromShiftStdKB("4"));
-  //btn5->setText(imb->fromShiftStdKB("5"));
-  //btn6->setText(imb->fromShiftStdKB("6"));
-  //btn7->setText(imb->fromShiftStdKB("7"));
-  //btn8->setText(imb->fromShiftStdKB("8"));
-  //btn9->setText(imb->fromShiftStdKB("9"));
-  //btn0->setText(imb->fromShiftStdKB("0"));
-  //btnHiphen->setText(imb->fromShiftStdKB("-"));
-
   btnQ->setText(imb->fromShiftStdKB("q"));
   btnW->setText(imb->fromShiftStdKB("w"));
   btnE->setText(imb->fromShiftStdKB("e"));
@@ -296,9 +262,6 @@ void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
   btnI->setText(imb->fromShiftStdKB("i"));
   btnO->setText(imb->fromShiftStdKB("o"));
   btnP->setText(imb->fromShiftStdKB("p"));
-  //btnStartSquare->setText(imb->fromShiftStdKB("["));
-  //btnCloseSquare->setText(imb->fromShiftStdKB("]"));
-  //btnBckSlash->setText(imb->fromShiftStdKB("\\"));
 
   btnA->setText(imb->fromShiftStdKB("a"));
   btnS->setText(imb->fromShiftStdKB("s"));
@@ -309,8 +272,6 @@ void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
   btnJ->setText(imb->fromShiftStdKB("j"));
   btnK->setText(imb->fromShiftStdKB("k"));
   btnL->setText(imb->fromShiftStdKB("l"));
-  //btnSemiColon->setText(imb->fromShiftStdKB(";"));
-  //btnSp->setText(imb->fromShiftStdKB("'"));
 
   btnZ->setText(imb->fromShiftStdKB("z"));
   btnX->setText(imb->fromShiftStdKB("x"));
@@ -319,10 +280,6 @@ void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
   btnB->setText(imb->fromShiftStdKB("b"));
   btnN->setText(imb->fromShiftStdKB("n"));
   btnM->setText(imb->fromShiftStdKB("m"));
-  //btnComma->setText(imb->fromShiftStdKB(","));
-  //btnPeriod->setText(imb->fromShiftStdKB("."));
-  //btnSlash->setText(imb->fromShiftStdKB("/"));
-  //btnSpace->setText(imb->fromShiftStdKB(" ")); // Not needed since shift doesn't change spacebar
 }
 
 bool QVirtualKeyboard::isTextKey(int keyId)

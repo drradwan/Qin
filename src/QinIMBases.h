@@ -80,7 +80,7 @@ class QinIMBase {
     virtual void handle_Backspace(void);
     virtual void handle_Capslock(void);
     virtual void handle_Ctrl(void);
-    virtual void handle_Default(int);
+    virtual void handle_Default(int, bool);
     virtual void handle_Del(void);
     virtual void handle_Down(void);
     virtual void handle_End(void);

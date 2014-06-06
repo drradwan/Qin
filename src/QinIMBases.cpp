@@ -181,7 +181,7 @@ void QinIMBase::handle_Default(int, bool) {}
 void QinIMBase::handle_Del(void) {}
 void QinIMBase::handle_Down(void) {}
 void QinIMBase::handle_End(void) {}
-void QinIMBase::handle_Enter(bool) {}
+void QinIMBase::handle_Enter(void) {}
 void QinIMBase::handle_Esc(void) {}
 void QinIMBase::handle_Home(void) {}
 void QinIMBase::handle_Left(void) {}
@@ -283,18 +283,14 @@ QStringList QinTableIMBase::getPopUpStrings(void) {
   return results;
 }
 
-int QinTableIMBase::doQuery(bool shifted) {
+int QinTableIMBase::doQuery() {
   int count = 0;
   QString queryTemplate = getQueryTemplate();
   QString query = queryTemplate;
   
   for (int i = 0; i < maxKeyStrokes; ++i) {
     if (i < keyIndex) {
-      if (shifted)
-        query = query.arg("m%1=%2%3").arg(i).arg(
-          keyTransform[keyStrokes[i].toUpper()]);
-      else
-        query = query.arg("m%1=%2%3").arg(i).arg(
+      query = query.arg("m%1=%2%3").arg(i).arg(
           keyTransform[keyStrokes[i]]);
       if (i != keyIndex -1)
         query = query.arg(" AND %1");
@@ -402,7 +398,7 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
     keyStrokes[keyIndex++] = keyId;
   }
 
-  if (doQuery(shifted) < 1 && maxKeyStrokes == 1) {
+  if (doQuery() < 1 && maxKeyStrokes == 1) {
     if (shifted)
       commitString += QString((char) keyId).toUpper();
     else
@@ -412,8 +408,8 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
   }
 }
 
-void QinTableIMBase::handle_Space(bool shifted) {
-  doQuery(shifted);
+void QinTableIMBase::handle_Space(void) {
+  doQuery();
   if (results.isEmpty()) {
     commitString.clear();
   } else {
@@ -425,8 +421,8 @@ void QinTableIMBase::handle_Space(bool shifted) {
   keyIndex = 0;
 }
 
-void QinTableIMBase::handle_Enter(bool shifted) {
-  handle_Space(shifted);
+void QinTableIMBase::handle_Enter(void) {
+  handle_Space();
 }
 
 void QinTableIMBase::handle_Backspace(void) {
@@ -435,7 +431,7 @@ void QinTableIMBase::handle_Backspace(void) {
     //keyStrokes[keyIndex--] = 0;
   }
   if (maxKeyStrokes > 1) {
-    doQuery(false);
+    doQuery();
   } else {
     //commitString.clear();
     //results.clear();

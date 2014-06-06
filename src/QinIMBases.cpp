@@ -181,7 +181,7 @@ void QinIMBase::handle_Default(int, bool) {}
 void QinIMBase::handle_Del(void) {}
 void QinIMBase::handle_Down(void) {}
 void QinIMBase::handle_End(void) {}
-void QinIMBase::handle_Enter(void) {}
+void QinIMBase::handle_Enter(bool) {}
 void QinIMBase::handle_Esc(void) {}
 void QinIMBase::handle_Home(void) {}
 void QinIMBase::handle_Left(void) {}
@@ -421,8 +421,8 @@ void QinTableIMBase::handle_Space(bool shifted) {
   keyIndex = 0;
 }
 
-void QinTableIMBase::handle_Enter(void) {
-  handle_Space();
+void QinTableIMBase::handle_Enter(bool shifted) {
+  handle_Space(shifted);
 }
 
 void QinTableIMBase::handle_Backspace(void) {

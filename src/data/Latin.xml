@@ -29,6 +29,32 @@
   <maxkeystrokes>1</maxkeystrokes>
   <querytemplate>SELECT phrase FROM phrases WHERE %1 ORDER BY -freq;</querytemplate>
   <keytransform>
+    <key value="A">65</key>
+    <key value="B">66</key>
+    <key value="C">67</key>
+    <key value="D">68</key>
+    <key value="E">69</key>
+    <key value="F">70</key>
+    <key value="G">71</key>
+    <key value="H">72</key>
+    <key value="I">73</key>
+    <key value="J">74</key>
+    <key value="K">75</key>
+    <key value="L">76</key>
+    <key value="M">77</key>
+    <key value="N">78</key>
+    <key value="O">79</key>
+    <key value="P">80</key>
+    <key value="Q">81</key>
+    <key value="R">82</key>
+    <key value="S">83</key>
+    <key value="T">84</key>
+    <key value="U">85</key>
+    <key value="V">86</key>
+    <key value="W">87</key>
+    <key value="X">88</key>
+    <key value="Y">89</key>
+    <key value="Z">90</key>
     <key value="a">97</key>
     <key value="b">98</key>
     <key value="c">99</key>

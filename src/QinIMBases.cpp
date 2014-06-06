@@ -61,6 +61,7 @@ QinIMBase::QinIMBase(QString xmlpath): xmlPath(xmlpath) {
 
   QDomElement root = xml.documentElement();
   imName = root.firstChildElement("name").text();
+#ifdef DEBUG
   qDebug() << "DEBUG: imName: " << imName;
 #endif
 

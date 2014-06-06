@@ -61,7 +61,6 @@ QinIMBase::QinIMBase(QString xmlpath): xmlPath(xmlpath) {
 
   QDomElement root = xml.documentElement();
   imName = root.firstChildElement("name").text();
-#ifdef DEBUG
   qDebug() << "DEBUG: imName: " << imName;
 #endif
 
@@ -355,7 +354,7 @@ QString QinTableIMBase::fromShiftStdKB(QString str) {
   return str.toUpper();
 }
 
-void QinTableIMBase::handle_Default(int keyId) {
+void QinTableIMBase::handle_Default(int keyId, bool shifted) {
 #ifdef DEBUG
   qDebug() << "handle_Default called with keyId = " << keyId;
 #endif
@@ -378,7 +377,10 @@ void QinTableIMBase::handle_Default(int keyId) {
     for (size_t i = 0; i < SELKEY_COUNT; ++i) {
       qDebug() << "Commit String = " << keys[i] << " Key Id = " << keyId;
       if (keyId == keys[i]) {
-        commitString = results[i];
+        if (shifted)
+          commitString = results[i].toUpper();
+        else
+          commitString = results[i];
         results.clear();
         keyIndex = 0;
         return;
@@ -392,7 +394,10 @@ void QinTableIMBase::handle_Default(int keyId) {
   keyStrokes[keyIndex++] = keyId;
 
   if (doQuery() < 1 && maxKeyStrokes == 1) {
-    commitString += (char) keyId;
+    if (shifted)
+      commitString = QString((char) keyId).toUpper();
+    else
+      commitString = QString((char) keyId);
     results.clear();
     keyIndex = 0;
   }

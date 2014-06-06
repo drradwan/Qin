@@ -118,7 +118,7 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
     default:
       if (keyId & Qt::Key_Escape)
         return true;
-      currentIM->handle_Default(keyId, (mod & Qt::ShiftModifier));
+      currentIM->handle_Default(keyId, (mod & Qt::ShiftModifier) ? true : false);
 
       doSendEvent = false;
   }

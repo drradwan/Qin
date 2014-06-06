@@ -257,6 +257,9 @@ QinTableIMBase::QinTableIMBase(QString xmlpath): QinIMBase(xmlpath) {
     QCoreApplication::exit(1);
   }
   database.setConnectOptions("QSQLITE_OPEN_READONLY");
+  
+    useCustomKeyMap = (root.firstChildElement("customkeymap").text() == "true")?
+    true: false;
 }
 
 QinTableIMBase::~QinTableIMBase() {

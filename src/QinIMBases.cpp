@@ -291,7 +291,7 @@ int QinTableIMBase::doQuery(void) {
   for (int i = 0; i < maxKeyStrokes; ++i) {
     if (i < keyIndex) {
       query = query.arg("m%1=%2%3").arg(i).arg(
-          keyTransform[tolower(keyStrokes[i])]);
+          keyTransform[keyStrokes[i]]);
       if (i != keyIndex -1)
         query = query.arg(" AND %1");
       else

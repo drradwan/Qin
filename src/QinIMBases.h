@@ -131,7 +131,7 @@ class QinTableIMBase: public QinIMBase {
     QString fromShiftStdKB(QString str);
 
     /** Key handling APIs **/
-    virtual void handle_Default(int keyId);
+    virtual void handle_Default(int keyId, bool shifted);
     virtual void handle_Enter(void);
     virtual void handle_Space(void);
     virtual void handle_Backspace(void);

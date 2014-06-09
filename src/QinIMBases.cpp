@@ -368,8 +368,11 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
       commitString = results[0];
       results.clear();
     }
-    if (keyId >= 30 && keyId <= 39) {
-      commitString += (char) keyId;
+    if (keyId >= 30 && keyId <= 39 && ) {
+      commitString += QString((char) keyId);
+      results.clear();
+      keyIndex = 0;
+      return;
     }
   }
 
@@ -379,7 +382,7 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
   if (results.size()) {
     for (size_t i = 0; i < SELKEY_COUNT; ++i) {
       qDebug() << "Commit String = " << keys[i] << " Key Id = " << keyId;
-      if (keyId == keys[i]) {
+      if (keyId == keys[i] && ) {
         if (shifted)
           commitString = results[i].toUpper();
         else

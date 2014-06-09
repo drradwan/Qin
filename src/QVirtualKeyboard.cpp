@@ -339,10 +339,12 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
   /* Make surce previous is cleared */
   if (strlist == numbers) {
-    if (numbersVisible)
+    if (numbersVisible) {
       return;
-    else
+    } else {
+      clearCandStrBar(false);
       numbersVisible = true;
+    }
   } else {
     clearCandStrBar(false);
     numbersVisible = false;

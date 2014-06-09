@@ -81,6 +81,7 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
     signalMapper->setMapping(allButtons.at(i), i);
   }
   connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(s_on_btn_clicked(int)));
+  numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
 }
 
 QVirtualKeyboard::~QVirtualKeyboard() {
@@ -319,8 +320,6 @@ void QVirtualKeyboard::clearCandStrBar(void) {
   }
   candButtons.clear();
   //selectPanel->hide();
-  QStringList numbers;
-  numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
   showCandStrBar(numbers);
 }
 

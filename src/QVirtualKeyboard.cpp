@@ -317,6 +317,7 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
     delete candButtons[i];
   }
   if (showNumbers) {
+    candButtons.clear();
     showCandStrBar(numbers);
   } else {
     candButtons.clear();
@@ -333,7 +334,7 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 #endif
 
   /* Make surce previous is cleared */
-  clearCandStrBar(false);
+  //clearCandStrBar(false);
 
   if (!strlist.size()) return;
 

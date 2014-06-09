@@ -320,13 +320,13 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
     }
     return;
   } else {
+    for (int i = 0; i < candButtons.size(); ++i) {
+      selectPanel->layout()->removeWidget(candButtons[i]);
+      delete candButtons[i];
+    }
     candButtons.clear();
     selectPanel->hide();
     numbersVisible = false;
-  }
-  for (int i = 0; i < candButtons.size(); ++i) {
-    selectPanel->layout()->removeWidget(candButtons[i]);
-    delete candButtons[i];
   }
 }
 

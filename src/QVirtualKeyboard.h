@@ -45,7 +45,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     QVirtualKeyboard(QinEngine* im);
     ~QVirtualKeyboard();
     void insertInputMethod(const QinIMBase* im);
-    void clearCandStrBar(void);
+    void clearCandStrBar(bool showNumbers);
     void showCandStrBar(QStringList strlist);
     void hideAll(void);
 

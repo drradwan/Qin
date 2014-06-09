@@ -65,6 +65,8 @@ void QinEngine::setCurrentIM(int index) {
     nextIM = inputMethods[index+1];
   }
   currentIM->reset();
+  if (currentIM->getDoPopUp())
+    vkeyboard->showCandStrBar(currentIM->getPopUpStrings());
 }
 
 bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,

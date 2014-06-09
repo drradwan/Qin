@@ -338,12 +338,18 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 #endif
 
   /* Make surce previous is cleared */
+  if (strlist == numbers) {
+    if (numbersVisible)
+      return;
+    else
+      numbersVisible = true;
+  }
   //clearCandStrBar(false);
 
   if (!strlist.size()) return;
 
   selectPanel->show();
-
+  
   for (int i = 0; i < strlist.size(); ++i) {
     button = new QPushButton(strlist[i]);
     //button->setFont(QFont("WenQuanYiMicroHeiLight", 13));

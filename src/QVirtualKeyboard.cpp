@@ -98,7 +98,7 @@ void QVirtualKeyboard::insertInputMethod(const QinIMBase* im) {
 }
 
 void QVirtualKeyboard::hideAll(void) {
-  clearCandStrBar();
+  clearCandStrBar(false);
   hide();
 }
 
@@ -164,7 +164,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
     ch = QString(" ");
     
   if (keyId == Qt::Key_Backspace)
-    clearCandStrBar();
+    clearCandStrBar(true);
 
   uni = ch.unicode()[0].unicode();
   QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
@@ -222,8 +222,6 @@ void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
     else
       changeNormalKeyMap(imEngine->defaultIM);
   }
-  
-  clearCandStrBar();
 }
 
 void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
@@ -310,17 +308,18 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
 #endif
 
   QWSServer::sendKeyEvent(0, keyId, Qt::NoModifier, true, false);
-  clearCandStrBar();
+  clearCandStrBar(true);
 }
 
-void QVirtualKeyboard::clearCandStrBar(void) {
+void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
   for (int i = 0; i < candButtons.size(); ++i) {
     selectPanel->layout()->removeWidget(candButtons[i]);
     delete candButtons[i];
   }
   candButtons.clear();
   selectPanel->hide();
-  //showCandStrBar(numbers);
+  if (showNumbers)
+    showCandStrBar(numbers);
 }
 
 void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
@@ -332,7 +331,7 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 #endif
 
   /* Make surce previous is cleared */
-  clearCandStrBar();
+  clearCandStrBar(false);
 
   if (!strlist.size()) return;
 

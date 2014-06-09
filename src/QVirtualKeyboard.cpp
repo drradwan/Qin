@@ -316,10 +316,12 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
     selectPanel->layout()->removeWidget(candButtons[i]);
     delete candButtons[i];
   }
-  candButtons.clear();
-  selectPanel->hide();
-  if (showNumbers)
+  if (showNumbers) {
     showCandStrBar(numbers);
+  } else {
+    candButtons.clear();
+    selectPanel->hide();
+  }
 }
 
 void QVirtualKeyboard::showCandStrBar(QStringList strlist) {

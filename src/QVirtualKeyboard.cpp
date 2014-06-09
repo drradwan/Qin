@@ -317,11 +317,15 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
     delete candButtons[i];
   }
   if (showNumbers) {
-    candButtons.clear();
-    showCandStrBar(numbers);
+    if (!numbersVisible) {
+      candButtons.clear();
+      showCandStrBar(numbers);
+      numbersVisible = true;
+    }
   } else {
     candButtons.clear();
     selectPanel->hide();
+    numbersVisible = false;
   }
 }
 

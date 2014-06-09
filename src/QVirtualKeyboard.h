@@ -64,6 +64,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     QSignalMapper *candSignalMapper;
     QList<QToolButton*> allButtons;
     QVector<QPushButton*> candButtons;
+    QStringList numbers;
 
   private slots:
     void s_on_btn_clicked(int btn);

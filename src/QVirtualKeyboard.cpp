@@ -343,8 +343,10 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
       return;
     else
       numbersVisible = true;
+  } else {
+    clearCandStrBar(false);
+    numbersVisible = false;
   }
-  //clearCandStrBar(false);
 
   if (!strlist.size()) return;
 

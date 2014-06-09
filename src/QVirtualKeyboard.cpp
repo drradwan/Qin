@@ -316,7 +316,10 @@ void QVirtualKeyboard::clearCandStrBar(void) {
     delete candButtons[i];
   }
   candButtons.clear();
-  selectPanel->hide();
+  //selectPanel->hide();
+  QStringList numbers;
+  numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
+  showCandStrBar(numbers);
 }
 
 void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
@@ -328,7 +331,12 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 #endif
 
   /* Make surce previous is cleared */
-  clearCandStrBar();
+  //clearCandStrBar();
+  for (int i = 0; i < candButtons.size(); ++i) {
+    selectPanel->layout()->removeWidget(candButtons[i]);
+    delete candButtons[i];
+  }
+  candButtons.clear();
 
   if (!strlist.size()) return;
 

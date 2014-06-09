@@ -221,6 +221,8 @@ void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
     else
       changeNormalKeyMap(imEngine->defaultIM);
   }
+  
+  clearCandStrBar();
 }
 
 void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {

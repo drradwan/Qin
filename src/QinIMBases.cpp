@@ -368,12 +368,6 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
       commitString = results[0];
       results.clear();
     }
-    if (keyId >= 30 && keyId <= 39) {
-      commitString += QString((char) keyId);
-      results.clear();
-      keyIndex = 0;
-      return;
-    }
   }
 
   if (keyIndex == maxKeyStrokes)
@@ -392,6 +386,10 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
         return;
       }
     }
+  } else if (keyId >= 16 && keyId <= 25) {
+    commitString = QString((char) keyId + 32);
+    keyIndex = 0;
+    return;
   }
   
   if (keyTransform.find(tolower(keyId)) == keyTransform.end())

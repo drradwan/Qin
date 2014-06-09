@@ -368,7 +368,7 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
       commitString = results[0];
       results.clear();
     }
-    if (keyId >= 30 && keyId <= 39 && ) {
+    if (keyId >= 30 && keyId <= 39) {
       commitString += QString((char) keyId);
       results.clear();
       keyIndex = 0;

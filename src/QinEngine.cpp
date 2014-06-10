@@ -173,6 +173,7 @@ void QinEngine::updateHandler(int type) {
       currentIM->reset();
       vkeyboard->show();
       vkeyboard->showCandStrBar(numbers);
+      vkeyboard->pressShiftKey();
       break;
 
     case QWSInputMethod::FocusOut:

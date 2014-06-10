@@ -70,7 +70,7 @@ void QinEngine::setCurrentIM(int index) {
     vkeyboard->showCandStrBar(currentIM->getPopUpStrings());
   else
     vkeyboard->showCandStrBar(numbers);
-  vkeyboard->pressShiftKey();
+  //vkeyboard->pressShiftKey();
 }
 
 bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,

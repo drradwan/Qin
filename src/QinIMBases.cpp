@@ -177,7 +177,7 @@ void QinIMBase::handle_Alt(void) {}
 void QinIMBase::handle_Backspace(void) {}
 void QinIMBase::handle_Capslock(void) {}
 void QinIMBase::handle_Ctrl(void) {}
-//void QinIMBase::handle_Default(int, bool) {}
+void QinIMBase::handle_Default(int, bool) {}
 void QinIMBase::handle_Del(void) {}
 void QinIMBase::handle_Down(void) {}
 void QinIMBase::handle_End(void) {}
@@ -191,18 +191,6 @@ void QinIMBase::handle_Right(void) {}
 void QinIMBase::handle_Space(void) {}
 void QinIMBase::handle_Tab(void) {}
 void QinIMBase::handle_Up(void) {}
-
-void QinIMBase::handle_Default(int keyId, bool shifted) {
-#ifdef DEBUG
-  qDebug() << "handle_Default called with keyId = " << keyId;
-#endif
-
-  if (keyId >= 16 && keyId <= 25) {
-    commitString = QString((char) keyId + 32);
-    keyIndex = 0;
-    return;
-  }
-}
 
 
 /* QinTableIMBase methods implementation */

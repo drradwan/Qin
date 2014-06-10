@@ -82,7 +82,8 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
 #endif
 
   if (!currentIM->getPreEditable()) {
-    sendCommitString(QString((char) keyId + 32));
+    if (keyId >= 16 && keyId <= 25)
+      sendCommitString(QString((char) keyId + 32));
     return false;
   }
 

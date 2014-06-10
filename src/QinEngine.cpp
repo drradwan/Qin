@@ -38,6 +38,7 @@ QinEngine::QinEngine() {
   //regInputMethod(new QinPinyin());
   regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
   defaultIM = inputMethods[0];
+  numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
 }
 
 QinEngine::~QinEngine() {
@@ -67,6 +68,9 @@ void QinEngine::setCurrentIM(int index) {
   currentIM->reset();
   if (currentIM->getDoPopUp())
     vkeyboard->showCandStrBar(currentIM->getPopUpStrings());
+  else
+    vkeyboard->showCandStrBar(numbers);
+  vkeyboard->pressShiftKey();
 }
 
 bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
@@ -164,15 +168,11 @@ void QinEngine::updatePreEditBuffer() {
 }
 
 void QinEngine::updateHandler(int type) {
-  QStringList numbers;
   switch (type) {
     case QWSInputMethod::FocusIn:
       currentIM->reset();
       vkeyboard->show();
-      //if (currentIM->getDoPopUp()) {
-        numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
-        vkeyboard->showCandStrBar(numbers);
-      //}
+      vkeyboard->showCandStrBar(numbers);
       break;
 
     case QWSInputMethod::FocusOut:

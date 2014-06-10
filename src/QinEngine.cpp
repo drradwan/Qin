@@ -81,8 +81,10 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
   qDebug("DEBUG: KeyPressed: %d, %x", uni, keyId);
 #endif
 
-  if (!currentIM->getPreEditable())
+  if (!currentIM->getPreEditable()) {
+    currentIM->handle_Default(keyId, shifted);
     return false;
+  }
 
   switch (keyId) {
     case Qt::Key_Space:

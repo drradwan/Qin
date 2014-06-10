@@ -314,6 +314,10 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
 void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
   if (showNumbers) {
     if (!numbersVisible) {
+      for (int i = 0; i < candButtons.size(); ++i) {
+        selectPanel->layout()->removeWidget(candButtons[i]);
+        delete candButtons[i];
+      }
       candButtons.clear();
       showCandStrBar(numbers);
       numbersVisible = true;

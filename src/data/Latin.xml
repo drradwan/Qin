@@ -29,6 +29,7 @@
   <maxkeystrokes>1</maxkeystrokes>
   <querytemplate>SELECT phrase FROM phrases WHERE %1 ORDER BY -freq;</querytemplate>
   <capsable>true</capsable>
+  <shiftable>true</shiftable>
   <keytransform>
     <key value="A">65</key>
     <key value="B">66</key>

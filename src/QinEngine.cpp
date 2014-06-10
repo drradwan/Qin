@@ -144,6 +144,7 @@ void QinEngine::updateCommitString() {
   char* commit_str = currentIM->getCommitString();
   if (commit_str) {
     sendCommitString(commit_str);
+    qDebug() << "Sending commit string: " << commit_str;
     delete commit_str;
   }
 }
@@ -152,6 +153,7 @@ void QinEngine::updatePreEditBuffer() {
   char* preedit = currentIM->getPreEditString();
   inputBuffer = QString(preedit);
   sendPreeditString(inputBuffer, 1);
+    qDebug() << "Sending preedit string: " << inputBuffer;
   delete preedit;
 }
 

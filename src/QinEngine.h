@@ -50,6 +50,7 @@ class QinEngine: public QWSInputMethod {
     QinIMBase* currentIM;
     QinIMBase* nextIM;
     int selected;
+    QStringList numbers;
 
     bool filter(int uni, int keyId, int mod, bool isPress, bool autoRepeat);
     void updateHandler(int type);

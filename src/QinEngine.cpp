@@ -164,7 +164,7 @@ void QinEngine::updateHandler(int type) {
       currentIM->reset();
       vkeyboard->show();
       //if (currentIM->getDoPopUp()) {
-ç        numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
+        numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
         vkeyboard->showCandStrBar(numbers);
       //}
       break;

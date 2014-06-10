@@ -81,9 +81,10 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
   qDebug("DEBUG: KeyPressed: %d, %x", uni, keyId);
 #endif
 
-  if (!currentIM->getPreEditable()) {
-    if (keyId >= 16 && keyId <= 25)
-      sendCommitString(QString((char) keyId + 32));
+  if (!currentIM->getPreEditable() && keyId >= 16 && keyId <= 25) {
+    sendCommitString(QString((char) keyId + 32));
+    return true;
+  } else {
     return false;
   }
 

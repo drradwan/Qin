@@ -82,7 +82,7 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
 #endif
 
   if (!currentIM->getPreEditable()) {
-    currentIM->handle_Default(keyId, shifted);
+    sendCommitString(QString((char) keyId + 32));
     return false;
   }
 

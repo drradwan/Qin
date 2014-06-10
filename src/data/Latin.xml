@@ -28,6 +28,7 @@
   <database>/opt/vsd/latin.db</database>
   <maxkeystrokes>1</maxkeystrokes>
   <querytemplate>SELECT phrase FROM phrases WHERE %1 ORDER BY -freq;</querytemplate>
+  <capsable>true</capsable>
   <keytransform>
     <key value="A">65</key>
     <key value="B">66</key>

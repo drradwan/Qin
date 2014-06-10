@@ -71,6 +71,7 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   IMIndex = 0;
   candSignalMapper = NULL;
   //opacitySlide->setRange(20, 100);
+  on_btnShiftLeft_toggled(true);
 
   /* Setup buttons */
   allButtons = findChildren<QToolButton*>();

@@ -162,8 +162,11 @@ void QinEngine::updateHandler(int type) {
     case QWSInputMethod::FocusIn:
       currentIM->reset();
       vkeyboard->show();
-      if (currentIM->getDoPopUp())
+      //if (currentIM->getDoPopUp()) {
+        QString numbers;
+        numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
         vkeyboard->showCandStrBar(numbers);
+      //}
       break;
 
     case QWSInputMethod::FocusOut:

@@ -26,6 +26,7 @@
   <tableim>false</tableim>
   <preeditable>true</preeditable>
   <customkeymap>true</customkeymap>
+  <capsable>false</capsable>
   <keymap>
     <normal>
       <key value="~">~</key>

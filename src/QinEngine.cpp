@@ -99,6 +99,7 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
     case Qt::Key_Backspace:
       if (currentIM->isPreEditing()) doSendEvent = false;
       currentIM->handle_Backspace();
+      vkeyboard->clearCandStrBar(true);
       break;
     case Qt::Key_Tab: currentIM->handle_Tab(); break;
     case Qt::Key_Left:

@@ -151,7 +151,7 @@ void QinEngine::updateCommitString() {
 void QinEngine::updatePreEditBuffer() {
   char* preedit = currentIM->getPreEditString();
   inputBuffer = QString(preedit);
-  sendPreeditString(inputBuffer, 0);
+  sendPreeditString(inputBuffer, 1);
   delete preedit;
 }
 

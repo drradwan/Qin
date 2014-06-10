@@ -27,6 +27,7 @@
   <preeditable>true</preeditable>
   <customkeymap>true</customkeymap>
   <capsable>false</capsable>
+  <shiftable>false</shiftable>
   <keymap>
     <normal>
       <key value="~">~</key>

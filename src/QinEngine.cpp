@@ -35,7 +35,7 @@ QinEngine::QinEngine() {
   regInputMethod(new QinIMBase(":/data/Symbols.xml"));
   regInputMethod(new QinTableIMBase(":/data/Latin.xml"));
   //regInputMethod(new QinChewing());
-  //regInputMethod(new QinPinyin());
+  regInputMethod(new QinPinyin());
   regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
   defaultIM = inputMethods[0];
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";

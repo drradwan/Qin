@@ -29,15 +29,20 @@
 #include "QinIMBases.h"
 #include "QVirtualKeyboard.h"
 
-QinEngine::QinEngine() {
+QinEngine::QinEngine(QString lang) {
   vkeyboard = new QVirtualKeyboard(this);
-  regInputMethod(new QinIMBase(":/data/English.xml"));
-  regInputMethod(new QinIMBase(":/data/Symbols.xml"));
-  regInputMethod(new QinTableIMBase(":/data/Latin.xml"));
+  if (lang.contains("en"))
+    regInputMethod(new QinIMBase(":/data/English.xml"));
+  if (lang.contains("en"))
+    regInputMethod(new QinIMBase(":/data/Symbols.xml"));
+  if (lang.contains("en"))
+    regInputMethod(new QinTableIMBase(":/data/Latin.xml"));
   //regInputMethod(new QinChewing());
   //regInputMethod(new QinPinyin());
-  regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
-  defaultIM = inputMethods[0];
+  if (lang.contains("zh"))
+    regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
+  if (lang.contains("en") || lang.contains("zh"))
+    defaultIM = inputMethods[0];
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
 }
 

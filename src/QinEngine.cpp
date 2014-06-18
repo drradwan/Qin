@@ -33,15 +33,15 @@ QinEngine::QinEngine(QString lang) {
   vkeyboard = new QVirtualKeyboard(this);
   if (lang.contains("en"))
     regInputMethod(new QinIMBase(":/data/English.xml"));
-  if (lang.contains("en"))
-    regInputMethod(new QinIMBase(":/data/Symbols.xml"));
-  if (lang.contains("en"))
+  if (lang.contains("en") || lang.contains("fr"))
     regInputMethod(new QinTableIMBase(":/data/Latin.xml"));
+  if (lang.contains("en") || lang.contains("fr"))
+    regInputMethod(new QinIMBase(":/data/Symbols.xml"));
   //regInputMethod(new QinChewing());
   //regInputMethod(new QinPinyin());
   if (lang.contains("zh"))
     regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
-  if (lang.contains("en") || lang.contains("zh"))
+  if (lang.contains("en") || lang.contains("fr") || lang.contains("zh"))
     defaultIM = inputMethods[0];
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
 }

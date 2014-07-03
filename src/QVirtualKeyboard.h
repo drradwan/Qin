@@ -32,6 +32,7 @@
 #include <QVector>
 #include <QWidget>
 #include <QWSInputMethod>
+#include <QHideEvent>
 
 QT_BEGIN_NAMESPACE
 class QinEngine;
@@ -77,6 +78,9 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     bool isTextKey(int keyId);
     void changeNormalKeyMap(QinIMBase* imb);
     void changeShiftKeyMap(QinIMBase* imb);
+    
+  protected:
+    void hideEvent(QHideEvent* event);
 };
 
 #endif /* QVIRTUALKEYBOARD_H */

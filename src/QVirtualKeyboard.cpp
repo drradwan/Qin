@@ -398,6 +398,6 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
 void QVirtualKeyboard::hideEvent(QHideEvent *event)
 {
-  s_on_btnCands_clicked(0);
-  clearCandStrBar(false);
+  //s_on_btnCands_clicked(0);
+  //clearCandStrBar(false);
 }

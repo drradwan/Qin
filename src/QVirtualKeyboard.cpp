@@ -97,7 +97,7 @@ void QVirtualKeyboard::insertInputMethod(const QinIMBase* im) {
 }
 
 void QVirtualKeyboard::hideAll(void) {
-  clearCandStrBar(false);
+  //clearCandStrBar(false);
   hide();
 }
 
@@ -329,6 +329,7 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
       candButtons.clear();
       showCandStrBar(numbers);
       numbersVisible = true;
+      candidatesVisible = false;
     }
     return;
   } else {

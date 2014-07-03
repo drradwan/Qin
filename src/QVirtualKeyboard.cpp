@@ -395,3 +395,9 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
   connect(candSignalMapper, SIGNAL(mapped(int)), this,
       SLOT(s_on_btnCands_clicked(int)));
 }
+
+void QVirtualKeyboard::hideEvent(QHideEvent *event)
+{
+  s_on_btnCands_clicked(0);
+  clearCandStrBar(false);
+}

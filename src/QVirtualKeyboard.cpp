@@ -97,7 +97,7 @@ void QVirtualKeyboard::insertInputMethod(const QinIMBase* im) {
 }
 
 void QVirtualKeyboard::hideAll(void) {
-  //clearCandStrBar(false);
+  clearCandStrBar(false);
   hide();
 }
 
@@ -329,7 +329,6 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
       candButtons.clear();
       showCandStrBar(numbers);
       numbersVisible = true;
-      candidatesVisible = false;
     }
     return;
   } else {
@@ -340,7 +339,6 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
     candButtons.clear();
     selectPanel->hide();
     numbersVisible = false;
-    candidatesVisible = false;
   }
 }
 
@@ -394,16 +392,6 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
     connect(candButtons[i], SIGNAL(clicked()), candSignalMapper, SLOT(map()));
     candSignalMapper->setMapping(candButtons[i], i);
   }
-  candidatesVisible = true;
   connect(candSignalMapper, SIGNAL(mapped(int)), this,
       SLOT(s_on_btnCands_clicked(int)));
-}
-
-void QVirtualKeyboard::hideEvent(QHideEvent *event)
-{
-  if (candidatesVisible) {
-    qDebug() << "hideEvent called on QVirtualKeyboard";
-    s_on_btnCands_clicked(0);
-    clearCandStrBar(false);
-  }
 }

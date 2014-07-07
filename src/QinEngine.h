@@ -43,7 +43,7 @@ class QinEngine: public QWSInputMethod {
     void setCurrentIM(int index);
     
   public slots:
-    void prepareKeyboard(int mode);
+    void setShift(bool shifted, bool capsed);
     void finishKeyboard();
 
   private:

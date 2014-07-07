@@ -101,6 +101,28 @@ void QVirtualKeyboard::hideAll(void) {
   hide();
 }
 
+void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
+  Shifted = shifted;
+  Capsed = capsed;
+  Pressed = false;
+
+  if (Capsed) {
+    changeShiftKeyMap(imEngine->currentIM);
+    btnShiftLeft->setText(QString::fromUtf8("⇪"));
+    btnShiftLeft->setChecked(true);
+  } else if (Shifted) {
+      changeShiftKeyMap(imEngine->currentIM);
+      btnShiftLeft->setText(QString::fromUtf8("⇧"));
+      btnShiftLeft->setChecked(true);
+    }
+  } else {
+    changeNormalKeyMap(imEngine->currentIM);
+    btnShiftLeft->setText(QString::fromUtf8("⇧"));
+    btnShiftLeft->setChecked(false);
+  }
+}
+
+
 void QVirtualKeyboard::pressShiftKey() {
   Capsed = false;
   Shifted = true;

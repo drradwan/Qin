@@ -201,3 +201,7 @@ void QinEngine::selectPreEditWord(int index) {
   if (index != -1)
     sendPreeditString(inputBuffer, index, 1);
 }
+
+void QinEngine::setShift(bool shifted, bool capsed) {
+  vkeyboard->setShift(shifted, capsed);
+}

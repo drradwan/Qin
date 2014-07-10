@@ -8,7 +8,8 @@ TARGET = qin
 DEPENDPATH += . plugins
 INCLUDEPATH += . plugins
 LIBS += -lchewing -lsunpinyin-3.0
-DEFINES += DEBUG
+# Turn this on to enable debugging output to the console
+#DEFINES += DEBUG
 
 # Input
 RESOURCES += qin.qrc

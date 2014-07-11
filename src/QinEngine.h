@@ -20,29 +20,30 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __QIN_SRC_QIN_ENGINE_H__
-#define __QIN_SRC_QIN_ENGINE_H__
+#ifndef __QIN_SRC_QIN_LINE_EDIT_H__
+#define __QIN_SRC_QIN_LINE_EDIT_H__
 
-#include <QWSInputMethod>
 #include "QVirtualKeyboard.h"
 #include "QinIMBases.h"
+#include <QLineEdit>
 
 QT_BEGIN_NAMESPACE
 class QVirtualKeyboard;
 QT_END_NAMESPACE
 
-class QinEngine: public QWSInputMethod {
+class QinEngine: public QWidget {
   Q_OBJECT
 
   friend class QVirtualKeyboard;
 
   public:
-    QinEngine(QString lang);
+    QinEngine(QString lang, QLineEdit* le);
     ~QinEngine();
     void regInputMethod(QinIMBase* imb);
     void setCurrentIM(int index);
     
   private:
+    QLineEdit* lineEdit;
     QVirtualKeyboard* vkeyboard;
     QString inputBuffer;
     QVector<QinIMBase*> inputMethods;
@@ -54,10 +55,9 @@ class QinEngine: public QWSInputMethod {
 
     bool filter(int uni, int keyId, int mod, bool isPress, bool autoRepeat);
     void updateHandler(int type);
-    void mouseHandler(int offset, int state);
     void updateCommitString();
     void updatePreEditBuffer(void);
-    void selectPreEditWord(int index);
+    //void selectPreEditWord(int index);
 };
 
-#endif /* __QIN_SRC_QIN_ENGINE_H__ */
+#endif /* __QIN_SRC_QIN_LINE_EDIT_H__ */

@@ -371,7 +371,7 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
   qDebug() << "DEBUG: cands: " << strlist;
 #endif
 
-  /* Make surce previous is cleared */
+  /* Make sure previous is cleared */
   if (strlist == numbers) {
     if (numbersVisible) {
       return;

@@ -29,7 +29,8 @@
 #include "QinIMBases.h"
 #include "QVirtualKeyboard.h"
 
-QinEngine::QinEngine(QString lang) {
+QinEngine::QinEngine(QString lang, QLineEdit* le) {
+  lineEdit = le;
   vkeyboard = new QVirtualKeyboard(this);
   if (lang.contains("en"))
     regInputMethod(new QinIMBase(":/data/English.xml"));
@@ -92,7 +93,8 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
 
   if (!currentIM->getPreEditable()) {
     if (keyId >= 16 && keyId <= 25) {
-      sendCommitString(QString((char) keyId + 32));
+      lineEdit->insert(QString((char) keyId + 32));
+      //sendCommitString(QString((char) keyId + 32));
       return true;
     } else {
       return false;
@@ -150,7 +152,7 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
   if (currentIM->getDoPopUp())
     vkeyboard->showCandStrBar(currentIM->getPopUpStrings());
 
-  selectPreEditWord(currentIM->cursorCurrent());
+  //selectPreEditWord(currentIM->cursorCurrent());
 
   return !doSendEvent;
 }
@@ -158,7 +160,8 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
 void QinEngine::updateCommitString() {
   char* commit_str = currentIM->getCommitString();
   if (commit_str) {
-    sendCommitString(commit_str);
+    lineEdit->insert(commit_str);
+    //sendCommitString(commit_str);
     qDebug() << "Sending commit string: " << commit_str;
     delete commit_str;
   }
@@ -167,7 +170,8 @@ void QinEngine::updateCommitString() {
 void QinEngine::updatePreEditBuffer() {
   char* preedit = currentIM->getPreEditString();
   inputBuffer = QString(preedit);
-  sendPreeditString(inputBuffer, 1);
+  lineEdit->insert(inputBuffer);
+  //sendPreeditString(inputBuffer, 1);
     qDebug() << "Sending preedit string: " << inputBuffer;
   delete preedit;
 }
@@ -187,17 +191,4 @@ void QinEngine::updateHandler(int type) {
       vkeyboard->hideAll();
       break;
   }
-}
-
-void QinEngine::mouseHandler(int offset, int state) {
-  if (state == QWSServer::MousePress && offset >= 0) {
-    currentIM->setCursor(offset);
-    sendPreeditString(inputBuffer, offset, 1);
-    selected = offset;
-  }
-}
-
-void QinEngine::selectPreEditWord(int index) {
-  if (index != -1)
-    sendPreeditString(inputBuffer, index, 1);
 }

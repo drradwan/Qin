@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
 
   QLineEdit* le = new QLineEdit;
   QWSInputMethod* im = new QinEngine(QString("en"), le);
-  QWSServer::setCurrentInputMethod(im);
+  im->show();
+  //QWSServer::setCurrentInputMethod(im);
   return app.exec();
 }

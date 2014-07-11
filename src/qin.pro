@@ -17,7 +17,6 @@ RESOURCES += qin.qrc
 HEADERS += \
   QinConfig.h \
   QinEngine.h \
-  QinLineEdit.h \
   QinIMBases.h \
   QVirtualKeyboard.h \
   plugins/QinChewing.h \
@@ -28,7 +27,6 @@ FORMS += QVirtualKeyboard.ui
 SOURCES += \
   Qin.cpp \
   QinEngine.cpp \
-  QinLineEdit.cpp \
   QinIMBases.cpp \
   QVirtualKeyboard.cpp \
   plugins/QinChewing.cpp \

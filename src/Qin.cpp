@@ -24,6 +24,7 @@
 #include <QApplication>
 #include <QTextCodec>
 #include <QWSInputMethod>
+#include <QLineEdit>
 
 #include "QinEngine.h"
 
@@ -33,7 +34,8 @@ int main(int argc, char *argv[])
   QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
   QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
-  QWSInputMethod* im = new QinEngine(QString("en"));
+  QLineEdit* le = new QLineEdit;
+  QWSInputMethod* im = new QinEngine(QString("en"), le);
   QWSServer::setCurrentInputMethod(im);
   return app.exec();
 }

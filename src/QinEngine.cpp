@@ -29,7 +29,8 @@
 #include "QinIMBases.h"
 #include "QVirtualKeyboard.h"
 
-QinEngine::QinEngine(QString lang, QLineEdit* le) {
+QinEngine::QinEngine(QString lang, QLineEdit* le)
+:QWidget(0, Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint) {
   lineEdit = le;
   vkeyboard = new QVirtualKeyboard(this);
   if (lang.contains("en"))

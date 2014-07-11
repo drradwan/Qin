@@ -42,10 +42,6 @@ class QinEngine: public QWSInputMethod {
     void regInputMethod(QinIMBase* imb);
     void setCurrentIM(int index);
     
-  public slots:
-    void setShift(bool shifted, bool capsed);
-    void finishKeyboard();
-
   private:
     QVirtualKeyboard* vkeyboard;
     QString inputBuffer;

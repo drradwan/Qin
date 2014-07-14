@@ -32,8 +32,8 @@
 #include "QinEngine.h"
 #include "QinIMBases.h"
 
-QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
-:QWidget(0)
+QVirtualKeyboard::QVirtualKeyboard(QinEngine* im, QWidget* parent)
+:QWidget(parent)
 {
   /* setup UI */
   setupUi(this);

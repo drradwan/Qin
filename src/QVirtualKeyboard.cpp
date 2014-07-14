@@ -28,11 +28,12 @@
 #include <QPushButton>
 #include <QSignalMapper>
 #include <QTextStream>
+#include <QLineEdit>
 
 #include "QinEngine.h"
 #include "QinIMBases.h"
 
-QVirtualKeyboard::QVirtualKeyboard(QinEngine* im, QWidget* parent)
+QVirtualKeyboard::QVirtualKeyboard(QWidget* parent, QinEngine* im, QLineEdit* lineEdit)
 :QWidget(parent)
 {
   /* setup UI */

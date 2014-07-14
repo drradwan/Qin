@@ -31,7 +31,7 @@
 #include <QStringList>
 #include <QVector>
 #include <QWidget>
-#include <QWSInputMethod>
+//#include <QWSInputMethod>
 #include <QHideEvent>
 
 QT_BEGIN_NAMESPACE

@@ -33,7 +33,7 @@
 #include "QinIMBases.h"
 
 QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
-:QWidget(parent)
+:QWidget((QWidget) im)
 {
   /* setup UI */
   setupUi(this);

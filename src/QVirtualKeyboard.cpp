@@ -28,7 +28,6 @@
 #include <QPushButton>
 #include <QSignalMapper>
 #include <QTextStream>
-#include <QLineEdit>
 
 #include "QinEngine.h"
 #include "QinIMBases.h"
@@ -41,6 +40,7 @@ QVirtualKeyboard::QVirtualKeyboard(QWidget* parent, QinEngine* im, QLineEdit* le
   this->move((QApplication::desktop()->width() - width())/2,
       QApplication::desktop()->height() - height());
 
+  lineEdit = le;
   /* Setup selectPanel */
   QHBoxLayout* layout = new QHBoxLayout;
   layout->setContentsMargins(1, 1, 1, 0);

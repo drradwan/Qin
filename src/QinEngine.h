@@ -43,7 +43,6 @@ class QinEngine: public QWidget {
     void setCurrentIM(int index);
     
   private:
-    QLineEdit* lineEdit;
     QVirtualKeyboard* vkeyboard;
     QString inputBuffer;
     QVector<QinIMBase*> inputMethods;
@@ -58,6 +57,9 @@ class QinEngine: public QWidget {
     void updateCommitString();
     void updatePreEditBuffer(void);
     //void selectPreEditWord(int index);
+    
+  protected:
+    QLineEdit* lineEdit;
 };
 
 #endif /* __QIN_SRC_QIN_LINE_EDIT_H__ */

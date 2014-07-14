@@ -196,7 +196,8 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
     clearCandStrBar(true);
 
   uni = ch.unicode()[0].unicode();
-  QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
+  //QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
+  lineEdit->insert(QChar(keyId));
 
   if (istextkey && Shifted) {
     btnShiftLeft->setChecked(false);
@@ -336,7 +337,8 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
   qDebug() << "DEBUG: selected = " << btn << "(" << strKeyId << ")";
 #endif
 
-  QWSServer::sendKeyEvent(0, keyId, Qt::NoModifier, true, false);
+  //QWSServer::sendKeyEvent(0, keyId, Qt::NoModifier, true, false);
+  lineEdit->insert(QChar(keyId));
   clearCandStrBar(true);
 }
 

@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
   QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
   QLineEdit* le = new QLineEdit;
-  QinEngine* im = new QinEngine(this, le, QString("en"));
+  QinEngine* im = new QinEngine(0, le, QString("en"));
   im->show();
   //QWSServer::setCurrentInputMethod(im);
   return app.exec();

@@ -193,12 +193,14 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
   if (keyId == Qt::Key_Space)
     ch = QString(" ");
     
-  if (keyId == Qt::Key_Backspace)
+  if (keyId == Qt::Key_Backspace) {
     clearCandStrBar(true);
-
-  uni = ch.unicode()[0].unicode();
-  //QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
-  lineEdit->insert(QChar(keyId));
+    lineEdit->backspace();
+  } else {
+    uni = ch.unicode()[0].unicode();
+    //QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
+    lineEdit->insert(QChar(keyId));
+  }
 
   if (istextkey && Shifted) {
     btnShiftLeft->setChecked(false);

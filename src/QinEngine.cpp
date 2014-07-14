@@ -32,7 +32,7 @@
 QinEngine::QinEngine(QWidget* parent, QLineEdit* le, QString lang)
 :QWidget(parent) {
   lineEdit = le;
-  vkeyboard = new QVirtualKeyboard(this);
+  vkeyboard = new QVirtualKeyboard(this, parent);
   if (lang.contains("en"))
     regInputMethod(new QinIMBase(":/data/English.xml"));
   if (lang.contains("en") || lang.contains("fr"))

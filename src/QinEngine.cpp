@@ -178,18 +178,18 @@ void QinEngine::updatePreEditBuffer() {
 }
 
 void QinEngine::updateHandler(int type) {
-  switch (type) {
-    case QWSInputMethod::FocusIn:
-      currentIM->reset();
-      vkeyboard->show();
-      vkeyboard->showCandStrBar(numbers);
-      vkeyboard->pressShiftKey();
-      break;
+  // switch (type) {
+  //   case QWSInputMethod::FocusIn:
+  //     currentIM->reset();
+  //     vkeyboard->show();
+  //     vkeyboard->showCandStrBar(numbers);
+  //     vkeyboard->pressShiftKey();
+  //     break;
 
-    case QWSInputMethod::FocusOut:
-      inputBuffer.clear();
-      currentIM->reset();
-      vkeyboard->hideAll();
-      break;
-  }
+  //   case QWSInputMethod::FocusOut:
+  //     inputBuffer.clear();
+  //     currentIM->reset();
+  //     vkeyboard->hideAll();
+  //     break;
+  // }
 }

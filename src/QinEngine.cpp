@@ -29,7 +29,7 @@
 #include "QinIMBases.h"
 #include "QVirtualKeyboard.h"
 
-QinEngine::QinEngine(QString lang, QLineEdit* le)
+QinEngine::QinEngine(QWidget* parent, QLineEdit* le, QString lang)
 :QWidget(parent) {
   lineEdit = le;
   vkeyboard = new QVirtualKeyboard(this);

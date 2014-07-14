@@ -43,7 +43,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
   Q_OBJECT
 
   public:
-    QVirtualKeyboard(QinEngine* im);
+    QVirtualKeyboard(QinEngine* im, QWidget* parent);
     ~QVirtualKeyboard();
     void insertInputMethod(const QinIMBase* im);
     void clearCandStrBar(bool showNumbers);

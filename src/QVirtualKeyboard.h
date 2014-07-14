@@ -33,6 +33,7 @@
 #include <QWidget>
 //#include <QWSInputMethod>
 #include <QHideEvent>
+#include <QLineEdit>
 
 QT_BEGIN_NAMESPACE
 class QinEngine;
@@ -53,6 +54,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void setShift(bool shifted, bool capsed);
 
   private:
+    QLineEdit* lineEdit;
     QinEngine* imEngine;
     QWidget* selectPanel;
     bool Capsed;

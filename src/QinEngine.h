@@ -37,7 +37,7 @@ class QinEngine: public QWSInputMethod {
   friend class QVirtualKeyboard;
 
   public:
-    QinEngine(QString lang);
+    QinEngine(QWidget* parent, QString lang);
     ~QinEngine();
     void regInputMethod(QinIMBase* imb);
     void setCurrentIM(int index);

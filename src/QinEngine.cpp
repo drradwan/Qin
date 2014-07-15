@@ -203,9 +203,11 @@ void QinEngine::selectPreEditWord(int index) {
 }
 
 void QinEngine::setShift(bool shifted, bool capsed) {
+  qDebug() << "setShift() called by signal";
   vkeyboard->setShift(shifted, capsed);
 }
 
 void QinEngine::commitPreEdit() {
+  qDebug() << "commitPreEdit() called by signal";
   currentIM->handle_Space();
 }

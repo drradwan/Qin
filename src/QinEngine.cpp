@@ -205,3 +205,7 @@ void QinEngine::selectPreEditWord(int index) {
 void QinEngine::setShift(bool shifted, bool capsed) {
   vkeyboard->setShift(shifted, capsed);
 }
+
+void QinEngine::commitPreEdit() {
+  currentIM->handle_Space();
+}

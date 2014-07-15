@@ -33,7 +33,7 @@
 #include <QWidget>
 //#include <QWSInputMethod>
 #include <QHideEvent>
-#include <QLineEdit
+#include <QLineEdit>
 #include <QKeyEvent>
 
 QT_BEGIN_NAMESPACE

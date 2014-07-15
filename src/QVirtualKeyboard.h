@@ -33,7 +33,8 @@
 #include <QWidget>
 //#include <QWSInputMethod>
 #include <QHideEvent>
-#include <QLineEdit>
+#include <QLineEdit
+#include <QKeyEvent>
 
 QT_BEGIN_NAMESPACE
 class QinEngine;
@@ -71,6 +72,8 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     QVector<QPushButton*> candButtons;
     QStringList numbers;
     bool numbersVisible;
+    QKeyEvent *key_press;
+    QKeyEvent *key_release;
 
   private slots:
     void s_on_btn_clicked(int btn);

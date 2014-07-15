@@ -26,6 +26,7 @@
 #include "QVirtualKeyboard.h"
 #include "QinIMBases.h"
 #include <QLineEdit>
+#include <QKeyEvent>
 
 QT_BEGIN_NAMESPACE
 class QVirtualKeyboard;

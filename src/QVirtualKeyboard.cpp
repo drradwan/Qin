@@ -200,12 +200,12 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
     uni = ch.unicode()[0].unicode();
     
     //QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
-    QWidget *widget = QApplication::focusWidget();
+    //QWidget *widget = QApplication::focusWidget();
     QKeyEvent key_press(QKeyEvent::KeyPress, keyId, Modifier, NULL, false);
-    QApplication::sendEvent(widget, &key_press);
+    QApplication::sendEvent(lineEdit, &key_press);
     
     QKeyEvent key_release(QKeyEvent::KeyRelease, keyId, Modifier, NULL, false);
-    QApplication::sendEvent(widget, &key_release);
+    QApplication::sendEvent(lineEdit, &key_release);
     
     //lineEdit->insert(QChar(keyId));
   }

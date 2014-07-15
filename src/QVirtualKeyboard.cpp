@@ -205,7 +205,13 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
     //lineEdit->insert(key_press.text());
     //QApplication::sendEvent(lineEdit, &key_press);
     QApplication::postEvent(lineEdit, new QKeyEvent(QKeyEvent::KeyPress, keyId, Modifier));
-    
+    qDebug() << "Adding keypress: " << keyId;
+    QApplication::postEvent(lineEdit, new QKeyEvent(QKeyEvent::KeyRelease, keyId, Modifier));
+
+    QApplication::postEvent(lineEdit, new QKeyEvent(QKeyEvent::KeyPress, Qt::Key_A, Modifier, "A"));
+    qDebug() << "Adding A";
+    QApplication::postEvent(lineEdit, new QKeyEvent(QKeyEvent::KeyRelease, Qt::Key_A, Modifier, "A"));
+
     //QKeyEvent key_release(QKeyEvent::KeyRelease, keyId, Modifier);
     //QApplication::sendEvent(lineEdit, &key_release);
     

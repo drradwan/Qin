@@ -44,6 +44,7 @@ class QinEngine: public QWSInputMethod {
     
   public slots:
     void setShift(bool shifted, bool capsed);
+    void commitPreEdit();
 
   private:
     QVirtualKeyboard* vkeyboard;

@@ -199,7 +199,13 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
   } else {
     uni = ch.unicode()[0].unicode();
     //QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
-    lineEdit->insert(QChar(keyId));
+    QKeyEvent key_press(QKeyEvent::KeyPress, keyId, Modifier, NULL, false);
+    QApplication::sendEvent(lineEdit, key_press);
+    
+    QKeyEvent key_release(QKeyEvent::KeyRelease, keyId, Modifier, NULL, false);
+    QApplication::sendEvent(lineEdit, key_release);
+    
+    //lineEdit->insert(QChar(keyId));
   }
 
   if (istextkey && Shifted) {
@@ -341,7 +347,12 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
 #endif
 
   //QWSServer::sendKeyEvent(0, keyId, Qt::NoModifier, true, false);
-  lineEdit->insert(QChar(keyId));
+  QKeyEvent key_press(QKeyEvent::KeyPress, keyId, Qt::NoModifier, NULL, false);
+  QApplication::sendEvent(lineEdit, key_press);
+    
+  QKeyEvent key_release(QKeyEvent::KeyRelease, keyId, Qt::NoModifier, NULL, false);
+  QApplication::sendEvent(lineEdit, key_release);
+  //lineEdit->insert(QChar(keyId));
   clearCandStrBar(true);
 }
 

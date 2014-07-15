@@ -361,8 +361,8 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
   //QKeyEvent key_press(QKeyEvent::KeyPress, keyId, Qt::NoModifier);
   //lineEdit->insert(key_press.text());
   //QApplication::sendEvent(lineEdit, &key_press);
-  QApplication::postEvent(lineEdit, new QKeyEvent(QKeyEvent::KeyPress, keyId, Qt::NoModifier, strKeyId));
-  QApplication::postEvent(lineEdit, new QKeyEvent(QKeyEvent::KeyRelease, keyId, Qt::NoModifier, strKeyId));
+  QApplication::postEvent(lineEdit, new QKeyEvent(QKeyEvent::KeyPress, keyId, Qt::NoModifier, candButtons[btn]->text()));
+  QApplication::postEvent(lineEdit, new QKeyEvent(QKeyEvent::KeyRelease, keyId, Qt::NoModifier, candButtons[btn]->text()));
     
   //QKeyEvent key_release(QKeyEvent::KeyRelease, keyId, Qt::NoModifier);
   //QApplication::sendEvent(lineEdit, &key_release);

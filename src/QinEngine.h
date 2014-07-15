@@ -41,6 +41,8 @@ class QinEngine: public QWSInputMethod {
     ~QinEngine();
     void regInputMethod(QinIMBase* imb);
     void setCurrentIM(int index);
+    
+  public slots:
     void setShift(bool shifted, bool capsed);
 
   private:

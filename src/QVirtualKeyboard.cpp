@@ -202,7 +202,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
     //QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
     //QWidget *widget = QApplication::focusWidget();
     QKeyEvent key_press(QKeyEvent::KeyPress, keyId, Modifier);
-    lineEdit->insert(key_press->text());
+    lineEdit->insert(key_press.text());
     //QApplication::sendEvent(lineEdit, &key_press);
     
     //QKeyEvent key_release(QKeyEvent::KeyRelease, keyId, Modifier);
@@ -352,7 +352,7 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
   //QWSServer::sendKeyEvent(0, keyId, Qt::NoModifier, true, false);
   //QWidget *widget = QApplication::focusWidget();
   QKeyEvent key_press(QKeyEvent::KeyPress, keyId, Qt::NoModifier);
-  lineEdit->insert(key_press->text());
+  lineEdit->insert(key_press.text());
   //QApplication::sendEvent(lineEdit, &key_press);
     
   //QKeyEvent key_release(QKeyEvent::KeyRelease, keyId, Qt::NoModifier);

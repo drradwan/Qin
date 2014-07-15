@@ -202,10 +202,10 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
     //QWSServer::sendKeyEvent(uni, keyId, Modifier, true, false);
     QWidget *widget = QApplication::focusWidget();
     QKeyEvent key_press(QKeyEvent::KeyPress, keyId, Modifier, NULL, false);
-    QApplication::postEvent(widget, &key_press);
+    QApplication::sendEvent(widget, &key_press);
     
     QKeyEvent key_release(QKeyEvent::KeyRelease, keyId, Modifier, NULL, false);
-    QApplication::postEvent(widget, &key_release);
+    QApplication::sendEvent(widget, &key_release);
     
     //lineEdit->insert(QChar(keyId));
   }
@@ -351,10 +351,10 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
   //QWSServer::sendKeyEvent(0, keyId, Qt::NoModifier, true, false);
   QWidget *widget = QApplication::focusWidget();
   QKeyEvent key_press(QKeyEvent::KeyPress, keyId, Qt::NoModifier, NULL, false);
-  QApplication::postEvent(widget, &key_press);
+  QApplication::sendEvent(widget, &key_press);
     
   QKeyEvent key_release(QKeyEvent::KeyRelease, keyId, Qt::NoModifier, NULL, false);
-  QApplication::postEvent(widget, &key_release);
+  QApplication::sendEvent(widget, &key_release);
   //lineEdit->insert(QChar(keyId));
   clearCandStrBar(true);
 }

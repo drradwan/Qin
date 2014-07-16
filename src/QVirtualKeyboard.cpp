@@ -51,6 +51,7 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   selectPanel->setMinimumSize(width(), 65);
   selectPanel->setMaximumSize(width(), 65);
   selectPanel->setLayout(layout);
+  clearCandStrBar(false);
   selectPanel->hide();
 
   QFile data(":/data/selectPanel.qss");

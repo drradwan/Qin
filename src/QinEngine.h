@@ -41,12 +41,10 @@ class QinEngine: public QWSInputMethod {
     ~QinEngine();
     void regInputMethod(QinIMBase* imb);
     void setCurrentIM(int index);
-    void commitPreEdit();
 
-    
   public slots:
     void setShift(bool shifted, bool capsed);
-    //void commitPreEdit();
+    void commitPreEdit();
 
   private:
     QVirtualKeyboard* vkeyboard;

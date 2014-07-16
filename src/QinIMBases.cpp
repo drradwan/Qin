@@ -448,5 +448,14 @@ void QinTableIMBase::handle_Backspace(void) {
 }
 
 void QinTableIMBase::commit_Default(void) {
-  commitString = results[0];
+  doQuery();
+  if (results.isEmpty()) {
+    commitString.clear();
+  } else {
+    commitString = results[0];
+    results.clear();
+  }
+
+  /* reset keyStrokes */
+  keyIndex = 0;
 }

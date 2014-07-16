@@ -37,7 +37,7 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
 ui(new Ui::QVirtualKeyboard)
 {
   /* setup UI */
-  setupUi(this);
+  ui->setupUi(this);
   this->move((QApplication::desktop()->width() - width())/2,
       QApplication::desktop()->height() - height());
 

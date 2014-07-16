@@ -67,20 +67,20 @@ ui(new Ui::QVirtualKeyboard)
   allButtons = findChildren<QToolButton*>();
   signalMapper = new QSignalMapper(this);
 
-  QFile data(":/data/selectPanel.qss");
-  if (data.open(QFile::ReadOnly)) {
-    QTextStream ssin(&data);
+  //QFile data(":/data/selectPanel.qss");
+  //if (data.open(QFile::ReadOnly)) {
+  //  QTextStream ssin(&data);
     
     for (int i = 0; i < allButtons.count(); i++) {
       connect(allButtons.at(i), SIGNAL(clicked()), signalMapper, SLOT(map()));
       signalMapper->setMapping(allButtons.at(i), i);
-      allButtons.at(i)->setStyleSheet(ssin.readAll());
+  //    allButtons.at(i)->setStyleSheet(ssin.readAll());
     }
 
-    data.close();
-  } else {
-    qDebug() << "Error: failed to set style sheet for selectPanel!";
-  }
+  //  data.close();
+  //} else {
+  //  qDebug() << "Error: failed to set style sheet for selectPanel!";
+  //}
 
   connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(s_on_btn_clicked(int)));
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";

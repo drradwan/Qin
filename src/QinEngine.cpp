@@ -23,6 +23,7 @@
 #include "QinEngine.h"
 
 #include <QDebug>
+#include <QCoreApplication>
 
 #include "plugins/QinPinyin.h"
 #include "plugins/QinChewing.h"
@@ -160,6 +161,7 @@ void QinEngine::updateCommitString() {
   if (commit_str) {
     sendCommitString(commit_str);
     qDebug() << "Sending commit string: " << commit_str;
+    QCoreApplication::processEvents();
     delete commit_str;
   }
 }

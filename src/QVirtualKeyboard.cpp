@@ -53,16 +53,7 @@ ui(new Ui::QVirtualKeyboard)
 //  selectPanel->setMaximumSize(width(), 65);
 //  selectPanel->setLayout(layout);
   clearCandStrBar(false);
-  ui->selectPanel->hide();
-
-  QFile data(":/data/selectPanel.qss");
-  if (data.open(QFile::ReadOnly)) {
-    QTextStream ssin(&data);
-    ui->selectPanel->setStyleSheet(ssin.readAll());
-    data.close();
-  } else {
-    qDebug() << "Error: failed to set style sheet for selectPanel!";
-  }
+  //ui->selectPanel->hide();
 
   /* Setup members */
   imEngine = im;
@@ -76,10 +67,21 @@ ui(new Ui::QVirtualKeyboard)
   allButtons = findChildren<QToolButton*>();
   signalMapper = new QSignalMapper(this);
 
-  for (int i = 0; i < allButtons.count(); i++) {
-    connect(allButtons.at(i), SIGNAL(clicked()), signalMapper, SLOT(map()));
-    signalMapper->setMapping(allButtons.at(i), i);
+  QFile data(":/data/selectPanel.qss");
+  if (data.open(QFile::ReadOnly)) {
+    QTextStream ssin(&data);
+    
+    for (int i = 0; i < allButtons.count(); i++) {
+      connect(allButtons.at(i), SIGNAL(clicked()), signalMapper, SLOT(map()));
+      signalMapper->setMapping(allButtons.at(i), i);
+      allButtons.at(i)->setStyleSheet(ssin.readAll());
+    }
+
+    data.close();
+  } else {
+    qDebug() << "Error: failed to set style sheet for selectPanel!";
   }
+
   connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(s_on_btn_clicked(int)));
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
 }
@@ -349,7 +351,7 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
       delete candButtons[i];
     }
     candButtons.clear();
-    ui->selectPanel->hide();
+    //ui->selectPanel->hide();
     numbersVisible = false;
   }
 }
@@ -377,7 +379,7 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
   if (!strlist.size()) return;
 
-  ui->selectPanel->show();
+  //ui->selectPanel->show();
   
   for (int i = 0; i < strlist.size(); ++i) {
     button = new QPushButton(strlist[i]);

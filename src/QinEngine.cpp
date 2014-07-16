@@ -209,5 +209,6 @@ void QinEngine::setShift(bool shifted, bool capsed) {
 
 void QinEngine::commitPreEdit() {
   qDebug() << "commitPreEdit() called by signal";
-  currentIM->handle_Space();
+  currentIM->commit_Default();
+  updateCommitString();
 }

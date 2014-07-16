@@ -76,7 +76,6 @@ void QinEngine::setCurrentIM(int index) {
     vkeyboard->showCandStrBar(currentIM->getPopUpStrings());
   else
     vkeyboard->showCandStrBar(numbers);
-  //vkeyboard->pressShiftKey();
 }
 
 bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
@@ -180,7 +179,6 @@ void QinEngine::updateHandler(int type) {
       currentIM->reset();
       vkeyboard->show();
       vkeyboard->showCandStrBar(numbers);
-      vkeyboard->pressShiftKey();
       break;
 
     case QWSInputMethod::FocusOut:

@@ -213,4 +213,5 @@ void QinEngine::commitPreEdit() {
   qDebug() << "commitPreEdit() called by signal";
   currentIM->commit_Default();
   updateCommitString();
+  vkeyboard->clearCandStrBar(true);
 }

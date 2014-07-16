@@ -34,7 +34,7 @@
 
 QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
 :QWidget(0, Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint),
-Ui(new Ui::QVirtualKeyboard)
+ui(new Ui::QVirtualKeyboard)
 {
   /* setup UI */
   setupUi(this);

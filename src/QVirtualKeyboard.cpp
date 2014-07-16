@@ -41,23 +41,23 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
       QApplication::desktop()->height() - height());
 
   /* Setup selectPanel */
-  QHBoxLayout* layout = new QHBoxLayout;
-  layout->setContentsMargins(1, 1, 1, 0);
-  layout->setSpacing(0);
-  selectPanel = new QWidget(this, Qt::Tool |
-                                  Qt::FramelessWindowHint);
-  selectPanel->move((QApplication::desktop()->width() - width())/2,
-      QApplication::desktop()->height() - height() - 65);
-  selectPanel->setMinimumSize(width(), 65);
-  selectPanel->setMaximumSize(width(), 65);
-  selectPanel->setLayout(layout);
+//  QHBoxLayout* layout = new QHBoxLayout;
+//  layout->setContentsMargins(1, 1, 1, 0);
+//  layout->setSpacing(0);
+//  selectPanel = new QWidget(this, Qt::Tool |
+//                                  Qt::FramelessWindowHint);
+//  selectPanel->move((QApplication::desktop()->width() - width())/2,
+//      QApplication::desktop()->height() - height() - 65);
+//  selectPanel->setMinimumSize(width(), 65);
+//  selectPanel->setMaximumSize(width(), 65);
+//  selectPanel->setLayout(layout);
   clearCandStrBar(false);
-  selectPanel->hide();
+  ui->selectPanel->hide();
 
   QFile data(":/data/selectPanel.qss");
   if (data.open(QFile::ReadOnly)) {
     QTextStream ssin(&data);
-    selectPanel->setStyleSheet(ssin.readAll());
+    ui->selectPanel->setStyleSheet(ssin.readAll());
     data.close();
   } else {
     qDebug() << "Error: failed to set style sheet for selectPanel!";
@@ -334,7 +334,7 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
   if (showNumbers) {
     if (!numbersVisible) {
       for (int i = 0; i < candButtons.size(); ++i) {
-        selectPanel->layout()->removeWidget(candButtons[i]);
+        ui->selectPanel->removeWidget(candButtons[i]);
         delete candButtons[i];
       }
       candButtons.clear();
@@ -344,11 +344,11 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
     return;
   } else {
     for (int i = 0; i < candButtons.size(); ++i) {
-      selectPanel->layout()->removeWidget(candButtons[i]);
+      ui->selectPanel->removeWidget(candButtons[i]);
       delete candButtons[i];
     }
     candButtons.clear();
-    selectPanel->hide();
+    ui->selectPanel->hide();
     numbersVisible = false;
   }
 }
@@ -376,13 +376,13 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
   if (!strlist.size()) return;
 
-  selectPanel->show();
+  ui->selectPanel->show();
   
   for (int i = 0; i < strlist.size(); ++i) {
     button = new QPushButton(strlist[i]);
     //button->setFont(QFont("WenQuanYiMicroHeiLight", 13));
     candButtons.push_back(button);
-    selectPanel->layout()->addWidget(button);
+    ui->selectPanel->addWidget(button);
     button->show();
   }
 
@@ -396,7 +396,7 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
     candSignalMapper = NULL;
   }
 
-  candSignalMapper = new QSignalMapper(selectPanel);
+  candSignalMapper = new QSignalMapper(ui->selectPanel);
 
   for (int i = 0; i < candButtons.size(); i++) {
     candButtons[i]->setWhatsThis(QString("%1").arg(keys[i], 2, 16));

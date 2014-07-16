@@ -203,7 +203,7 @@ void QinEngine::selectPreEditWord(int index) {
 }
 
 void QinEngine::setShift(bool shifted, bool capsed) {
-  qDebug() << "setShift() called by signal";
+  qDebug() << "setShift(" << shifted << ", " << capsed << ") called by signal";
   vkeyboard->setShift(shifted, capsed);
 }
 

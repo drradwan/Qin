@@ -94,6 +94,9 @@ class QinIMBase {
     virtual void handle_Space(void);
     virtual void handle_Tab(void);
     virtual void handle_Up(void);
+    
+    /* Added to force commit for table, here only for compatiblity */
+    virtual void commit_Default(void);
 };
 
 /**
@@ -135,6 +138,9 @@ class QinTableIMBase: public QinIMBase {
     virtual void handle_Enter(void);
     virtual void handle_Space(void);
     virtual void handle_Backspace(void);
+    
+    /* Added to force commit the first choice on the candidate bar */
+    virtual void commit_Default(void);
 };
 
 #endif /* __QIN_SRC_QIN_IM_BASE_H__ */

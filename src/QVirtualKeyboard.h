@@ -68,7 +68,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     QVector<QPushButton*> candButtons;
     QStringList numbers;
     bool numbersVisible;
-    Ui::QVirtualKeyboard *ui;
+    //Ui::QVirtualKeyboard *ui;
 
   private slots:
     void s_on_btn_clicked(int btn);

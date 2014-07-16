@@ -49,7 +49,6 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void clearCandStrBar(bool showNumbers);
     void showCandStrBar(QStringList strlist);
     void hideAll(void);
-    void pressShiftKey();
     void setShift(bool shifted, bool capsed);
 
   private:

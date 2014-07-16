@@ -45,8 +45,7 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   layout->setContentsMargins(1, 1, 1, 0);
   layout->setSpacing(0);
   selectPanel = new QWidget(this, Qt::Tool |
-                                  Qt::FramelessWindowHint |
-                                  Qt::WindowStaysOnTopHint);
+                                  Qt::FramelessWindowHint);
   selectPanel->move((QApplication::desktop()->width() - width())/2,
       QApplication::desktop()->height() - height() - 65);
   selectPanel->setMinimumSize(width(), 65);

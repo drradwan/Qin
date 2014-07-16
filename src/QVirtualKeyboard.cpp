@@ -336,7 +336,7 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
   if (showNumbers) {
     if (!numbersVisible) {
       for (int i = 0; i < candButtons.size(); ++i) {
-        selectPanel->removeWidget(candButtons[i]);
+        selectPanel->layout()->removeWidget(candButtons[i]);
         delete candButtons[i];
       }
       candButtons.clear();
@@ -346,11 +346,11 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
     return;
   } else {
     for (int i = 0; i < candButtons.size(); ++i) {
-      selectPanel->removeWidget(candButtons[i]);
+      selectPanel->layout()->removeWidget(candButtons[i]);
       delete candButtons[i];
     }
     candButtons.clear();
-    //selectPanel->hide();
+    selectPanel->hide();
     numbersVisible = false;
   }
 }
@@ -378,13 +378,13 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
   if (!strlist.size()) return;
 
-  //selectPanel->show();
+  selectPanel->show();
   
   for (int i = 0; i < strlist.size(); ++i) {
     button = new QPushButton(strlist[i]);
     //button->setFont(QFont("WenQuanYiMicroHeiLight", 13));
     candButtons.push_back(button);
-    selectPanel->addWidget(button);
+    selectPanel->layout()->addWidget(button);
     button->show();
   }
 

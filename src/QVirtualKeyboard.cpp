@@ -120,16 +120,6 @@ void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
   }
 }
 
-
-void QVirtualKeyboard::pressShiftKey() {
-  Capsed = false;
-  Shifted = true;
-  Pressed = false;
-  changeShiftKeyMap(imEngine->currentIM);
-  btnShiftLeft->setText(QString::fromUtf8("⇧"));
-  btnShiftLeft->setChecked(true);
-}
-
 void QVirtualKeyboard::on_btnLoc_clicked(void) {
   hideAll();
 }

@@ -37,23 +37,23 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
 ui(new Ui::QVirtualKeyboard)
 {
   /* setup UI */
-  ui->setupUi(this);
+  setupUi(this);
   this->move((QApplication::desktop()->width() - width())/2,
       QApplication::desktop()->height() - height());
 
   /* Setup selectPanel */
-//  QHBoxLayout* layout = new QHBoxLayout;
-//  layout->setContentsMargins(1, 1, 1, 0);
-//  layout->setSpacing(0);
-//  selectPanel = new QWidget(this, Qt::Tool |
-//                                  Qt::FramelessWindowHint);
-//  selectPanel->move((QApplication::desktop()->width() - width())/2,
-//      QApplication::desktop()->height() - height() - 65);
-//  selectPanel->setMinimumSize(width(), 65);
-//  selectPanel->setMaximumSize(width(), 65);
-//  selectPanel->setLayout(layout);
+  QHBoxLayout* layout = new QHBoxLayout;
+  layout->setContentsMargins(1, 1, 1, 0);
+  layout->setSpacing(0);
+  selectPanel = new QWidget(this, Qt::Tool |
+                                  Qt::FramelessWindowHint);
+  selectPanel->move((QApplication::desktop()->width() - width())/2,
+      QApplication::desktop()->height() - height() - 65);
+  selectPanel->setMinimumSize(width(), 65);
+  selectPanel->setMaximumSize(width(), 65);
+  selectPanel->setLayout(layout);
   clearCandStrBar(false);
-  //ui->selectPanel->hide();
+  selectPanel->hide();
 
   /* Setup members */
   imEngine = im;
@@ -67,20 +67,19 @@ ui(new Ui::QVirtualKeyboard)
   allButtons = findChildren<QToolButton*>();
   signalMapper = new QSignalMapper(this);
 
-  //QFile data(":/data/selectPanel.qss");
-  //if (data.open(QFile::ReadOnly)) {
-  //  QTextStream ssin(&data);
-    
-    for (int i = 0; i < allButtons.count(); i++) {
-      connect(allButtons.at(i), SIGNAL(clicked()), signalMapper, SLOT(map()));
-      signalMapper->setMapping(allButtons.at(i), i);
-  //    allButtons.at(i)->setStyleSheet(ssin.readAll());
-    }
+  QFile data(":/data/selectPanel.qss");
+  if (data.open(QFile::ReadOnly)) {
+    QTextStream ssin(&data);
+    selectPanel->setStyleSheet(ssin.readAll());
+    data.close();
+  } else {
+    qDebug() << "Error: failed to set style sheet for selectPanel!";
+  }
 
-  //  data.close();
-  //} else {
-  //  qDebug() << "Error: failed to set style sheet for selectPanel!";
-  //}
+  for (int i = 0; i < allButtons.count(); i++) {
+    connect(allButtons.at(i), SIGNAL(clicked()), signalMapper, SLOT(map()));
+    signalMapper->setMapping(allButtons.at(i), i);
+  }
 
   connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(s_on_btn_clicked(int)));
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
@@ -337,7 +336,7 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
   if (showNumbers) {
     if (!numbersVisible) {
       for (int i = 0; i < candButtons.size(); ++i) {
-        ui->selectPanel->removeWidget(candButtons[i]);
+        selectPanel->removeWidget(candButtons[i]);
         delete candButtons[i];
       }
       candButtons.clear();
@@ -347,11 +346,11 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
     return;
   } else {
     for (int i = 0; i < candButtons.size(); ++i) {
-      ui->selectPanel->removeWidget(candButtons[i]);
+      selectPanel->removeWidget(candButtons[i]);
       delete candButtons[i];
     }
     candButtons.clear();
-    //ui->selectPanel->hide();
+    //selectPanel->hide();
     numbersVisible = false;
   }
 }
@@ -379,13 +378,13 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
   if (!strlist.size()) return;
 
-  //ui->selectPanel->show();
+  //selectPanel->show();
   
   for (int i = 0; i < strlist.size(); ++i) {
     button = new QPushButton(strlist[i]);
     //button->setFont(QFont("WenQuanYiMicroHeiLight", 13));
     candButtons.push_back(button);
-    ui->selectPanel->addWidget(button);
+    selectPanel->addWidget(button);
     button->show();
   }
 
@@ -399,7 +398,7 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
     candSignalMapper = NULL;
   }
 
-  candSignalMapper = new QSignalMapper(ui->selectPanel);
+  candSignalMapper = new QSignalMapper(selectPanel);
 
   for (int i = 0; i < candButtons.size(); i++) {
     candButtons[i]->setWhatsThis(QString("%1").arg(keys[i], 2, 16));

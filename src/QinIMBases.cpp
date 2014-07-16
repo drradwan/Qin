@@ -191,7 +191,6 @@ void QinIMBase::handle_Right(void) {}
 void QinIMBase::handle_Space(void) {}
 void QinIMBase::handle_Tab(void) {}
 void QinIMBase::handle_Up(void) {}
-void QinIMBase::commit_Default(void) {}
 
 /* QinTableIMBase methods implementation */
 
@@ -444,8 +443,4 @@ void QinTableIMBase::handle_Backspace(void) {
     --keyIndex;
   if (maxKeyStrokes > 1)
     doQuery();
-}
-
-void QinTableIMBase::commit_Default(void) {
-  commitString = results[0];
 }

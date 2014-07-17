@@ -209,21 +209,19 @@ void QinEngine::changeLanguage(QString oldLang, QString newLang) {
   qDebug() << "Qin is changing to language: " << newLang;
   currentLanguage = newLang;
   if (newLang.contains("en")) {
-    defaultIM = inputMethods[0];
     activeInputMethods.clear();
     activeInputMethods.push_back(inputMethods[0]);
     activeInputMethods.push_back(inputMethods[2]);
   } else if (newLang.contains("zh")) {
-    defaultIM = inputMethods[0];
     activeInputMethods.clear();
     activeInputMethods.push_back(inputMethods[0]);
     activeInputMethods.push_back(inputMethods[2]);
     activeInputMethods.push_back(inputMethods[3]);
   } else {
-    defaultIM = inputMethods[1];
     activeInputMethods.clear();
     activeInputMethods.push_back(inputMethods[1]);
     activeInputMethods.push_back(inputMethods[2]);
   }
+  defaultIM = activeInputMethods[0];
   setCurrentIM(0);
 }

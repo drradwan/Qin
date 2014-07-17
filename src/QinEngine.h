@@ -47,7 +47,7 @@ class QinEngine: public QWSInputMethod {
     void commitPreEdit();
     void changeLanguage(QString oldLang, QString newLang);
 
-  private:
+  protected:
     QVirtualKeyboard* vkeyboard;
     QString inputBuffer;
     QVector<QinIMBase*> inputMethods;

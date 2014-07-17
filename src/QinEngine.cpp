@@ -38,7 +38,7 @@ QinEngine::QinEngine(QString lang) {
   regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
   //regInputMethod(new QinChewing());
   //regInputMethod(new QinPinyin());
-  changeLanguage(NULL, lang);
+  //changeLanguage(NULL, lang);
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
 }
 

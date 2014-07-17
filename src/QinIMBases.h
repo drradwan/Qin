@@ -40,12 +40,12 @@
 class QinIMBase {
   protected:
     QString xmlPath;
-    QString imName;
     bool useCustomKeyMap;
     bool preEditable;
 
   public:
     /** Public members **/
+    QString imName;
     QHash<QString, QString> fromStdKB_hash;
     QHash<QString, QString> fromShiftStdKB_hash;
 

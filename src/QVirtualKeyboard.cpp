@@ -114,11 +114,11 @@ void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
   Capsed = capsed;
   Pressed = false;
 
-  if (Capsed) {
+  if (capsed) {
     changeShiftKeyMap(imEngine->currentIM);
     btnShiftLeft->setText(QString::fromUtf8("⇪"));
     btnShiftLeft->setChecked(true);
-  } else if (Shifted) {
+  } else if (shifted) {
       changeShiftKeyMap(imEngine->currentIM);
       btnShiftLeft->setText(QString::fromUtf8("⇧"));
       btnShiftLeft->setChecked(true);

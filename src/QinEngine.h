@@ -45,7 +45,7 @@ class QinEngine: public QWSInputMethod {
   public slots:
     void setShift(bool shifted, bool capsed);
     void commitPreEdit();
-    void setLanguage(QString lang);
+    void changeLanguage(QString oldLang, QString newLang);
 
   private:
     QVirtualKeyboard* vkeyboard;

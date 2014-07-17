@@ -98,7 +98,7 @@ QVirtualKeyboard::~QVirtualKeyboard() {
 //}
 
 void QVirtualKeyboard::setCurrentIMName(int offset) {
-  btnIMToggle->setText(imEngine->activeInputMethods[offset]);
+  btnIMToggle->setText(imEngine->activeInputMethods[offset]->imName);
 }
 
 void QVirtualKeyboard::hideAll(void) {

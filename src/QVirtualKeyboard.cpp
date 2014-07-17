@@ -97,6 +97,10 @@ QVirtualKeyboard::~QVirtualKeyboard() {
   //imEngine->setCurrentIM(0);
 //}
 
+void QVirtualKeyboard::setCurrentIMName(int offset) {
+  btnIMToggle->setText(imEngine->activeInputMethods[offset]);
+}
+
 void QVirtualKeyboard::hideAll(void) {
   clearCandStrBar(false);
   hide();

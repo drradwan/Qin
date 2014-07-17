@@ -45,16 +45,19 @@ class QinEngine: public QWSInputMethod {
   public slots:
     void setShift(bool shifted, bool capsed);
     void commitPreEdit();
+    void setLanguage(QString lang);
 
   private:
     QVirtualKeyboard* vkeyboard;
     QString inputBuffer;
     QVector<QinIMBase*> inputMethods;
+    QVector<QinIMBase*> activeInputMethods;
     QinIMBase* defaultIM;
     QinIMBase* currentIM;
     QinIMBase* nextIM;
     int selected;
     QStringList numbers;
+    QString currentLanguage;
 
     bool filter(int uni, int keyId, int mod, bool isPress, bool autoRepeat);
     void updateHandler(int type);

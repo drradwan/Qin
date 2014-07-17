@@ -32,18 +32,14 @@
 
 QinEngine::QinEngine(QString lang) {
   vkeyboard = new QVirtualKeyboard(this);
-  if (lang.contains("en"))
-    regInputMethod(new QinIMBase(":/data/English.xml"));
-  if (lang.contains("en") || lang.contains("fr"))
-    regInputMethod(new QinTableIMBase(":/data/Latin.xml"));
-  if (lang.contains("en") || lang.contains("fr"))
-    regInputMethod(new QinIMBase(":/data/Symbols.xml"));
+  regInputMethod(new QinIMBase(":/data/English.xml"));
+  regInputMethod(new QinTableIMBase(":/data/Latin.xml"));
+  regInputMethod(new QinIMBase(":/data/Symbols.xml"));
+  regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
   //regInputMethod(new QinChewing());
   //regInputMethod(new QinPinyin());
-  if (lang.contains("zh"))
-    regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
-  if (lang.contains("en") || lang.contains("fr") || lang.contains("zh"))
-    defaultIM = inputMethods[0];
+  currentLanguage = lang;
+  setLanguage(currentLanguage);
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
 }
 
@@ -65,17 +61,13 @@ void QinEngine::regInputMethod(QinIMBase* imb) {
 }
 
 void QinEngine::setCurrentIM(int index) {
-  currentIM = inputMethods[index];
-  if (inputMethods.size() == index+1) {
-    nextIM = inputMethods[0];
+  currentIM = activeInputMethods[index];
+  if (activeInputMethods.size() == index+1) {
+    nextIM = activeInputMethods[0];
   } else {
-    nextIM = inputMethods[index+1];
+    nextIM = activeInputMethods[index+1];
   }
   currentIM->reset();
-  //if (currentIM->getDoPopUp())
-  //  vkeyboard->showCandStrBar(currentIM->getPopUpStrings());
-  //else
-  //  vkeyboard->showCandStrBar(numbers);
 }
 
 bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
@@ -212,4 +204,25 @@ void QinEngine::commitPreEdit() {
   currentIM->commit_Default();
   updateCommitString();
   vkeyboard->clearCandStrBar(true);
+}
+
+void QinEngine::setLanguage(QString lang) {
+  if (lang.contains("en")) {
+    defaultIM = inputMethods[0];
+    activeInputMethods.clear();
+    activeInputMethods.push_back(inputMethods[0]);
+    activeInputMethods.push_back(inputMethods[2]);
+  } else if (lang.contains("zh")) {
+    defaultIM = inputMethods[0];
+    activeInputMethods.clear();
+    activeInputMethods.push_back(inputMethods[0]);
+    activeInputMethods.push_back(inputMethods[2]);
+    activeInputMethods.push_back(inputMethods[3]);
+  } else {
+    defaultIM = inputMethods[1];
+    activeInputMethods.clear();
+    activeInputMethods.push_back(inputMethods[1]);
+    activeInputMethods.push_back(inputMethods[2]);
+  }
+  setCurrentIM(0);
 }

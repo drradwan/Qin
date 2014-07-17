@@ -61,7 +61,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     int IMIndex;
     int opacity;
     int* selkeys;
-    QVector<QString> regedIMs;
+    //QVector<QString> regedIMs;
     QSignalMapper *signalMapper;
     QSignalMapper *candSignalMapper;
     QList<QToolButton*> allButtons;

@@ -56,7 +56,7 @@ void QinEngine::regInputMethod(QinIMBase* imb) {
   }
 
   inputMethods.push_back(imb);
-  vkeyboard->insertInputMethod(imb);
+  //vkeyboard->insertInputMethod(imb);
 }
 
 void QinEngine::setCurrentIM(int index) {

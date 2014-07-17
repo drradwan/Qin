@@ -38,8 +38,7 @@ QinEngine::QinEngine(QString lang) {
   regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
   //regInputMethod(new QinChewing());
   //regInputMethod(new QinPinyin());
-  currentLanguage = lang;
-  setLanguage(currentLanguage);
+  changeLanguage(NULL, lang);
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
 }
 
@@ -206,13 +205,14 @@ void QinEngine::commitPreEdit() {
   vkeyboard->clearCandStrBar(true);
 }
 
-void QinEngine::setLanguage(QString lang) {
-  if (lang.contains("en")) {
+void QinEngine::changeLanguage(QString oldLang, QString newLang) {
+  currentLanguage = newLang;
+  if (newLang.contains("en")) {
     defaultIM = inputMethods[0];
     activeInputMethods.clear();
     activeInputMethods.push_back(inputMethods[0]);
     activeInputMethods.push_back(inputMethods[2]);
-  } else if (lang.contains("zh")) {
+  } else if (newLang.contains("zh")) {
     defaultIM = inputMethods[0];
     activeInputMethods.clear();
     activeInputMethods.push_back(inputMethods[0]);

@@ -228,7 +228,7 @@ void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
 
 void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
   //IMIndex = (IMIndex + 1) % regedIMs.size();
-  IMIndex = (IMIndex + 1) % imEngine->activeInputMethods->size();
+  IMIndex = (IMIndex + 1) % imEngine->activeInputMethods.size();
   imEngine->setCurrentIM(IMIndex);
   btnIMToggle->setText(imEngine->nextIM->name());
 

@@ -224,5 +224,5 @@ void QinEngine::changeLanguage(QString oldLang, QString newLang) {
   }
   defaultIM = activeInputMethods[0];
   setCurrentIM(0);
-  vkeyboard->setCurrentIMName(0);
+  vkeyboard->setDefaultIMName();
 }

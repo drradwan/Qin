@@ -88,14 +88,14 @@ QVirtualKeyboard::~QVirtualKeyboard() {
   delete signalMapper;
 }
 
-void QVirtualKeyboard::insertInputMethod(const QinIMBase* im) {
-  regedIMs.push_back(im->name());
-  if (regedIMs.size() > 1)
-    btnIMToggle->setText(regedIMs[1]);
-  else
-    btnIMToggle->setText(regedIMs[0]);
+//void QVirtualKeyboard::insertInputMethod(const QinIMBase* im) {
+  //regedIMs.push_back(im->name());
+  //if (regedIMs.size() > 1)
+  //  btnIMToggle->setText(regedIMs[1]);
+  //else
+  //  btnIMToggle->setText(regedIMs[0]);
   //imEngine->setCurrentIM(0);
-}
+//}
 
 void QVirtualKeyboard::hideAll(void) {
   clearCandStrBar(false);
@@ -227,7 +227,8 @@ void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
 }
 
 void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
-  IMIndex = (IMIndex + 1) % regedIMs.size();
+  //IMIndex = (IMIndex + 1) % regedIMs.size();
+  IMIndex = (IMIndex + 1) % imEngine->activeInputMethods->size();
   imEngine->setCurrentIM(IMIndex);
   btnIMToggle->setText(imEngine->nextIM->name());
 

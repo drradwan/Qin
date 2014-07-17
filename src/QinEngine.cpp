@@ -206,6 +206,7 @@ void QinEngine::commitPreEdit() {
 }
 
 void QinEngine::changeLanguage(QString oldLang, QString newLang) {
+  qDebug() << "Qin is changing to language: " << newLang;
   currentLanguage = newLang;
   if (newLang.contains("en")) {
     defaultIM = inputMethods[0];

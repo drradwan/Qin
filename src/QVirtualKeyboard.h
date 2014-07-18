@@ -79,7 +79,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void s_on_btnCands_clicked(int btn);
     void on_btnShiftLeft_toggled(bool checked);
     void on_btnIMToggle_clicked(void);
-    void on_btnLoc_clicked(void);
+    void on_btnNext_clicked(void);
     bool isTextKey(int keyId);
     void changeNormalKeyMap(QinIMBase* imb);
     void changeShiftKeyMap(QinIMBase* imb);

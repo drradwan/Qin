@@ -47,9 +47,9 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   selectPanel = new QWidget(this, Qt::Tool |
                                   Qt::FramelessWindowHint);
   selectPanel->move((QApplication::desktop()->width() - width())/2,
-      QApplication::desktop()->height() - height() - 60);
-  selectPanel->setMinimumSize(width(), 60);
-  selectPanel->setMaximumSize(width(), 60);
+      QApplication::desktop()->height() - height() - 55);
+  selectPanel->setMinimumSize(width(), 55);
+  selectPanel->setMaximumSize(width(), 55);
   selectPanel->setLayout(layout);
   clearCandStrBar(false);
   selectPanel->hide();
@@ -145,14 +145,14 @@ void QVirtualKeyboard::setShift2() {
     changeShiftKeyMap(imEngine->currentIM);
     qDebug() << "Shifted called";
   } else {
-    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
     btnShiftLeft->setChecked(false);
+    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
     btnShiftLeft->repaint();
-    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
     btnShiftLeft->setChecked(false);
+    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
     btnShiftLeft->repaint();
-    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
     btnShiftLeft->setChecked(false);
+    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
     btnShiftLeft->repaint();
     changeNormalKeyMap(imEngine->currentIM);
     qDebug() << "None called";

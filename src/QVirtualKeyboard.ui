@@ -1015,7 +1015,7 @@ QToolButton:on {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="btnLoc">
+        <widget class="QPushButton" name="btnNext">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -1024,12 +1024,12 @@ QToolButton:on {
          </property>
          <property name="minimumSize">
           <size>
-           <width>30</width>
+           <width>40</width>
            <height>25</height>
           </size>
          </property>
          <property name="text">
-          <string>⇣</string>
+          <string>Next</string>
          </property>
         </widget>
        </item>

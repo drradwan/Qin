@@ -132,6 +132,7 @@ void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
 
 void QVirtualKeyboard::on_btnNext_clicked(void) {
   emit keyboardFinished();
+  qDebug() << "emitting keyboardFinished() from Qin";
 }
 
 void QVirtualKeyboard::s_on_btn_clicked(int btn) {

@@ -47,9 +47,9 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   selectPanel = new QWidget(this, Qt::Tool |
                                   Qt::FramelessWindowHint);
   selectPanel->move((QApplication::desktop()->width() - width())/2,
-      QApplication::desktop()->height() - height() - 65);
-  selectPanel->setMinimumSize(width(), 65);
-  selectPanel->setMaximumSize(width(), 65);
+      QApplication::desktop()->height() - height() - 60);
+  selectPanel->setMinimumSize(width(), 60);
+  selectPanel->setMaximumSize(width(), 60);
   selectPanel->setLayout(layout);
   clearCandStrBar(false);
   selectPanel->hide();
@@ -129,8 +129,8 @@ void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
   }
 }
 
-void QVirtualKeyboard::on_btnLoc_clicked(void) {
-  hideAll();
+void QVirtualKeyboard::on_btnNext_clicked(void) {
+  emit keyboardFinished();
 }
 
 void QVirtualKeyboard::s_on_btn_clicked(int btn) {

@@ -115,7 +115,7 @@ void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
   Shifted = shifted;
   Capsed = capsed;
   Pressed = false;
-  QTimer::singleShot(100, this, SLOT(setShift2(shifted, capsed)));
+  QTimer::singleShot(100, this, SLOT(setShift2()));
 }
 
 void QVirtualKeyboard::setShift2() {

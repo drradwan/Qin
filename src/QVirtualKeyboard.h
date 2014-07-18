@@ -51,6 +51,9 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void showCandStrBar(QStringList strlist);
     void hideAll(void);
     void setShift(bool shifted, bool capsed);
+    
+  signals:
+    void keyboardFinished();
 
   private:
     QinEngine* imEngine;

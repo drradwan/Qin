@@ -40,6 +40,7 @@ QinEngine::QinEngine(QString lang) {
   //regInputMethod(new QinPinyin());
   changeLanguage(NULL, lang);
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
+  connect(this, SIGNAL(keyboardFinished()), qApp, SLOT(aboutQt()));
 }
 
 QinEngine::~QinEngine() {

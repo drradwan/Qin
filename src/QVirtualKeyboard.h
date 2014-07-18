@@ -52,7 +52,6 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void showCandStrBar(QStringList strlist);
     void hideAll(void);
     void setShift(bool shifted, bool capsed);
-    void setShift2(bool shifted, bool capsed);
     
   signals:
     void keyboardFinished();
@@ -85,6 +84,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     bool isTextKey(int keyId);
     void changeNormalKeyMap(QinIMBase* imb);
     void changeShiftKeyMap(QinIMBase* imb);
+    void setShift2(bool shifted, bool capsed);
 };
 
 #endif /* QVIRTUALKEYBOARD_H */

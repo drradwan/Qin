@@ -47,9 +47,9 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   selectPanel = new QWidget(this, Qt::Tool |
                                   Qt::FramelessWindowHint);
   selectPanel->move((QApplication::desktop()->width() - width())/2,
-      QApplication::desktop()->height() - height() - 55);
-  selectPanel->setMinimumSize(width(), 55);
-  selectPanel->setMaximumSize(width(), 55);
+      QApplication::desktop()->height() - height() - 65);
+  selectPanel->setMinimumSize(width(), 65);
+  selectPanel->setMaximumSize(width(), 65);
   selectPanel->setLayout(layout);
   clearCandStrBar(false);
   selectPanel->hide();
@@ -122,37 +122,37 @@ void QVirtualKeyboard::setShift2() {
   qDebug() << "QVirtualKeyboard::setShift2() called with " << Shifted << ", " << Capsed;
   if (Capsed) {
     btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇪A"));
+    btnShiftLeft->setText(QString::fromUtf8("⇪"));
     btnShiftLeft->repaint();
     btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇪A"));
+    btnShiftLeft->setText(QString::fromUtf8("⇪"));
     btnShiftLeft->repaint();
     btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇪A"));
+    btnShiftLeft->setText(QString::fromUtf8("⇪"));
     btnShiftLeft->repaint();
     changeShiftKeyMap(imEngine->currentIM);
     qDebug() << "Capsed called";
   } else if (Shifted) {
     btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇧B"));
+    btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->repaint();
     btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇧B"));
+    btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->repaint();
     btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇧B"));
+    btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->repaint();
     changeShiftKeyMap(imEngine->currentIM);
     qDebug() << "Shifted called";
   } else {
     btnShiftLeft->setChecked(false);
-    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
+    btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->repaint();
     btnShiftLeft->setChecked(false);
-    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
+    btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->repaint();
     btnShiftLeft->setChecked(false);
-    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
+    btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->repaint();
     changeNormalKeyMap(imEngine->currentIM);
     qDebug() << "None called";

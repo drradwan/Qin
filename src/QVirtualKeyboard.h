@@ -33,6 +33,7 @@
 #include <QWidget>
 #include <QWSInputMethod>
 #include <QHideEvent>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 class QinEngine;
@@ -51,6 +52,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void showCandStrBar(QStringList strlist);
     void hideAll(void);
     void setShift(bool shifted, bool capsed);
+    void setShift2(bool shifted, bool capsed);
     
   signals:
     void keyboardFinished();

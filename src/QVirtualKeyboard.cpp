@@ -112,7 +112,7 @@ void QVirtualKeyboard::hideAll(void) {
 
 void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
   qDebug() << "QVirtualKeyboard::setShift() called with " << shifted << ", " << capsed;
-  QTimer::singleShot(100, this, setShift2());
+  QTimer::singleShot(100, this, SLOT(setShift2()));
 }
 
 void QVirtualKeyboard::setShift2(bool shifted, bool capsed) {

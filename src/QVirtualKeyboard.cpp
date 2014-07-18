@@ -112,20 +112,19 @@ void QVirtualKeyboard::hideAll(void) {
 
 void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
   qDebug() << "QVirtualKeyboard::setShift() called with " << shifted << ", " << capsed;
-  QTimer::singleShot(100, this, SLOT(setShift2(shifted, capsed)));
-}
-
-void QVirtualKeyboard::setShift2(bool shifted, bool capsed) {
-  qDebug() << "QVirtualKeyboard::setShift2() called with " << shifted << ", " << capsed;
   Shifted = shifted;
   Capsed = capsed;
   Pressed = false;
+  QTimer::singleShot(100, this, SLOT(setShift2(shifted, capsed)));
+}
 
-  if (capsed) {
+void QVirtualKeyboard::setShift2() {
+  qDebug() << "QVirtualKeyboard::setShift2() called with " << Shifted << ", " << Capsed;
+  if (Capsed) {
     changeShiftKeyMap(imEngine->currentIM);
     btnShiftLeft->setText(QString::fromUtf8("⇪"));
     btnShiftLeft->setChecked(true);
-  } else if (shifted) {
+  } else if (Shifted) {
     changeShiftKeyMap(imEngine->currentIM);
     btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->setChecked(true);

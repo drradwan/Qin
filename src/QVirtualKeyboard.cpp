@@ -115,25 +115,25 @@ void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
   Shifted = shifted;
   Capsed = capsed;
   Pressed = false;
-  QTimer::singleShot(3000, this, SLOT(setShift2()));
+  QTimer::singleShot(100, this, SLOT(setShift2()));
 }
 
 void QVirtualKeyboard::setShift2() {
   qDebug() << "QVirtualKeyboard::setShift2() called with " << Shifted << ", " << Capsed;
   if (Capsed) {
+    btnShiftLeft->setText(QString::fromUtf8("⇪A"));
+    btnShiftLeft->setChecked(true);
     changeShiftKeyMap(imEngine->currentIM);
-    //btnShiftLeft->setText(QString::fromUtf8("⇪A"));
-    //btnShiftLeft->setChecked(true);
     qDebug() << "Capsed called";
   } else if (Shifted) {
+    btnShiftLeft->setText(QString::fromUtf8("⇧B"));
+    btnShiftLeft->setChecked(true);
     changeShiftKeyMap(imEngine->currentIM);
-    //btnShiftLeft->setText(QString::fromUtf8("⇧B"));
-    //btnShiftLeft->setChecked(true);
     qDebug() << "Shifted called";
   } else {
+    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
+    btnShiftLeft->setChecked(false);
     changeNormalKeyMap(imEngine->currentIM);
-    //btnShiftLeft->setText(QString::fromUtf8("⇧C"));
-    //btnShiftLeft->setChecked(false);
     qDebug() << "None called";
   }
 }

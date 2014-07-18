@@ -111,7 +111,7 @@ void QVirtualKeyboard::hideAll(void) {
 }
 
 void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
-  qDebug() << "QVirtualKeyboard::setShift() called with " << shifted << ", " << capsed;
+  //qDebug() << "QVirtualKeyboard::setShift() called with " << shifted << ", " << capsed;
   Shifted = shifted;
   Capsed = capsed;
   Pressed = false;
@@ -119,7 +119,7 @@ void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
 }
 
 void QVirtualKeyboard::setShift2() {
-  qDebug() << "QVirtualKeyboard::setShift2() called with " << Shifted << ", " << Capsed;
+  //qDebug() << "QVirtualKeyboard::setShift2() called with " << Shifted << ", " << Capsed;
   if (Capsed) {
     btnShiftLeft->setChecked(true);
     btnShiftLeft->setText(QString::fromUtf8("⇪"));
@@ -131,7 +131,7 @@ void QVirtualKeyboard::setShift2() {
     btnShiftLeft->setText(QString::fromUtf8("⇪"));
     btnShiftLeft->repaint();
     changeShiftKeyMap(imEngine->currentIM);
-    qDebug() << "Capsed called";
+    //qDebug() << "Capsed called";
   } else if (Shifted) {
     btnShiftLeft->setChecked(true);
     btnShiftLeft->setText(QString::fromUtf8("⇧"));
@@ -143,7 +143,7 @@ void QVirtualKeyboard::setShift2() {
     btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->repaint();
     changeShiftKeyMap(imEngine->currentIM);
-    qDebug() << "Shifted called";
+    //qDebug() << "Shifted called";
   } else {
     btnShiftLeft->setChecked(false);
     btnShiftLeft->setText(QString::fromUtf8("⇧"));
@@ -155,13 +155,13 @@ void QVirtualKeyboard::setShift2() {
     btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->repaint();
     changeNormalKeyMap(imEngine->currentIM);
-    qDebug() << "None called";
+    //qDebug() << "None called";
   }
 }
 
 void QVirtualKeyboard::on_btnNext_clicked(void) {
   emit keyboardFinished();
-  qDebug() << "emitting keyboardFinished() from Qin";
+  //qDebug() << "emitting keyboardFinished() from Qin";
 }
 
 void QVirtualKeyboard::s_on_btn_clicked(int btn) {

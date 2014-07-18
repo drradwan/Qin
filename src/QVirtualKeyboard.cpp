@@ -81,6 +81,7 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   }
 
   connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(s_on_btn_clicked(int)));
+  connect(this, SIGNAL(keyboardFinished()), imEngine, SIGNAL(keyboardFinished()));
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
 }
 

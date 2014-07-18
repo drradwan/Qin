@@ -122,16 +122,19 @@ void QVirtualKeyboard::setShift2() {
   qDebug() << "QVirtualKeyboard::setShift2() called with " << Shifted << ", " << Capsed;
   if (Capsed) {
     changeShiftKeyMap(imEngine->currentIM);
-    btnShiftLeft->setText(QString::fromUtf8("⇪"));
+    btnShiftLeft->setText(QString::fromUtf8("⇪A"));
     btnShiftLeft->setChecked(true);
+    qDebug() << "Capsed called";
   } else if (Shifted) {
     changeShiftKeyMap(imEngine->currentIM);
-    btnShiftLeft->setText(QString::fromUtf8("⇧"));
+    btnShiftLeft->setText(QString::fromUtf8("⇧B"));
     btnShiftLeft->setChecked(true);
+    qDebug() << "Shifted called";
   } else {
     changeNormalKeyMap(imEngine->currentIM);
-    btnShiftLeft->setText(QString::fromUtf8("⇧"));
+    btnShiftLeft->setText(QString::fromUtf8("⇧C"));
     btnShiftLeft->setChecked(false);
+    qDebug() << "None called";
   }
 }
 

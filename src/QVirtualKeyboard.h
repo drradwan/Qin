@@ -84,7 +84,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     bool isTextKey(int keyId);
     void changeNormalKeyMap(QinIMBase* imb);
     void changeShiftKeyMap(QinIMBase* imb);
-    void setShift2(bool shifted, bool capsed);
+    void setShift2();
 };
 
 #endif /* QVIRTUALKEYBOARD_H */

@@ -374,14 +374,14 @@ void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
 
 void QVirtualKeyboard::switchToAZERTY(QinIMBase* imb) {
   QString tempStr = btnQ->whatsThis();
-  btnQ->setWhatsThis(btnA->whatsThis);
+  btnQ->setWhatsThis(btnA->whatsThis());
   btnA->setWhatsThis(tempStr);
 
   tempStr = btnW->whatsThis();
-  btnW->setWhatsThis(btnZ->whatsThis);
+  btnW->setWhatsThis(btnZ->whatsThis());
   btnZ->setWhatsThis(tempStr);
 
-  btnMalt->setWhatsThis(btnM->whatsThis);
+  btnMalt->setWhatsThis(btnM->whatsThis());
   btnM->setVisible(false);
   btnMalt->setVisible(true);
   
@@ -390,11 +390,11 @@ void QVirtualKeyboard::switchToAZERTY(QinIMBase* imb) {
 
 void QVirtualKeyboard::switchToQWERTY(QinIMBase* imb) {
   QString tempStr = btnQ->whatsThis();
-  btnQ->setWhatsThis(btnA->whatsThis);
+  btnQ->setWhatsThis(btnA->whatsThis());
   btnA->setWhatsThis(tempStr);
 
   tempStr = btnW->whatsThis();
-  btnW->setWhatsThis(btnZ->whatsThis);
+  btnW->setWhatsThis(btnZ->whatsThis());
   btnZ->setWhatsThis(tempStr);
 
   btnM->setVisible(true);

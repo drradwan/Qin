@@ -170,6 +170,11 @@ void QinEngine::updateHandler(int type) {
       currentIM->reset();
       vkeyboard->show();
       vkeyboard->showCandStrBar(numbers);
+      if (currentLanguage.contains("fr") && vkeyboard->isQWERTY) {
+        vkeyboard->switchToAZERTY(currentIM);
+      } else if ((!currentLanguage.contains("fr") && !isQWERTY) || currentIM->imName.contains("?123")) {
+        vkeyboard->switchToQWERTY(imEngine->currentIM);
+      }
       break;
 
     case QWSInputMethod::FocusOut:

@@ -175,6 +175,10 @@ void QinEngine::updateHandler(int type) {
       } else if ((!currentLanguage.contains("fr") && !vkeyboard->isQWERTY) || currentIM->imName.contains("?123")) {
         vkeyboard->switchToQWERTY(currentIM);
       }
+      if (vkeyboard->Shifted || vkeyboard->Capsed)
+        vkeyboard->changeShiftKeyMap(currentIM);
+      else
+        vkeyboard->changeNormalKeyMap(currentIM);
       break;
 
     case QWSInputMethod::FocusOut:

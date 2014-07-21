@@ -53,6 +53,8 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void hideAll(void);
     void setShift(bool shifted, bool capsed);
     bool isQWERTY;
+    void switchToAZERTY(QinIMBase* imb);
+    void switchToQWERTY(QinIMBase* imb);
     
   signals:
     void keyboardFinished();
@@ -85,8 +87,6 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     bool isTextKey(int keyId);
     void changeNormalKeyMap(QinIMBase* imb);
     void changeShiftKeyMap(QinIMBase* imb);
-    void switchToAZERTY(QinIMBase* imb);
-    void switchToQWERTY(QinIMBase* imb);
     void setShift2();
 };
 

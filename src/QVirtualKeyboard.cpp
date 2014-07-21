@@ -61,6 +61,7 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   location = 0;
   IMIndex = 0;
   candSignalMapper = NULL;
+  isQWERTY = true;
 
   /* Setup buttons */
   allButtons = findChildren<QToolButton*>();

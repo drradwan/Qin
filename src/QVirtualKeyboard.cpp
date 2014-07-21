@@ -293,8 +293,10 @@ void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
 }
 
 void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
-  btnQ->setText(imb->fromStdKB("q"));
-  btnW->setText(imb->fromStdKB("w"));
+  if (isQWERTY)
+    btnQ->setText(imb->fromStdKB("q"));
+  if (isQWERTY)
+    btnW->setText(imb->fromStdKB("w"));
   btnE->setText(imb->fromStdKB("e"));
   btnR->setText(imb->fromStdKB("r"));
   btnT->setText(imb->fromStdKB("t"));
@@ -304,7 +306,8 @@ void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
   btnO->setText(imb->fromStdKB("o"));
   btnP->setText(imb->fromStdKB("p"));
 
-  btnA->setText(imb->fromStdKB("a"));
+  if (isQWERTY)
+    btnA->setText(imb->fromStdKB("a"));
   btnS->setText(imb->fromStdKB("s"));
   btnD->setText(imb->fromStdKB("d"));
   btnF->setText(imb->fromStdKB("f"));
@@ -314,13 +317,15 @@ void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
   btnK->setText(imb->fromStdKB("k"));
   btnL->setText(imb->fromStdKB("l"));
 
-  btnZ->setText(imb->fromStdKB("z"));
+  if (isQWERTY)
+    btnZ->setText(imb->fromStdKB("z"));
   btnX->setText(imb->fromStdKB("x"));
   btnC->setText(imb->fromStdKB("c"));
   btnV->setText(imb->fromStdKB("v"));
   btnB->setText(imb->fromStdKB("b"));
   btnN->setText(imb->fromStdKB("n"));
-  btnM->setText(imb->fromStdKB("m"));
+  if (isQWERTY)
+    btnM->setText(imb->fromStdKB("m"));
   
   if (!isQWERTY) {
     btnQ->setText(imb->fromStdKB("a"));
@@ -332,8 +337,10 @@ void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
 }
 
 void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
-  btnQ->setText(imb->fromShiftStdKB("q"));
-  btnW->setText(imb->fromShiftStdKB("w"));
+  if (isQWERTY)
+    btnQ->setText(imb->fromShiftStdKB("q"));
+  if (isQWERTY)
+    btnW->setText(imb->fromShiftStdKB("w"));
   btnE->setText(imb->fromShiftStdKB("e"));
   btnR->setText(imb->fromShiftStdKB("r"));
   btnT->setText(imb->fromShiftStdKB("t"));
@@ -343,7 +350,8 @@ void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
   btnO->setText(imb->fromShiftStdKB("o"));
   btnP->setText(imb->fromShiftStdKB("p"));
 
-  btnA->setText(imb->fromShiftStdKB("a"));
+  if (isQWERTY)
+    btnA->setText(imb->fromShiftStdKB("a"));
   btnS->setText(imb->fromShiftStdKB("s"));
   btnD->setText(imb->fromShiftStdKB("d"));
   btnF->setText(imb->fromShiftStdKB("f"));
@@ -353,13 +361,15 @@ void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
   btnK->setText(imb->fromShiftStdKB("k"));
   btnL->setText(imb->fromShiftStdKB("l"));
 
-  btnZ->setText(imb->fromShiftStdKB("z"));
+  if (isQWERTY)
+    btnZ->setText(imb->fromShiftStdKB("z"));
   btnX->setText(imb->fromShiftStdKB("x"));
   btnC->setText(imb->fromShiftStdKB("c"));
   btnV->setText(imb->fromShiftStdKB("v"));
   btnB->setText(imb->fromShiftStdKB("b"));
   btnN->setText(imb->fromShiftStdKB("n"));
-  btnM->setText(imb->fromShiftStdKB("m"));
+  if (isQWERTY)
+    btnM->setText(imb->fromShiftStdKB("m"));
 
   if (!isQWERTY) {
     btnQ->setText(imb->fromShiftStdKB("a"));

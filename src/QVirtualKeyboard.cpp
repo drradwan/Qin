@@ -279,7 +279,14 @@ void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
       changeShiftKeyMap(imEngine->currentIM);
     else
       changeNormalKeyMap(imEngine->currentIM);
+    if (imEngine->currentLanguage.contains("fr") && isQWERTY) {
+      switchToAZERTY();
+    } else if (!imEngine->currentLanguage.contains("fr") && !isQWERTY) {
+      switchToQWERTY();
+    }
   } else {
+    if (!isQWERTY)
+      switchToQWERTY();
     if (Capsed || Shifted)
       changeShiftKeyMap(imEngine->defaultIM);
     else

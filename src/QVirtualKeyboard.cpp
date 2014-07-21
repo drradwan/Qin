@@ -380,9 +380,11 @@ void QVirtualKeyboard::switchToAZERTY(QinIMBase* imb) {
   btnZ->setWhatsThis(tempStr);
 
   btnMalt->setWhatsThis(btnM->whatsThis());
-  btnM->setVisible(false);
+  btnM->setText(".");
+  btnM->setWhatsThis("0x2e");
   btnMalt->setVisible(true);
-  
+
+  ui->horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
   isQWERTY = false;
 }
 
@@ -397,7 +399,13 @@ void QVirtualKeyboard::switchToQWERTY(QinIMBase* imb) {
 
   btnM->setVisible(true);
   btnMalt->setVisible(false);
+  if (Shifted || Capsed)
+    btnM->setText(imb->fromShiftStdKB("m"));
+  else
+    btnM->setText(imb->fromStdKB("m"));
+  btnM->setWhatsThis("0x6d");
   
+  ui->horizontalLayout_3->setContentsMargins(40, 0, 40, 0);
   isQWERTY = true;
 }
 

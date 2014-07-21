@@ -42,12 +42,12 @@ QPushButton {
     border-style: outset;
     border-radius: 3px;
     border-width: 1px;
-	border-color: #4F4F4F;
+    border-color: #4F4F4F;
 }
 
 QPushButton:pressed {
-	color: white;
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+    color: white;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #2D7D00, stop: 1 #7ED403);
 }
 
@@ -67,9 +67,9 @@ QToolButton {
 }
 
 QToolButton:pressed {
-	color: white;
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #2D7D00, stop: 1 #7ED403);
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #a4a4a4, stop: 1 #dfdfdf);
+    color: #3b3c3e;
+    border: 2px solid #909090;
 }
 
 QToolButton:on {

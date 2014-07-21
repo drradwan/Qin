@@ -405,7 +405,7 @@ void QVirtualKeyboard::switchToQWERTY(QinIMBase* imb) {
     btnM->setText(imb->fromStdKB("m"));
   btnM->setWhatsThis("0x6d");
   
-  ui->horizontalLayout_3->setContentsMargins(40, 0, 40, 0);
+  horizontalLayout_3->setContentsMargins(40, 0, 40, 0);
   isQWERTY = true;
 }
 

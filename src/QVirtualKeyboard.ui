@@ -679,6 +679,38 @@ QToolButton:on {
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QToolButton" name="btnMalt">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="whatsThis">
+          <string>0x6d</string>
+         </property>
+         <property name="text">
+          <string>m</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>false</bool>
+         </property>
+         <property name="visible">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
      <item>

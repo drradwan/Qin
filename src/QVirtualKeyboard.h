@@ -52,6 +52,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void showCandStrBar(QStringList strlist);
     void hideAll(void);
     void setShift(bool shifted, bool capsed);
+    bool isQWERTY;
     
   signals:
     void keyboardFinished();
@@ -73,7 +74,6 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     QVector<QPushButton*> candButtons;
     QStringList numbers;
     bool numbersVisible;
-    bool isQWERTY;
     //Ui::QVirtualKeyboard *ui;
 
   private slots:

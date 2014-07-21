@@ -85,6 +85,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void changeNormalKeyMap(QinIMBase* imb);
     void changeShiftKeyMap(QinIMBase* imb);
     void switchToAZERTY(QinIMBase* imb);
+    void switchToQWERTY(QinIMBase* imb);
     void setShift2();
 };
 

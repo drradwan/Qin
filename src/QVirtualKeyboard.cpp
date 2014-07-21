@@ -280,9 +280,9 @@ void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
     else
       changeNormalKeyMap(imEngine->currentIM);
     if (imEngine->currentLanguage.contains("fr") && isQWERTY) {
-      switchToAZERTY();
+      switchToAZERTY(imEngine->currentIM);
     } else if (!imEngine->currentLanguage.contains("fr") && !isQWERTY) {
-      switchToQWERTY();
+      switchToQWERTY(imEngine->currentIM);
     }
   } else {
     if (!isQWERTY)

@@ -391,7 +391,7 @@ void QVirtualKeyboard::switchToAZERTY(QinIMBase* imb) {
 
   btnMalt->setWhatsThis(btnM->whatsThis());
   btnM->setText(QString("."));
-  btnM->setWhatsThis(QString("0x2e"));
+  btnM->setWhatsThis(QString("0x3e"));
   btnMalt->setVisible(true);
 
   horizontalLayout_3->setContentsMargins(0, 0, 0, 0);

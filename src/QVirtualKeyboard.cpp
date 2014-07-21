@@ -378,6 +378,20 @@ void QVirtualKeyboard::switchToAZERTY(QinIMBase* imb) {
   btnMalt->setVisible(true);
 }
 
+void QVirtualKeyboard::switchToQWERTY(QinIMBase* imb) {
+  QString tempStr = btnQ->whatsThis();
+  btnQ->setWhatsThis(btnA->whatsThis);
+  btnA->setWhatsThis(tempStr);
+
+  tempStr = btnW->whatsThis();
+  btnW->setWhatsThis(btnZ->whatsThis);
+  btnZ->setWhatsThis(tempStr);
+
+  btnM->setVisible(true);
+  btnMalt->setVisible(false);
+}
+
+
 bool QVirtualKeyboard::isTextKey(int keyId)
 {
   return !(keyId == Qt::Key_Shift

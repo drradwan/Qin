@@ -277,7 +277,7 @@ void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
   if (imEngine->currentIM->getUseCustomKeyMap()) {
     if (imEngine->currentLanguage.contains("fr") && isQWERTY) {
       switchToAZERTY(imEngine->currentIM);
-    } else if (!imEngine->currentLanguage.contains("fr") && !isQWERTY) {
+    } else if ((!imEngine->currentLanguage.contains("fr") && !isQWERTY) || imEngine->currentIM->imName.contains("?123")) {
       switchToQWERTY(imEngine->currentIM);
     }
     if (Capsed || Shifted)
@@ -285,8 +285,6 @@ void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
     else
       changeNormalKeyMap(imEngine->currentIM);
   } else {
-    if (!isQWERTY)
-      switchToQWERTY(imEngine->currentIM);
     if (Capsed || Shifted)
       changeShiftKeyMap(imEngine->defaultIM);
     else

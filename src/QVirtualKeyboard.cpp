@@ -315,6 +315,14 @@ void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
   btnB->setText(imb->fromStdKB("b"));
   btnN->setText(imb->fromStdKB("n"));
   btnM->setText(imb->fromStdKB("m"));
+  
+  if (imEngine->currentLanguage.contains("fr")) {
+    btnQ->setText(imb->fromStdKB("a"));
+    btnA->setText(imb->fromStdKB("q"));
+    btnW->setText(imb->fromStdKB("z"));
+    btnZ->setText(imb->fromStdKB("w"));
+    btnMalt->setText(imb->fromStdKB("m"));
+  }
 }
 
 void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
@@ -346,6 +354,28 @@ void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
   btnB->setText(imb->fromShiftStdKB("b"));
   btnN->setText(imb->fromShiftStdKB("n"));
   btnM->setText(imb->fromShiftStdKB("m"));
+
+  if (imEngine->currentLanguage.contains("fr")) {
+    btnQ->setText(imb->fromShiftStdKB("a"));
+    btnA->setText(imb->fromShiftStdKB("q"));
+    btnW->setText(imb->fromShiftStdKB("z"));
+    btnZ->setText(imb->fromShiftStdKB("w"));
+    btnMalt->setText(imb->fromShiftStdKB("m"));
+  }
+}
+
+void QVirtualKeyboard::switchToAZERTY(QinIMBase* imb) {
+  QString tempStr = btnQ->whatsThis();
+  btnQ->setWhatsThis(btnA->whatsThis);
+  btnA->setWhatsThis(tempStr);
+
+  tempStr = btnW->whatsThis();
+  btnW->setWhatsThis(btnZ->whatsThis);
+  btnZ->setWhatsThis(tempStr);
+
+  btnMalt->setWhatsThis(btnM->whatsThis);
+  btnM->setVisible(false);
+  btnMalt->setVisible(true);
 }
 
 bool QVirtualKeyboard::isTextKey(int keyId)

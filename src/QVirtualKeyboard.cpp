@@ -376,6 +376,8 @@ void QVirtualKeyboard::switchToAZERTY(QinIMBase* imb) {
   btnMalt->setWhatsThis(btnM->whatsThis);
   btnM->setVisible(false);
   btnMalt->setVisible(true);
+  
+  isQWERTY = false;
 }
 
 void QVirtualKeyboard::switchToQWERTY(QinIMBase* imb) {
@@ -389,6 +391,8 @@ void QVirtualKeyboard::switchToQWERTY(QinIMBase* imb) {
 
   btnM->setVisible(true);
   btnMalt->setVisible(false);
+  
+  isQWERTY = true;
 }
 
 

@@ -275,18 +275,18 @@ void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
   btnIMToggle->setText(imEngine->nextIM->name());
 
   if (imEngine->currentIM->getUseCustomKeyMap()) {
-    if (Capsed || Shifted)
-      changeShiftKeyMap(imEngine->currentIM);
-    else
-      changeNormalKeyMap(imEngine->currentIM);
     if (imEngine->currentLanguage.contains("fr") && isQWERTY) {
       switchToAZERTY(imEngine->currentIM);
     } else if (!imEngine->currentLanguage.contains("fr") && !isQWERTY) {
       switchToQWERTY(imEngine->currentIM);
     }
+    if (Capsed || Shifted)
+      changeShiftKeyMap(imEngine->currentIM);
+    else
+      changeNormalKeyMap(imEngine->currentIM);
   } else {
     if (!isQWERTY)
-      switchToQWERTY();
+      switchToQWERTY(imEngine->currentIM);
     if (Capsed || Shifted)
       changeShiftKeyMap(imEngine->defaultIM);
     else
@@ -324,7 +324,7 @@ void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
   btnN->setText(imb->fromStdKB("n"));
   btnM->setText(imb->fromStdKB("m"));
   
-  if (imEngine->currentLanguage.contains("fr")) {
+  if (!isQWERTY) {
     btnQ->setText(imb->fromStdKB("a"));
     btnA->setText(imb->fromStdKB("q"));
     btnW->setText(imb->fromStdKB("z"));
@@ -363,7 +363,7 @@ void QVirtualKeyboard::changeShiftKeyMap(QinIMBase* imb) {
   btnN->setText(imb->fromShiftStdKB("n"));
   btnM->setText(imb->fromShiftStdKB("m"));
 
-  if (imEngine->currentLanguage.contains("fr")) {
+  if (!isQWERTY) {
     btnQ->setText(imb->fromShiftStdKB("a"));
     btnA->setText(imb->fromShiftStdKB("q"));
     btnW->setText(imb->fromShiftStdKB("z"));

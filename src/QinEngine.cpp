@@ -222,11 +222,6 @@ void QinEngine::changeLanguage(QString oldLang, QString newLang) {
     activeInputMethods.push_back(inputMethods[1]);
     activeInputMethods.push_back(inputMethods[2]);
   }
-  if (newLang.contains("fr") && vkeyboard->isQWERTY) {
-    vkeyboard->switchToAZERTY();
-  } else if (!newLang.contains("fr") && !vkeyboard->isQWERTY) {
-    vkeyboard->switchToQWERTY();
-  }
   defaultIM = activeInputMethods[0];
   setCurrentIM(0);
   vkeyboard->setDefaultIMName();

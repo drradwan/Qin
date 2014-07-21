@@ -51,8 +51,10 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void clearCandStrBar(bool showNumbers);
     void showCandStrBar(QStringList strlist);
     void hideAll(void);
-    void setShift(bool shifted, bool capsed);
+    bool Capsed;
+    bool Shifted;
     bool isQWERTY;
+    void setShift(bool shifted, bool capsed);
     void switchToAZERTY(QinIMBase* imb);
     void switchToQWERTY(QinIMBase* imb);
     
@@ -62,8 +64,6 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
   private:
     QinEngine* imEngine;
     QWidget* selectPanel;
-    bool Capsed;
-    bool Shifted;
     bool Pressed;
     bool location;
     int IMIndex;

@@ -117,43 +117,45 @@ void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
   //Capsed = capsed;
   //Pressed = false;
   //QTimer::singleShot(100, this, SLOT(setShift2()));
+  for (int i = 0; i < 3; ++i) {
+    // AKR - Note: this doesn't execute properly unless repeated multiple times
+    Shifted = shifted;
+    Capsed = capsed;
+    Pressed = false;
     if (capsed) {
-    // AKR - Note: this doesn't execute properly unless repeated 3x
-    btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇪"));
-    btnShiftLeft->repaint();
-    btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇪"));
-    btnShiftLeft->repaint();
-    btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇪"));
-    btnShiftLeft->repaint();
-    changeShiftKeyMap(imEngine->currentIM);
-    //qDebug() << "Capsed called";
-  } else if (shifted) {
-    // AKR - Note: this doesn't execute properly unless repeated 3x
-    btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇧"));
-    btnShiftLeft->repaint();
-    btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇧"));
-    btnShiftLeft->repaint();
-    btnShiftLeft->setChecked(true);
-    btnShiftLeft->setText(QString::fromUtf8("⇧"));
-    btnShiftLeft->repaint();
-    changeShiftKeyMap(imEngine->currentIM);
-  } else {
-    // AKR - Note: this doesn't execute properly unless repeated 3x
-    btnShiftLeft->setChecked(false);
-    btnShiftLeft->setText(QString::fromUtf8("⇧"));
-    btnShiftLeft->repaint();
-    btnShiftLeft->setChecked(false);
-    btnShiftLeft->setText(QString::fromUtf8("⇧"));
-    btnShiftLeft->repaint();
-    btnShiftLeft->setChecked(false);
-    btnShiftLeft->setText(QString::fromUtf8("⇧"));
-    btnShiftLeft->repaint();
-    changeNormalKeyMap(imEngine->currentIM);
+      btnShiftLeft->setChecked(true);
+      btnShiftLeft->setText(QString::fromUtf8("⇪"));
+      btnShiftLeft->repaint();
+      btnShiftLeft->setChecked(true);
+      btnShiftLeft->setText(QString::fromUtf8("⇪"));
+      btnShiftLeft->repaint();
+      btnShiftLeft->setChecked(true);
+      btnShiftLeft->setText(QString::fromUtf8("⇪"));
+      btnShiftLeft->repaint();
+      changeShiftKeyMap(imEngine->currentIM);
+    } else if (shifted) {
+      btnShiftLeft->setChecked(true);
+      btnShiftLeft->setText(QString::fromUtf8("⇧"));
+      btnShiftLeft->repaint();
+      btnShiftLeft->setChecked(true);
+      btnShiftLeft->setText(QString::fromUtf8("⇧"));
+      btnShiftLeft->repaint();
+      btnShiftLeft->setChecked(true);
+      btnShiftLeft->setText(QString::fromUtf8("⇧"));
+      btnShiftLeft->repaint();
+      changeShiftKeyMap(imEngine->currentIM);
+    } else {
+      btnShiftLeft->setChecked(false);
+      btnShiftLeft->setText(QString::fromUtf8("⇧"));
+      btnShiftLeft->repaint();
+      btnShiftLeft->setChecked(false);
+      btnShiftLeft->setText(QString::fromUtf8("⇧"));
+      btnShiftLeft->repaint();
+      btnShiftLeft->setChecked(false);
+      btnShiftLeft->setText(QString::fromUtf8("⇧"));
+      btnShiftLeft->repaint();
+      changeNormalKeyMap(imEngine->currentIM);
+    }
   }
 }
 

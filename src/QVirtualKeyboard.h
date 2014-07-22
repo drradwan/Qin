@@ -87,7 +87,6 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void on_btnIMToggle_clicked(void);
     void on_btnNext_clicked(void);
     bool isTextKey(int keyId);
-    void setShift2();
 };
 
 #endif /* QVIRTUALKEYBOARD_H */

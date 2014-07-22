@@ -150,7 +150,9 @@ void QinEngine::updateCommitString() {
   char* commit_str = currentIM->getCommitString();
   if (commit_str) {
     sendCommitString(commit_str);
-    qDebug() << "Sending commit string: " << commit_str;
+#ifdef DEBUG
+    qDebug() << "DEBUG: Sending commit string: " << commit_str;
+#endif
     QCoreApplication::processEvents();
     delete commit_str;
   }
@@ -160,7 +162,9 @@ void QinEngine::updatePreEditBuffer() {
   char* preedit = currentIM->getPreEditString();
   inputBuffer = QString(preedit);
   sendPreeditString(inputBuffer, 1);
-    qDebug() << "Sending preedit string: " << inputBuffer;
+#ifdef DEBUG
+  qDebug() << "DEBUG: Sending preedit string: " << inputBuffer;
+#endif
   delete preedit;
 }
 
@@ -203,19 +207,25 @@ void QinEngine::selectPreEditWord(int index) {
 }
 
 void QinEngine::setShift(bool shifted, bool capsed) {
-  qDebug() << "setShift(" << shifted << ", " << capsed << ") called by signal";
+#ifdef DEBUG
+  qDebug() << "DEBUG: setShift(" << shifted << ", " << capsed << ") called by signal";
+#endif
   vkeyboard->setShift(shifted, capsed);
 }
 
 void QinEngine::commitPreEdit() {
-  qDebug() << "commitPreEdit() called by signal";
+#ifdef DEBUG
+  qDebug() << "DEBUG: commitPreEdit() called by signal";
+#endif
   currentIM->commit_Default();
   updateCommitString();
   vkeyboard->clearCandStrBar(true);
 }
 
 void QinEngine::changeLanguage(QString oldLang, QString newLang) {
-  qDebug() << "Qin is changing to language: " << newLang;
+#ifdef DEBUG
+  qDebug() << "DEBUG: Qin is changing to language: " << newLang;
+#endif
   currentLanguage = newLang;
   if (newLang.contains("en")) {
     activeInputMethods.clear();

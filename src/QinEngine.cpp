@@ -176,6 +176,7 @@ void QinEngine::updateHandler(int type) {
       vkeyboard->showCandStrBar(numbers);
       if (currentLanguage.contains("fr") && vkeyboard->isQWERTY) {
         vkeyboard->switchToAZERTY(currentIM);
+        vkeyboard->btnNext->setText("Prochain");
       } else if ((!currentLanguage.contains("fr") && !vkeyboard->isQWERTY) || currentIM->imName.contains("?123")) {
         vkeyboard->switchToQWERTY(currentIM);
       }

@@ -363,8 +363,8 @@ void QVirtualKeyboard::switchToAZERTY(QinIMBase* imb) {
   btnZ->setWhatsThis(tempStr);
 
   btnMalt->setWhatsThis(btnM->whatsThis());
-  btnM->setText(QString("."));
-  btnM->setWhatsThis(QString("0x2e"));
+  btnM->setText(QString("'"));
+  btnM->setWhatsThis(QString("0x27"));
   btnMalt->setVisible(true);
 
   horizontalLayout_3->setContentsMargins(0, 0, 0, 0);

@@ -213,7 +213,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
     changeNormalKeyMap(imEngine->currentIM);
   }
   
-  disconnect(this, SLOT(s_on_btn_clicked(int));
+  disconnect(this, SLOT(s_on_btn_clicked(int)));
   QTimer::singleShot(3000, this, SLOT(debounce()));
 }
 

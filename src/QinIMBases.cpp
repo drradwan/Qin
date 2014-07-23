@@ -371,7 +371,7 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
   if (maxKeyStrokes == 1) {
     /* reset keyStrokes */
     keyIndex = 0;
-    if (keyId >= 39 && results.count() > 1 && !results[0].isEmpty()) {
+    if (keyId >= 46 && results.count() > 1 && !results[0].isEmpty()) {
       commitString = results[0];
       results.clear();
     }
@@ -397,6 +397,9 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
     commitString = QString((char) keyId + 32);
     keyIndex = 0;
     return;
+  }
+  if (keyId >=34 && keyId <= 39) {
+    commitString = QString("'");
   }
   
   if (keyTransform.find(tolower(keyId)) == keyTransform.end())

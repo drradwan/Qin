@@ -90,6 +90,10 @@ QVirtualKeyboard::~QVirtualKeyboard() {
   delete signalMapper;
 }
 
+QVirtualKeyboard::debounce() {
+  connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(s_on_btn_clicked(int)));
+}
+
 //void QVirtualKeyboard::insertInputMethod(const QinIMBase* im) {
   //regedIMs.push_back(im->name());
   //if (regedIMs.size() > 1)
@@ -208,6 +212,9 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
     btnShiftLeft->setChecked(false);
     changeNormalKeyMap(imEngine->currentIM);
   }
+  
+  disconnect(this, SLOT(s_on_btn_clicked(int));
+  QTimer::singleShot(3000, this, SLOT(debounce()));
 }
 
 void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {

@@ -86,6 +86,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     void on_btnShiftLeft_toggled(bool checked);
     void on_btnIMToggle_clicked(void);
     void on_btnNext_clicked(void);
+    void debounce(void);
     bool isTextKey(int keyId);
 };
 

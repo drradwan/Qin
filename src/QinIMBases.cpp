@@ -371,7 +371,7 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
   if (maxKeyStrokes == 1) {
     /* reset keyStrokes */
     keyIndex = 0;
-    if (keyId >= 46 && results.count() > 1 && !results[0].isEmpty()) {
+    if (keyId >= 39 && results.count() > 1 && !results[0].isEmpty()) {
       commitString = results[0];
       results.clear();
     }

@@ -78,6 +78,7 @@ class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
     QVector<QPushButton*> candButtons;
     QStringList numbers;
     bool numbersVisible;
+    bool keysAllowed;
     //Ui::QVirtualKeyboard *ui;
 
   private slots:

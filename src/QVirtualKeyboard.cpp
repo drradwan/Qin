@@ -91,7 +91,7 @@ QVirtualKeyboard::~QVirtualKeyboard() {
 }
 
 void QVirtualKeyboard::debounce() {
-  connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(s_on_btn_clicked(int)));
+  keysAllowed = true;
 }
 
 //void QVirtualKeyboard::insertInputMethod(const QinIMBase* im) {

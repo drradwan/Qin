@@ -62,6 +62,7 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   IMIndex = 0;
   candSignalMapper = NULL;
   isQWERTY = true;
+  keysAllowed = true;
 
   /* Setup buttons */
   allButtons = findChildren<QToolButton*>();
@@ -146,6 +147,8 @@ void QVirtualKeyboard::on_btnNext_clicked(void) {
 }
 
 void QVirtualKeyboard::s_on_btn_clicked(int btn) {
+  if (keysAllowed == false)
+    return;
   QString strKeyId = allButtons.at(btn)->whatsThis();
   bool isOk;
   int keyId = strKeyId.toInt(&isOk, 16);
@@ -212,8 +215,8 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
     btnShiftLeft->setChecked(false);
     changeNormalKeyMap(imEngine->currentIM);
   }
-  
-  disconnect(this, SLOT(s_on_btn_clicked(int)));
+
+  keysAllowed = false;  
   QTimer::singleShot(3000, this, SLOT(debounce()));
 }
 

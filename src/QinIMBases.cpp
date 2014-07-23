@@ -398,10 +398,6 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
     keyIndex = 0;
     return;
   }
-  // Special case for apostrophe on AZERTY keyboard
-  if (keyId >=34 && keyId <= 39) {
-    commitString += QString("'");
-  }
   
   if (keyTransform.find(tolower(keyId)) == keyTransform.end())
     return;
@@ -417,6 +413,12 @@ void QinTableIMBase::handle_Default(int keyId, bool shifted) {
     else
       commitString += QString((char) keyId);
     results.clear();
+    keyIndex = 0;
+  }
+
+  // Special case for apostrophe on AZERTY keyboard
+  if (keyId >=34 && keyId <= 39) {
+    commitString += QString("'");
     keyIndex = 0;
   }
 }

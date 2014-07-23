@@ -95,15 +95,6 @@ void QVirtualKeyboard::debounce() {
   keysAllowed = true;
 }
 
-//void QVirtualKeyboard::insertInputMethod(const QinIMBase* im) {
-  //regedIMs.push_back(im->name());
-  //if (regedIMs.size() > 1)
-  //  btnIMToggle->setText(regedIMs[1]);
-  //else
-  //  btnIMToggle->setText(regedIMs[0]);
-  //imEngine->setCurrentIM(0);
-//}
-
 void QVirtualKeyboard::setDefaultIMName() {
   if (imEngine->activeInputMethods.size() > 1)
     btnIMToggle->setText(imEngine->activeInputMethods[1]->imName);
@@ -147,13 +138,14 @@ void QVirtualKeyboard::on_btnNext_clicked(void) {
 }
 
 void QVirtualKeyboard::s_on_btn_clicked(int btn) {
-  if (keysAllowed == false)
-    return;
   QString strKeyId = allButtons.at(btn)->whatsThis();
   bool isOk;
   int keyId = strKeyId.toInt(&isOk, 16);
   int involvedKeys = 1;
   bool istextkey = isTextKey(keyId);
+
+  if (keysAllowed == false && keyId != Qt::Key_Backspace)
+    return;
 
   if (strKeyId.isEmpty() || !isOk)
     return;

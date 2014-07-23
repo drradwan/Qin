@@ -90,7 +90,7 @@ QVirtualKeyboard::~QVirtualKeyboard() {
   delete signalMapper;
 }
 
-QVirtualKeyboard::debounce() {
+void QVirtualKeyboard::debounce() {
   connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(s_on_btn_clicked(int)));
 }
 

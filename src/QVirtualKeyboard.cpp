@@ -217,7 +217,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
   }
 
   keysAllowed = false;  
-  QTimer::singleShot(3000, this, SLOT(debounce()));
+  QTimer::singleShot(100, this, SLOT(debounce()));
 }
 
 void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {

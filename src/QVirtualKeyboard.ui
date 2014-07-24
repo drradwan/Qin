@@ -28,7 +28,7 @@
   <property name="styleSheet">
    <string notr="true">QWidget {
 	/* Normal */
-    background: #C4C4C4;
+    background: #A4A4A6;
 }
 
 QPushButton {

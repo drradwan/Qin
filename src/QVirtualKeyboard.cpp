@@ -444,14 +444,14 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
         delete candButtons[i];
       }
       candButtons.clear();
-      // QFile data(":/data/selectPanelNumbers.qss");
-      // if (data.open(QFile::ReadOnly)) {
-      //   QTextStream ssin(&data);
-      //   selectPanel->setStyleSheet(ssin.readAll());
-      //   data.close();
-      // } else {
-      //   qDebug() << "Error: failed to set style sheet for selectPanel!";
-      // }
+      QFile data(":/data/selectPanelNumbers.qss");
+      if (data.open(QFile::ReadOnly)) {
+        QTextStream ssin(&data);
+        selectPanel->setStyleSheet(ssin.readAll());
+        data.close();
+      } else {
+        qDebug() << "Error: failed to set style sheet for selectPanel!";
+      }
       showCandStrBar(numbers);
       numbersVisible = true;
     }
@@ -462,14 +462,14 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
       delete candButtons[i];
     }
     candButtons.clear();
-    // QFile data(":/data/selectPanel.qss");
-    // if (data.open(QFile::ReadOnly)) {
-    //   QTextStream ssin(&data);
-    //   selectPanel->setStyleSheet(ssin.readAll());
-    //   data.close();
-    // } else {
-    //   qDebug() << "Error: failed to set style sheet for selectPanel!";
-    // }
+    QFile data(":/data/selectPanel.qss");
+    if (data.open(QFile::ReadOnly)) {
+      QTextStream ssin(&data);
+      selectPanel->setStyleSheet(ssin.readAll());
+      data.close();
+    } else {
+      qDebug() << "Error: failed to set style sheet for selectPanel!";
+    }
     selectPanel->hide();
     numbersVisible = false;
   }
@@ -510,8 +510,8 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
   /* Fix border for the rightmost color, the sequence of the CSS must be
    * border-right then border-style else it won't work */
-  candButtons.last()->setStyleSheet("QPushButton { border-right: 1px "
-      "#8A8A8A; border-style: groove; }");
+  //candButtons.last()->setStyleSheet("QPushButton { border-right: 1px "
+  //    "#8A8A8A; border-style: groove; }");
 
   if (candSignalMapper) {
     delete candSignalMapper;

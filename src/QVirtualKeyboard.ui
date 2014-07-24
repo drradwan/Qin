@@ -50,7 +50,7 @@ QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #2D7D00, stop: 1 #7ED403);
 }
-
+N
 QToolButton {
     font: 24px;
     font-weight: bold;
@@ -1055,7 +1055,7 @@ QToolButton:on {
           </size>
          </property>
          <property name="text">
-          <string>Next</string>
+          <string>↵</string>
          </property>
         </widget>
        </item>

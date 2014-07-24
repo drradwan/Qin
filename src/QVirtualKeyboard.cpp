@@ -134,7 +134,7 @@ void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
 
 void QVirtualKeyboard::on_btnNext_clicked(void) {
   if (!keysAllowed)
-    return
+    return;
   emit keyboardFinished();
   keysAllowed = false;  
   QTimer::singleShot(100, this, SLOT(debounce()));
@@ -218,7 +218,7 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
 
 void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
   if (!keysAllowed)
-    return
+    return;
   if (Capsed) {
     Capsed = false;
     Shifted = false;
@@ -253,7 +253,7 @@ void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
 
 void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
   if (!keysAllowed)
-    return
+    return;
   //IMIndex = (IMIndex + 1) % regedIMs.size();
   IMIndex = (IMIndex + 1) % imEngine->activeInputMethods.size();
   imEngine->setCurrentIM(IMIndex);

@@ -133,7 +133,11 @@ void QVirtualKeyboard::setShift(bool shifted, bool capsed) {
 }
 
 void QVirtualKeyboard::on_btnNext_clicked(void) {
+  if (!keysAllowed)
+    return
   emit keyboardFinished();
+  keysAllowed = false;  
+  QTimer::singleShot(100, this, SLOT(debounce()));
   //qDebug() << "emitting keyboardFinished() from Qin";
 }
 
@@ -213,6 +217,8 @@ void QVirtualKeyboard::s_on_btn_clicked(int btn) {
 }
 
 void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
+  if (!keysAllowed)
+    return
   if (Capsed) {
     Capsed = false;
     Shifted = false;
@@ -241,9 +247,13 @@ void QVirtualKeyboard::on_btnShiftLeft_toggled(bool checked) {
     btnShiftLeft->setText(QString::fromUtf8("⇧"));
     btnShiftLeft->setChecked(true);
   }
+  keysAllowed = false;  
+  QTimer::singleShot(100, this, SLOT(debounce()));
 }
 
 void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
+  if (!keysAllowed)
+    return
   //IMIndex = (IMIndex + 1) % regedIMs.size();
   IMIndex = (IMIndex + 1) % imEngine->activeInputMethods.size();
   imEngine->setCurrentIM(IMIndex);
@@ -265,6 +275,8 @@ void QVirtualKeyboard::on_btnIMToggle_clicked(void) {
     else
       changeNormalKeyMap(imEngine->defaultIM);
   }
+  keysAllowed = false;  
+  QTimer::singleShot(100, this, SLOT(debounce()));
 }
 
 void QVirtualKeyboard::changeNormalKeyMap(QinIMBase* imb) {
@@ -408,6 +420,8 @@ bool QVirtualKeyboard::isTextKey(int keyId)
 }
 
 void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
+  if (!keysAllowed)
+    return;
   QString strKeyId = candButtons[btn]->whatsThis();
   bool isOk;
   int keyId = strKeyId.toInt(&isOk, 16);
@@ -418,6 +432,8 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
 
   QWSServer::sendKeyEvent(0, keyId, Qt::NoModifier, true, false);
   clearCandStrBar(true);
+  keysAllowed = false;  
+  QTimer::singleShot(100, this, SLOT(debounce()));
 }
 
 void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {

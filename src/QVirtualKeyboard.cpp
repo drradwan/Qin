@@ -68,7 +68,7 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   allButtons = findChildren<QToolButton*>();
   signalMapper = new QSignalMapper(this);
 
-  QFile data(":/data/selectPanel.qss");
+  QFile data(":/data/selectPanelNumbers.qss");
   if (data.open(QFile::ReadOnly)) {
     QTextStream ssin(&data);
     selectPanel->setStyleSheet(ssin.readAll());

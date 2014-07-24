@@ -68,7 +68,7 @@ QVirtualKeyboard::QVirtualKeyboard(QinEngine* im)
   allButtons = findChildren<QToolButton*>();
   signalMapper = new QSignalMapper(this);
 
-  QFile data(":/data/selectPanelNumbers.qss");
+  QFile data(":/data/selectPanel.qss");
   if (data.open(QFile::ReadOnly)) {
     QTextStream ssin(&data);
     selectPanel->setStyleSheet(ssin.readAll());
@@ -428,14 +428,14 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
         delete candButtons[i];
       }
       candButtons.clear();
-      QFile data(":/data/selectPanelNumbers.qss");
-      if (data.open(QFile::ReadOnly)) {
-        QTextStream ssin(&data);
-        selectPanel->setStyleSheet(ssin.readAll());
-        data.close();
-      } else {
-        qDebug() << "Error: failed to set style sheet for selectPanel!";
-      }
+      // QFile data(":/data/selectPanelNumbers.qss");
+      // if (data.open(QFile::ReadOnly)) {
+      //   QTextStream ssin(&data);
+      //   selectPanel->setStyleSheet(ssin.readAll());
+      //   data.close();
+      // } else {
+      //   qDebug() << "Error: failed to set style sheet for selectPanel!";
+      // }
       showCandStrBar(numbers);
       numbersVisible = true;
     }
@@ -446,14 +446,14 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
       delete candButtons[i];
     }
     candButtons.clear();
-    QFile data(":/data/selectPanel.qss");
-    if (data.open(QFile::ReadOnly)) {
-      QTextStream ssin(&data);
-      selectPanel->setStyleSheet(ssin.readAll());
-      data.close();
-    } else {
-      qDebug() << "Error: failed to set style sheet for selectPanel!";
-    }
+    // QFile data(":/data/selectPanel.qss");
+    // if (data.open(QFile::ReadOnly)) {
+    //   QTextStream ssin(&data);
+    //   selectPanel->setStyleSheet(ssin.readAll());
+    //   data.close();
+    // } else {
+    //   qDebug() << "Error: failed to set style sheet for selectPanel!";
+    // }
     selectPanel->hide();
     numbersVisible = false;
   }

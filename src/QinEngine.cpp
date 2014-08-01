@@ -26,7 +26,7 @@
 #include <QCoreApplication>
 
 #include "plugins/QinPinyin.h"
-#include "plugins/QinChewing.h"
+//#include "plugins/QinChewing.h"
 #include "QinIMBases.h"
 #include "QVirtualKeyboard.h"
 

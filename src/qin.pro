@@ -7,7 +7,7 @@ QT += sql xml
 TARGET = qin
 DEPENDPATH += . plugins
 INCLUDEPATH += . plugins
-LIBS += -lchewing -lsunpinyin-3.0
+LIBS += -lsunpinyin-3.0
 # Turn this on to enable debugging output to the console
 #DEFINES += DEBUG
 
@@ -19,7 +19,6 @@ HEADERS += \
   QinEngine.h \
   QinIMBases.h \
   QVirtualKeyboard.h \
-  plugins/QinChewing.h \
   plugins/QinPinyin.h
 
 FORMS += QVirtualKeyboard.ui
@@ -29,5 +28,4 @@ SOURCES += \
   QinEngine.cpp \
   QinIMBases.cpp \
   QVirtualKeyboard.cpp \
-  plugins/QinChewing.cpp \
   plugins/QinPinyin.cpp \

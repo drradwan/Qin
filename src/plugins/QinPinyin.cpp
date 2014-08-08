@@ -108,11 +108,13 @@ QinPinyin::QinPinyin(void): QinIMBase(":/data/Pinyin.xml") {
 
     pv = factory.createSession();
 
-    //hotkey_profile = new CHotkeyProfile();
-    //pv->setHotkeyProfile(hotkey_profile);
+    hotkey_profile = new CHotkeyProfile();
+    if (hotkey_profile)
+      pv->setHotkeyProfile(hotkey_profile);
 
     wh = new CQinWinHandler(this);
-    pv->attachWinHandler(wh);
+    if (wh)
+      pv->attachWinHandler(wh);
 }
 
 QinPinyin::~QinPinyin(void) {

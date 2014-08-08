@@ -16,6 +16,7 @@ using std::back_inserter;
 using std::copy;
 
 #include <QStringList>
+#include <QDebug>
 
 /* Helper functions */
 

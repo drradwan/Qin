@@ -182,6 +182,7 @@ void QinPinyin::reset(void) {
 }
 
 void QinPinyin::handle_Default(int keyId) {
+  qDebug() << "QinPinyin::handle_Default(" << keyId << ") called";
   pv->onKeyEvent(CKeyEvent(keyId, keyId, 0));
 }
 

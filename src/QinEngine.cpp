@@ -35,9 +35,9 @@ QinEngine::QinEngine(QString lang) {
   regInputMethod(new QinIMBase(":/data/English.xml"));
   regInputMethod(new QinTableIMBase(":/data/Latin.xml"));
   regInputMethod(new QinIMBase(":/data/Symbols.xml"));
-  regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
+  //regInputMethod(new QinTableIMBase(":/data/Boshiamy.xml"));
   //regInputMethod(new QinChewing());
-  //regInputMethod(new QinPinyin());
+  regInputMethod(new QinPinyin());
   changeLanguage(NULL, lang);
   numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
 }

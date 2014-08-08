@@ -28,7 +28,6 @@
   <customkeymap>true</customkeymap>
   <capsable>false</capsable>
   <shiftable>false</shiftable>
-  <maxkeystrokes>8</maxkeystrokes>
   <keymap>
     <normal>
       <key value="1">1</key>

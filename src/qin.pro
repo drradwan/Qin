@@ -9,7 +9,7 @@ DEPENDPATH += . plugins
 INCLUDEPATH += . plugins
 LIBS += -lsunpinyin-3.0
 # Turn this on to enable debugging output to the console
-#DEFINES += DEBUG
+DEFINES += DEBUG
 
 # Input
 RESOURCES += qin.qrc

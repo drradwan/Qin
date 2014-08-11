@@ -129,7 +129,9 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
       if (keyId & Qt::Key_Escape)
         return true;
       currentIM->handle_Default(keyId, shifted);
-
+#ifdef DEBUG
+      qDebug() << "DEBUG: handle_Default() being called for currentIM";
+#endif
       doSendEvent = false;
   }
 

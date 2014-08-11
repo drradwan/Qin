@@ -114,6 +114,7 @@ QinPinyin::QinPinyin(void): QinIMBase(":/data/Pinyin.xml") {
 
     wh = new CQinWinHandler(this);
     pv->attachWinHandler(wh);
+    qDebug() << "QinPinyin class invoked, constructor returning now.";
 }
 
 QinPinyin::~QinPinyin(void) {

@@ -181,8 +181,10 @@ char* QinPinyin::getCommitString(void) {
 void QinPinyin::reset(void) {
 }
 
-void QinPinyin::handle_Default(int keyId) {
-  qDebug() << "QinPinyin::handle_Default(" << keyId << ") called";
+void QinPinyin::handle_Default(int keyId, bool shifted) {
+#ifdef DEBUG
+  qDebug() << "QinPinyin::handle_Default(" << keyId << ", " << shifted << ") called";
+#endif
   pv->onKeyEvent(CKeyEvent(keyId, keyId, 0));
 }
 

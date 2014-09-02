@@ -57,9 +57,6 @@ string_pairs parse_pairs(const vector<string>& strings)
 
         pairs.push_back(make_pair(pair->substr(0, found),
                                   pair->substr(found+1)));
-#ifdef DEBUG
-        qDebug() << "QinPinyin::parse_pairs called with " << pairs.last();
-#endif
     }
     return pairs;
 }

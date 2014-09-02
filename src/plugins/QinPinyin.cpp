@@ -33,6 +33,9 @@ string TWCHAR2str(const unsigned int* twchar, const int size)
   char *_Dest = new char[_Dsize];
   memset(_Dest, 0, _Dsize);
   wcstombs(_Dest, _Source, _Dsize);
+#ifdef DEBUG
+  qDebug() << "QinPinyin - twchar = " << _Dest;
+#endif
   std::string result = _Dest;
   delete []_Dest;
   setlocale(LC_ALL, curLocale.c_str());
@@ -54,6 +57,9 @@ string_pairs parse_pairs(const vector<string>& strings)
 
         pairs.push_back(make_pair(pair->substr(0, found),
                                   pair->substr(found+1)));
+#ifdef DEBUG
+        qDebug() << "QinPinyin::parse_pairs called with " << pairs.last();
+#endif
     }
     return pairs;
 }
@@ -80,12 +86,18 @@ void CQinWinHandler::updatePreedit(const IPreeditString* ppd)
 {
   if (ppd)
     engine->update_preedit_string(*ppd);
+#ifdef DEBUG
+  qDebug() << "QinPinyin::updatePreedit called with " << ppd;
+#endif
 }
 
 void CQinWinHandler::updateCandidates(const ICandidateList* pcl)
 {
   if (pcl)
     engine->update_candidates(*pcl);
+#ifdef DEBUG
+  qDebug() << "QinPinyin::updateCandidates called with " << pcl;
+#endif
 }
 
 void CQinWinHandler::throwBackKey(unsigned keycode, unsigned keyvalue,
@@ -138,6 +150,9 @@ void QinPinyin::update_candidates(const ICandidateList& cands)
   candidates.clear();
   for (int i = 0; i < cands.size(); ++i) {
     candidates += TWCHAR2str(cands.candiString(i), cands.candiSize(i)).c_str();
+#ifdef DEBUG
+    qDebug() << "QinPinyin::update_candidates called, adding " << candidates.last();
+#endif
   }
 }
 
@@ -146,6 +161,9 @@ void QinPinyin::update_preedit_string(const IPreeditString& preedit)
   const int len = preedit.size();
   if (len > 0) {
     preeditStr = TWCHAR2str(preedit.string(), preedit.size());
+#ifdef DEBUG
+    qDebug() << "QinPinyin::update_preedit_string called, setting: " << preeditStr;
+#endif
   } else {
     preeditStr.clear();
   }
@@ -154,6 +172,9 @@ void QinPinyin::update_preedit_string(const IPreeditString& preedit)
 void QinPinyin::update_commit_string(const string str)
 {
   commitStr = str;
+#ifdef DEBUG
+  qDebug() << "QinPinyin::update_commit_string called, setting: " << commitStr;
+#endif
 }
 
 bool QinPinyin::isPreEditing(void) {

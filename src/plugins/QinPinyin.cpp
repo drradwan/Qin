@@ -159,7 +159,7 @@ void QinPinyin::update_preedit_string(const IPreeditString& preedit)
   if (len > 0) {
     preeditStr = TWCHAR2str(preedit.string(), preedit.size());
 #ifdef DEBUG
-    qDebug() << "QinPinyin::update_preedit_string called, setting: " << QString(preeditStr);
+    qDebug() << "QinPinyin::update_preedit_string called, setting: " << QString(preeditStr.c_str());
 #endif
   } else {
     preeditStr.clear();

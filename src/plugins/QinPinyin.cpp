@@ -170,7 +170,7 @@ void QinPinyin::update_commit_string(const string str)
 {
   commitStr = str;
 #ifdef DEBUG
-  qDebug() << "QinPinyin::update_commit_string called, setting: " << commitStr;
+  qDebug() << "QinPinyin::update_commit_string called, setting: " << QString(commitStr.c_str());
 #endif
 }
 

@@ -27,7 +27,7 @@ string TWCHAR2str(const unsigned int* twchar, const int size)
 {
   QString retVal;
   for (int i=0; i < size; ++i) {
-    QChar currChar = QChar(*((uint*)(pcl->candiString(i))));
+    QChar currChar = QChar(*(uint*)(twchar));
     qDebug() << "Current char: " << currChar;
     retVal.append(currChar);
   }

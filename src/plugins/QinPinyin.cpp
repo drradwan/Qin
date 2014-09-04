@@ -27,7 +27,9 @@ string TWCHAR2str(const unsigned int* twchar, const int size)
 {
   QString retVal;
   QChar currChar = QChar(*(uint*)(twchar));
-  qDebug() << "Current char: " << currChar;
+#ifdef DEBUG
+  qDebug() << "DEBUG: Current char: " << currChar;
+#endif
   retVal.append(currChar);
   return retVal.toUtf8().constData();
 }
@@ -98,7 +100,7 @@ QinPinyin::QinPinyin(void): QinIMBase(":/data/Pinyin.xml") {
 
     update_user_data_dir();
 
-    factory.setCandiWindowSize(QIN_ENGINE_MAX_CHINESE_SYMBOL_LEN - 3);
+    factory.setCandiWindowSize(QIN_ENGINE_MAX_CHINESE_SYMBOL_LEN - 2);
 
     pv = factory.createSession();
 
@@ -129,7 +131,6 @@ void QinPinyin::update_candidates(const ICandidateList& cands)
 {
   candidates.clear();
   for (int i = 0; i < cands.size(); ++i) {
-    qDebug() << "Candidate: " << *((uint*)(cands.candiString(i)));
     candidates += TWCHAR2str(cands.candiString(i), cands.candiSize(i)).c_str();
   }
 }

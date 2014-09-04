@@ -111,6 +111,7 @@ QinPinyin::QinPinyin(void): QinIMBase(":/data/Pinyin.xml") {
     pinyin_scheme = CSunpinyinSessionFactory::QUANPIN;
 
     factory.setPinyinScheme(pinyin_scheme);
+    factory.setLanguage(CSunpinyinSessionFactory::SIMPLIFIED_CHINESE);
 
     update_user_data_dir();
 

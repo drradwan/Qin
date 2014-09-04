@@ -26,29 +26,10 @@ using std::copy;
 string TWCHAR2str(const unsigned int* twchar, const int size)
 {
   QString retVal;
-  for (int i=0; i < size; ++i) {
-    QChar currChar = QChar(*(uint*)(twchar));
-    qDebug() << "Current char: " << currChar;
-    retVal.append(currChar);
-  }
-  qDebug() << "All chars: " << retVal;
-  
-  std::wstring wstr;
-  copy(twchar, twchar+WCSLEN(twchar)+1, back_inserter(wstr));
-
-  std::string curLocale = setlocale(LC_ALL, NULL);
-  setlocale(LC_ALL, "chs");
-  const wchar_t* _Source = wstr.c_str();
-  size_t _Dsize = 3 * (size != -1? size: wstr.size()) + 1;
-
-  char *_Dest = new char[_Dsize];
-  memset(_Dest, 0, _Dsize);
-  wcstombs(_Dest, _Source, _Dsize);
-  std::string result = _Dest;
-  delete []_Dest;
-  setlocale(LC_ALL, curLocale.c_str());
-
-  return result;
+  QChar currChar = QChar(*(uint*)(twchar));
+  qDebug() << "Current char: " << currChar;
+  retVal.append(currChar);
+  return retVal.toUtf8().constData();
 }
 
 string_pairs parse_pairs(const vector<string>& strings)

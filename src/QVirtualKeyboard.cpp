@@ -429,10 +429,12 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
 #ifdef DEBUG
   qDebug() << "DEBUG: selected = " << btn << "(" << strKeyId << ")";
 #endif
-  if (numbersVisible)
+  if (numbersVisible) {
     QWSServer::sendKeyEvent(0, keyId, Qt::NoModifier, true, false);
-  else
-    QWSServer::sendKeyEvent(0, candButtons[btn]->text().data().unicode(), Qt::NoModifier, true, false);
+  } else {
+    QChar myChar = candButtons[btn]->text()->data();
+    QWSServer::sendKeyEvent(0, myChar.unicode(), Qt::NoModifier, true, false);
+  }
   clearCandStrBar(true);
   keysAllowed = false;  
   QTimer::singleShot(200, this, SLOT(debounce()));

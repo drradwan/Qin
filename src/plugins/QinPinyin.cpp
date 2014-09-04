@@ -18,6 +18,8 @@ using std::copy;
 #include <QStringList>
 #include <QDebug>
 
+#include <stdint.h>
+
 /* Helper functions */
 
 string TWCHAR2str(const unsigned int* twchar, const int size)

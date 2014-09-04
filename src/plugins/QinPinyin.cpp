@@ -139,7 +139,7 @@ void QinPinyin::update_candidates(const ICandidateList& cands)
 {
   candidates.clear();
   for (int i = 0; i < cands.size(); ++i) {
-    qDebug() << "Candidate: " << *((uint32_t*)(cands.candiString(i)))
+    qDebug() << "Candidate: " << *((uint32_t*)(cands.candiString(i)));
     candidates += TWCHAR2str(cands.candiString(i), cands.candiSize(i)).c_str();
   }
 }

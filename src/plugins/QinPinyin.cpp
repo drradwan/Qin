@@ -222,5 +222,7 @@ void QinPinyin::handle_Right(void) {
 }
 
 void QinPinyin::handle_Candidate(int candNum) {
+  commitStr = preeditStr;
+  preeditStr.clear();
   pv->onCandidateSelectRequest(candNum);
 }

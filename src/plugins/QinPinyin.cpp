@@ -218,3 +218,7 @@ void QinPinyin::handle_Right(void) {
     pv->onCandidatePageRequest(1, true);
   }
 }
+
+void QinPinyin::handle_Candidate(int candNum) {
+  pv->onCandidateSelectRequest(candNum);
+}

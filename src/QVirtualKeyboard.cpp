@@ -518,7 +518,7 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
     button->show();
     button->setWhatsThis(Qt::Key_Right);
     connect(button, SIGNAL(clicked()), candSignalMapper, SLOT(map()));
-    candSignalMapper->setMapping(button, ++i)
+    candSignalMapper->setMapping(button, ++i);
   }
 
   /* Fix border for the rightmost color, the sequence of the CSS must be

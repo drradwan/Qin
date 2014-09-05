@@ -82,6 +82,8 @@ class QinPinyin: public QinIMBase {
     virtual void handle_Backspace(void);
     virtual void handle_Left(void);
     virtual void handle_Right(void);
+    
+    virtual void handle_Candidate(int candNum);
 };
 
 #endif /* __QIN_SRC_PLUGIN_QIN_PINYIN_H__ */

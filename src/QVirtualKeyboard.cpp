@@ -501,7 +501,7 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
     button->show();
     button->setWhatsThis(QString(Qt::Key_Left));
     connect(button, SIGNAL(clicked()), candSignalMapper, SLOT(map()));
-    candSignalMapper->setMapping(button, 0)
+    candSignalMapper->setMapping(button, 0);
     i = 1;
   }
   for (i; i < strlist.size(); ++i) {

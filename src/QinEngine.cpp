@@ -235,9 +235,9 @@ void QinEngine::changeLanguage(QString oldLang, QString newLang) {
     activeInputMethods.push_back(inputMethods[2]);
   } else if (newLang.contains("zh")) {
     activeInputMethods.clear();
-    //activeInputMethods.push_back(inputMethods[0]);
-    //activeInputMethods.push_back(inputMethods[2]);
     activeInputMethods.push_back(inputMethods[3]);
+    activeInputMethods.push_back(inputMethods[2]);
+    activeInputMethods.push_back(inputMethods[0]);
   } else {
     activeInputMethods.clear();
     activeInputMethods.push_back(inputMethods[1]);

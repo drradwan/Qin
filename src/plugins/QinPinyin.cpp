@@ -26,9 +26,11 @@ using std::copy;
 string TWCHAR2str(const unsigned int* twchar, const int size)
 {
   QString retVal;
-  if (size == -1)
-    size = 1;
-  for (int i=0; i < size; ++i) {
+  int mSize = 1;
+  if (size > -1) {
+    mSize = size;
+  }
+  for (int i=0; i < mSize; ++i) {
     QChar currChar = QChar(*((uint*)(twchar)+i));
 #ifdef DEBUG
     qDebug() << "DEBUG: Current char: " << currChar;

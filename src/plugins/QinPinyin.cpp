@@ -40,23 +40,23 @@ string TWCHAR2str(const unsigned int* twchar, const int size)
   return retVal.toUtf8().constData();
 }
 
-string_pairs parse_pairs(const vector<string>& strings)
-{
-    string_pairs pairs;
-    for (vector<string>::const_iterator pair = strings.begin();
-         pair != strings.end(); ++pair) {
+// string_pairs parse_pairs(const vector<string>& strings)
+// {
+//     string_pairs pairs;
+//     for (vector<string>::const_iterator pair = strings.begin();
+//         pair != strings.end(); ++pair) {
 
-        std::string::size_type found = pair->find(':');
-        if (found == pair->npos || pair->length() < 3)
-            continue;
-        if (found == 0 && (*pair)[0] == ':')
-            found = 1;
+//         std::string::size_type found = pair->find(':');
+//         if (found == pair->npos || pair->length() < 3)
+//             continue;
+//         if (found == 0 && (*pair)[0] == ':')
+//             found = 1;
 
-        pairs.push_back(make_pair(pair->substr(0, found),
-                                  pair->substr(found+1)));
-    }
-    return pairs;
-}
+//         pairs.push_back(make_pair(pair->substr(0, found),
+//                                   pair->substr(found+1)));
+//     }
+//     return pairs;
+// }
 
 /* CQinWinHandler implementation */
 

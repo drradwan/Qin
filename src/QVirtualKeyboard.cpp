@@ -434,7 +434,7 @@ void QVirtualKeyboard::s_on_btnCands_clicked(int btn) {
   } else {
     QString myString = candButtons[btn]->text();
     QChar myChar = myString.data()[0];
-    QWSServer::sendKeyEvent(0, myChar.unicode(), Qt::NoModifier, true, false);
+    QWSServer::sendKeyEvent(myChar.unicode(), 0, Qt::NoModifier, true, false);
   }
   clearCandStrBar(true);
   keysAllowed = false;  

@@ -192,6 +192,7 @@ void QinIMBase::handle_Space(void) {}
 void QinIMBase::handle_Tab(void) {}
 void QinIMBase::handle_Up(void) {}
 void QinIMBase::commit_Default(void) {}
+void QinIMBase::handle_Candidate(int) {}
 
 
 /* QinTableIMBase methods implementation */

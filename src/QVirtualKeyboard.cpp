@@ -471,6 +471,7 @@ void QVirtualKeyboard::clearCandStrBar(bool showNumbers) {
 void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
   QPushButton* button = NULL;
   int keys[] = SELKEYS;
+  int i = 0;
 
 #ifdef DEBUG
   qDebug() << "DEBUG: cands: " << strlist;
@@ -493,12 +494,31 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
   selectPanel->show();
   
-  for (int i = 0; i < strlist.size(); ++i) {
+  if (strlist != numbers) {
+    button = new QPushButton("←");
+    candButtons.push_back(button);
+    selectPanel->layout()->addWidget(button);
+    button->show();
+    button->setWhatsThis(Qt::Key_Left);
+    connect(button, SIGNAL(clicked()), candSignalMapper, SLOT(map()));
+    candSignalMapper->setMapping(button, 0)
+    i = 1;
+  }
+  for (i; i < strlist.size(); ++i) {
     button = new QPushButton(strlist[i]);
     //button->setFont(QFont("WenQuanYiMicroHeiLight", 13));
     candButtons.push_back(button);
     selectPanel->layout()->addWidget(button);
     button->show();
+  }
+  if (strlist != numbers) {
+    button = new QPushButton("→");
+    candButtons.push_back(button);
+    selectPanel->layout()->addWidget(button);
+    button->show();
+    button->setWhatsThis(Qt::Key_Right);
+    connect(button, SIGNAL(clicked()), candSignalMapper, SLOT(map()));
+    candSignalMapper->setMapping(button, ++i)
   }
 
   /* Fix border for the rightmost color, the sequence of the CSS must be
@@ -513,7 +533,10 @@ void QVirtualKeyboard::showCandStrBar(QStringList strlist) {
 
   candSignalMapper = new QSignalMapper(selectPanel);
 
-  for (int i = 0; i < candButtons.size(); i++) {
+  i = 0;
+  if (strlist != numbers)
+    i = 1;
+  for (i; i < candButtons.size(); i++) {
     candButtons[i]->setWhatsThis(QString("%1").arg(keys[i], 2, 16));
     connect(candButtons[i], SIGNAL(clicked()), candSignalMapper, SLOT(map()));
     candSignalMapper->setMapping(candButtons[i], i);

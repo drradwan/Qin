@@ -88,6 +88,11 @@ bool QinEngine::filter(int uni, int keyId, int mod, bool isPress,
     } else {
       return false;
     }
+  } else {
+    if (keyId >= 16 && keyId <= 25) {
+      currentIM->handle_Candidate(keyId-15);
+      return true;
+    }
   }
 
   switch (keyId) {

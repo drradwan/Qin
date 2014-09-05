@@ -26,11 +26,15 @@ using std::copy;
 string TWCHAR2str(const unsigned int* twchar, const int size)
 {
   QString retVal;
-  QChar currChar = QChar(*(uint*)(twchar));
+  if (size == -1)
+    size = 1;
+  for (int i=0; i < size; ++i) {
+    QChar currChar = QChar(*((uint*)(twchar)+i));
 #ifdef DEBUG
-  qDebug() << "DEBUG: Current char: " << currChar;
+    qDebug() << "DEBUG: Current char: " << currChar;
 #endif
-  retVal.append(currChar);
+    retVal.append(currChar);
+  }
   return retVal.toUtf8().constData();
 }
 

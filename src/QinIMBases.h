@@ -97,6 +97,8 @@ class QinIMBase {
     
     /* Added to force commit for table, here only for compatiblity */
     virtual void commit_Default(void);
+    
+    virtual void handle_Candidate(int);
 };
 
 /**
@@ -141,6 +143,8 @@ class QinTableIMBase: public QinIMBase {
 
     /* Added to force commit the first choice on the candidate bar */
     virtual void commit_Default(void);
+    
+    virtual void handle_Candidate(int candNum);
 };
 
 #endif /* __QIN_SRC_QIN_IM_BASE_H__ */

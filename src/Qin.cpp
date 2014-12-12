@@ -1,10 +1,9 @@
 /**
- * @file   Qin.cpp
- * @brief  
- * @author Wei-Ning Huang (AZ) <aitjcize@gmail.com>
- *
- * Copyright (C) 2010 -  Wei-Ning Huang (AZ) <aitjcize@gmail.com>
- * All Rights reserved.
+ * Copyright (C) 2014 - Adam Radwan <adam@radwan.us>
+ * All rights reserved.
+ * 
+ * Copyright (C) 2013 - Wei-Ning Huang (AZ) <aitjcize@gmail.com>
+ * All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,11 +28,11 @@
 
 int main(int argc, char *argv[])
 {
-  QApplication app(argc, argv);
-  QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
-  QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+    QApplication app(argc, argv);
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
-  QWSInputMethod* im = new QinEngine(QString("en"));
-  QWSServer::setCurrentInputMethod(im);
-  return app.exec();
+    QWSInputMethod* im = new QinEngine(QString("en"));
+    QWSServer::setCurrentInputMethod(im);
+    return app.exec();
 }

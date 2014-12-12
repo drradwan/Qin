@@ -1,7 +1,9 @@
 /*
- * Modified by Wei-Ning Huang
- *
- * Copyright 2010 Wei-Ning Huang <aitjcize@gmail.com>
+ * Copyright (C) 2014 - Adam Radwan <adam@radwan.us>
+ * All rights reserved.
+ * 
+ * Copyright (C) 2013 - Wei-Ning Huang (AZ) <aitjcize@gmail.com>
+ * All rights reserved.
  *
  * Copyright 2009 EMBITEL (http://www.embitel.com)
  * 
@@ -41,54 +43,75 @@ class QSignalMapper;
 QT_END_NAMESPACE
 
 class QVirtualKeyboard : public QWidget, public Ui::QVirtualKeyboard {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
-    QVirtualKeyboard(QinEngine* im);
-    ~QVirtualKeyboard();
-    void setDefaultIMName();
-    //void insertInputMethod(const QinIMBase* im);
-    void clearCandStrBar(bool showNumbers);
-    void showCandStrBar(QStringList strlist);
-    void hideAll(void);
-    bool Capsed;
-    bool Shifted;
-    bool isQWERTY;
-    void setShift(bool shifted, bool capsed);
-    void switchToAZERTY(QinIMBase* imb);
-    void switchToQWERTY(QinIMBase* imb);
-    void changeNormalKeyMap(QinIMBase* imb);
-    void changeShiftKeyMap(QinIMBase* imb);
-    
-  signals:
-    void keyboardFinished();
+    public:
+        QVirtualKeyboard(QinEngine* im);
+        ~QVirtualKeyboard();
 
-  private:
-    QinEngine* imEngine;
-    QWidget* selectPanel;
-    bool Pressed;
-    bool location;
-    int IMIndex;
-    int opacity;
-    int* selkeys;
-    //QVector<QString> regedIMs;
-    QSignalMapper *signalMapper;
-    QSignalMapper *candSignalMapper;
-    QList<QToolButton*> allButtons;
-    QVector<QPushButton*> candButtons;
-    QStringList numbers;
-    bool numbersVisible;
-    bool keysAllowed;
-    //Ui::QVirtualKeyboard *ui;
+        enum LayoutTypes {
+            QWERTY_1 = 0,   // [10, 9, 7], e.g. English
+            QWERTY_2 = 1,   // [10, 10, 7], e.g. Spanish
+            QWERTY_3 = 2,   // [11, 11, 7], e.g. Danish
+            QWERTY_4 = 3,   // [11, 11, 9], e.g. Russian
+            AZERTY_1 = 5,   // [10, 10, 7], e.g. French
+            AZERTY_2 = 6,   // [10, 9, 7] e.g. Dutch
+        };
 
-  private slots:
-    void s_on_btn_clicked(int btn);
-    void s_on_btnCands_clicked(int btn);
-    void on_btnShiftLeft_toggled(bool checked);
-    void on_btnIMToggle_clicked(void);
-    void on_btnNext_clicked(void);
-    void debounce(void);
-    bool isTextKey(int keyId);
+        void setDefaultIMName();
+        //void insertInputMethod(const QinIMBase* im);
+        void clearCandStrBar(bool showNumbers);
+        void showCandStrBar(QStringList strlist);
+        void hideAll(void);
+        bool Capsed;
+        bool Shifted;
+        bool isQWERTY;
+        bool symbolCapsed;
+        void setShift(bool shifted, bool capsed);
+        void switchToAZERTY(QinIMBase* imb);
+        void switchToQWERTY(QinIMBase* imb);
+        void changeNormalKeyMap(QinIMBase* imb);
+        void changeShiftKeyMap(QinIMBase* imb);
+        bool getNumbersVisible();
+        void reset(); // to reset variables before showing keyboard
+        LayoutTypes getLayoutType(QString lang);
+        //    Languages getLanguageEnum(QString lang);
+        void switchLayoutType(LayoutTypes type);
+
+
+    signals:
+        void keyboardFinished();
+        void keyPressed(int numChars);
+
+    private:
+        QinEngine* imEngine;
+        QWidget* selectPanel;
+        bool Pressed;
+        bool location;
+        int IMIndex;
+        int opacity;
+        int* selkeys;
+        //QVector<QString> regedIMs;
+        QSignalMapper *signalMapper;
+        QSignalMapper *candSignalMapper;
+        QList<QToolButton*> allButtons;
+        QVector<QPushButton*> candButtons;
+        QStringList numbers;
+        bool numbersVisible;
+        bool keysAllowed;
+        //Ui::QVirtualKeyboard *ui;
+
+    private slots:
+        void s_on_btn_clicked(int btn);
+        void s_on_btnCands_clicked(int btn);
+        void on_btnShiftLeft_clicked(bool checked);
+        void on_btnIMToggle_clicked(void);
+        void on_btnNext_clicked(void);
+        void debounce(void);
+        bool isTextKey(int keyId);
+
+        void changeNormalUnicodeKeyMap(QinIMBase* imb);
+        void changeShiftUnicodeKeyMap(QinIMBase* imb);
 };
 
 #endif /* QVIRTUALKEYBOARD_H */

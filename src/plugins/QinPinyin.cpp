@@ -1,3 +1,25 @@
+/**
+ * Copyright (C) 2014 - Adam Radwan <adam@radwan.us>
+ * All rights reserved.
+ * 
+ * Copyright (C) 2013 - Wei-Ning Huang (AZ) <aitjcize@gmail.com>
+ * All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
 #include "QinPinyin.h"
 #include "QinIMBases.h"
 
@@ -21,6 +43,9 @@ using std::copy;
 #include <QString>
 #include <QChar>
 
+#include <QDomDocument>
+#include <QDomElement>
+
 /* Helper functions */
 
 string TWCHAR2str(const unsigned int* twchar, const int size)
@@ -32,9 +57,6 @@ string TWCHAR2str(const unsigned int* twchar, const int size)
   }
   for (int i=0; i < mSize; ++i) {
     QChar currChar = QChar(*((uint*)(twchar)+i));
-#ifdef DEBUG
-    qDebug() << "DEBUG: Current char: " << currChar;
-#endif
     retVal.append(currChar);
   }
   return retVal.toUtf8().constData();
@@ -72,7 +94,7 @@ CQinWinHandler::~CQinWinHandler()
 void CQinWinHandler::commit(const TWCHAR* wstr)
 {
   if (wstr) {
-    engine->update_commit_string(TWCHAR2str(wstr, -1));
+    engine->update_commit_string(TWCHAR2str(wstr, WCSLEN(wstr)));
   }
 }
 
@@ -106,7 +128,7 @@ QinPinyin::QinPinyin(void): QinIMBase(":/data/Pinyin.xml") {
 
     update_user_data_dir();
 
-    factory.setCandiWindowSize(QIN_ENGINE_MAX_CHINESE_SYMBOL_LEN - 2);
+    factory.setCandiWindowSize(QIN_ENGINE_MAX_CHINESE_SYMBOL_LEN - 4);
 
     pv = factory.createSession();
 
@@ -165,17 +187,56 @@ bool QinPinyin::getDoPopUp(void) {
 }
 
 QStringList QinPinyin::getPopUpStrings(void) {
-  return candidates;
+  if (candidates.size()) {
+    return candidates;
+  } else {
+    QStringList numbers;
+    numbers << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" << "0";
+    return numbers;
+  }
+}
+
+void QinPinyin::chopPreEditString(int length) {
+  int strLen = preeditStr.length();
+  preeditStr = preeditStr.substr(strLen-length);
+#ifdef DEBUG
+  qDebug() << "chopPreEditString(" << length << ") results in preeditStr = " << preeditStr.c_str();
+#endif
 }
 
 char* QinPinyin::getPreEditString(void) {
-  return strdup(preeditStr.c_str());
+
+    // Unify code with QinTableImBase
+    // Use "new char[]" instead of strdup() so that callers can use "delete []"
+    char* returnedStr = NULL;
+    const char* cstr = preeditStr.c_str();
+    int strSize = preeditStr.size();
+    qDebug() << "QinPinyin::getPreEditString " << strSize;
+
+    if (!preeditStr.empty()) {
+        returnedStr = new char[strSize + 1];
+        memcpy(returnedStr, cstr, strSize);
+        returnedStr[strSize] = 0; // null terminator
+    }
+    return returnedStr;
 }
 
 char* QinPinyin::getCommitString(void) {
-  string str = commitStr;
-  commitStr.clear();
-  return strdup(str.c_str());
+    // Unify code with QinTableImBase
+    // Use "new char[]" instead of strdup() so that callers can use "delete []"
+    char* returnedStr = NULL;
+    const char* cstr = commitStr.c_str();
+    int strSize = commitStr.size();
+    qDebug() << "QinPinyin::getCommitString " << strSize;
+
+    if (!commitStr.empty()) {
+        returnedStr = new char[strSize + 1];
+        memcpy(returnedStr, cstr, strSize);
+        returnedStr[strSize] = 0; // null terminator
+
+        commitStr.clear();
+    }
+    return returnedStr;
 }
 
 void QinPinyin::reset(void) {
@@ -210,19 +271,32 @@ void QinPinyin::handle_Backspace(void) {
 }
 
 void QinPinyin::handle_Left(void) {
+#ifdef DEBUG
+  qDebug() << "handle_Left called";
+#endif
   if (preeditStr.length() > 0) {
     pv->onCandidatePageRequest(-1, true);
+    //pv->getCandidateList(*currentCandidates, 0, 8);
+    //update_candidates(*currentCandidates);
   }
 }
 
 void QinPinyin::handle_Right(void) {
+#ifdef DEBUG
+  qDebug() << "handle_Right called";
+#endif
   if (preeditStr.length() > 0) {
     pv->onCandidatePageRequest(1, true);
+    //pv->getCandidateList(*currentCandidates, 0, 8);
+    //update_candidates(*currentCandidates);
   }
 }
 
 void QinPinyin::handle_Candidate(int candNum) {
-  commitStr = preeditStr;
-  preeditStr.clear();
   pv->onCandidateSelectRequest(candNum);
+}
+
+void QinPinyin::commit_Default(void) {
+  pv->onCandidatePageRequest(0, false); 
+  pv->onCandidateSelectRequest(0);
 }

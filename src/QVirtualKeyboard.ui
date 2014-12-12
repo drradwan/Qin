@@ -23,61 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">QWidget {
-	/* Normal */
-    background: #A4A4A6;
-}
-
-QPushButton {
-    min-height: 1.5em;
-    font: 24px;
-    font-weight: bold;
-    margin: 0 1px 0 1px;
-    color: #292929;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #FFFFFF, stop: 0.7 #B3B3B3);
-    border-style: outset;
-    border-radius: 3px;
-    border-width: 1px;
-    border-color: #4F4F4F;
-}
-
-QPushButton:pressed {
-    color: white;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #2D7D00, stop: 1 #7ED403);
-}
-
-QToolButton {
-    font: 24px;
-    font-weight: bold;
-    margin: 0 1px 0 1px;
-
-	/* Normal */
-    color:#929292;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #5c5c5c, stop: 1 #030303);
-    border-radius: 4px;
-    border-top: 2px solid #909090;
-    border-left: 2px solid #909090;
-    border-bottom: 3px solid #505050;
-    border-right: 3px solid #505050;
-}
-
-QToolButton:pressed {
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #a4a4a4, stop: 1 #dfdfdf);
-    color: #3b3c3e;
-    border: 2px solid #909090;
-}
-
-QToolButton:on {
-	color: white;
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #2D7D00, stop: 1 #7ED403);
-}
-</string>
+   <string notr="true">Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -86,13 +32,22 @@ QToolButton:on {
    <property name="sizeConstraint">
     <enum>QLayout::SetMinAndMaxSize</enum>
    </property>
-   <property name="margin">
+   <property name="leftMargin">
     <number>1</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>1</number>
+   </property>
+   <property name="bottomMargin">
+    <number>8</number>
    </property>
    <item>
     <layout class="QVBoxLayout" name="mainLayout">
      <property name="spacing">
-      <number>2</number>
+      <number>4</number>
      </property>
      <property name="sizeConstraint">
       <enum>QLayout::SetFixedSize</enum>
@@ -106,7 +61,7 @@ QToolButton:on {
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <property name="spacing">
-        <number>1</number>
+        <number>4</number>
        </property>
        <item>
         <widget class="QToolButton" name="btnQ">
@@ -118,16 +73,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x71</string>
+          <string notr="true">0x71</string>
          </property>
          <property name="text">
-          <string>q</string>
+          <string notr="true">q</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -147,16 +103,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x77</string>
+          <string notr="true">0x77</string>
          </property>
          <property name="text">
-          <string>w</string>
+          <string notr="true">w</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -176,16 +133,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x65</string>
+          <string notr="true">0x65</string>
          </property>
          <property name="text">
-          <string>e</string>
+          <string notr="true">e</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -205,16 +163,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x72</string>
+          <string notr="true">0x72</string>
          </property>
          <property name="text">
-          <string>r</string>
+          <string notr="true">r</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -234,16 +193,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x74</string>
+          <string notr="true">0x74</string>
          </property>
          <property name="text">
-          <string>t</string>
+          <string notr="true">t</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -263,16 +223,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x79</string>
+          <string notr="true">0x79</string>
          </property>
          <property name="text">
-          <string>y</string>
+          <string notr="true">y</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -292,16 +253,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x75</string>
+          <string notr="true">0x75</string>
          </property>
          <property name="text">
-          <string>u</string>
+          <string notr="true">u</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -321,16 +283,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x69</string>
+          <string notr="true">0x69</string>
          </property>
          <property name="text">
-          <string>i</string>
+          <string notr="true">i</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -350,16 +313,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x6f</string>
+          <string notr="true">0x6f</string>
          </property>
          <property name="text">
-          <string>o</string>
+          <string notr="true">o</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -379,16 +343,50 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x70</string>
+          <string notr="true">0x70</string>
          </property>
          <property name="text">
-          <string>p</string>
+          <string notr="true">p</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="btnAddition1">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>-1</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="visible">
+          <bool>false</bool>
+         </property>
+         <property name="whatsThis">
+          <string notr="true">0xe5</string>
+         </property>
+         <property name="text">
+          <string notr="true">å</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -403,7 +401,7 @@ QToolButton:on {
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <property name="spacing">
-        <number>1</number>
+        <number>4</number>
        </property>
        <property name="leftMargin">
         <number>40</number>
@@ -421,16 +419,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x61</string>
+          <string notr="true">0x61</string>
          </property>
          <property name="text">
-          <string>a</string>
+          <string notr="true">a</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -450,16 +449,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x73</string>
+          <string notr="true">0x73</string>
          </property>
          <property name="text">
-          <string>s</string>
+          <string notr="true">s</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -479,16 +479,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x64</string>
+          <string notr="true">0x64</string>
          </property>
          <property name="text">
-          <string>d</string>
+          <string notr="true">d</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -508,16 +509,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x66</string>
+          <string notr="true">0x66</string>
          </property>
          <property name="text">
-          <string>f</string>
+          <string notr="true">f</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -537,16 +539,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x67</string>
+          <string notr="true">0x67</string>
          </property>
          <property name="text">
-          <string>g</string>
+          <string notr="true">g</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -566,16 +569,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x68</string>
+          <string notr="true">0x68</string>
          </property>
          <property name="text">
-          <string>h</string>
+          <string notr="true">h</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -595,17 +599,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x6a</string>
+          <string notr="true">0x6a</string>
          </property>
          <property name="text">
-          <string>j</string>
+          <string notr="true">j</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -625,16 +629,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x6b</string>
+          <string notr="true">0x6b</string>
          </property>
          <property name="text">
-          <string>k</string>
+          <string notr="true">k</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -654,16 +659,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x6c</string>
+          <string notr="true">0x6c</string>
          </property>
          <property name="text">
-          <string>l</string>
+          <string notr="true">l</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -683,16 +689,20 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
+         <property name="visible">
+          <bool>false</bool>
+         </property>
          <property name="whatsThis">
-          <string>0x6d</string>
+          <string notr="true">0x6d</string>
          </property>
          <property name="text">
-          <string>m</string>
+          <string notr="true">m</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -700,7 +710,37 @@ QToolButton:on {
          <property name="autoRepeat">
           <bool>false</bool>
          </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="btnAddition2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>-1</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="visible">
+          <bool>false</bool>
+         </property>
+         <property name="whatsThis">
+          <string notr="true">0xf8</string>
+         </property>
+         <property name="text">
+          <string notr="true">ø</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="autoRepeat">
           <bool>false</bool>
          </property>
         </widget>
@@ -710,10 +750,10 @@ QToolButton:on {
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <property name="spacing">
-        <number>1</number>
+        <number>4</number>
        </property>
        <item>
-        <widget class="QToolButton" name="btnShiftLeft">
+        <widget class="QPushButton" name="btnShiftLeft">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -722,22 +762,23 @@ QToolButton:on {
          </property>
          <property name="minimumSize">
           <size>
-           <width>119</width>
-           <height>0</height>
+           <width>117</width>
+           <height>57</height>
           </size>
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x01000020</string>
+          <string notr="true">0x01000020</string>
          </property>
          <property name="text">
-          <string>⇧</string>
+          <string notr="true">⇧</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -757,16 +798,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x7a</string>
+          <string notr="true">0x7a</string>
          </property>
          <property name="text">
-          <string>z</string>
+          <string notr="true">z</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -786,16 +828,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x78</string>
+          <string notr="true">0x78</string>
          </property>
          <property name="text">
-          <string>x</string>
+          <string notr="true">x</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -815,16 +858,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x63</string>
+          <string notr="true">0x63</string>
          </property>
          <property name="text">
-          <string>c</string>
+          <string notr="true">c</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -844,16 +888,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x76</string>
+          <string notr="true">0x76</string>
          </property>
          <property name="text">
-          <string>v</string>
+          <string notr="true">v</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -873,16 +918,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x62</string>
+          <string notr="true">0x62</string>
          </property>
          <property name="text">
-          <string>b</string>
+          <string notr="true">b</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -902,16 +948,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x6e</string>
+          <string notr="true">0x6e</string>
          </property>
          <property name="text">
-          <string>n</string>
+          <string notr="true">n</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -931,16 +978,83 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x6d</string>
+          <string notr="true">0x6d</string>
          </property>
          <property name="text">
-          <string>m</string>
+          <string notr="true">m</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="btnAddition3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>-1</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="visible">
+          <bool>false</bool>
+         </property>
+         <property name="whatsThis">
+          <string notr="true">0x0431</string>
+         </property>
+         <property name="text">
+          <string notr="true">б</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="btnAddition4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>-1</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="visible">
+          <bool>false</bool>
+         </property>
+         <property name="whatsThis">
+          <string notr="true">0x044E</string>
+         </property>
+         <property name="text">
+          <string notr="true">ю</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -960,22 +1074,23 @@ QToolButton:on {
          </property>
          <property name="minimumSize">
           <size>
-           <width>119</width>
+           <width>117</width>
            <height>0</height>
           </size>
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x01000003</string>
+          <string notr="true">0x01000003</string>
          </property>
          <property name="text">
-          <string>←</string>
+          <string notr="true">←</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -990,7 +1105,7 @@ QToolButton:on {
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <property name="spacing">
-        <number>1</number>
+        <number>4</number>
        </property>
        <item>
         <widget class="QPushButton" name="btnIMToggle">
@@ -1002,12 +1117,12 @@ QToolButton:on {
          </property>
          <property name="minimumSize">
           <size>
-           <width>88</width>
-           <height>25</height>
+           <width>160</width>
+           <height>57</height>
           </size>
          </property>
          <property name="text">
-          <string>Current IM</string>
+          <string notr="true">Current IM</string>
          </property>
         </widget>
        </item>
@@ -1021,16 +1136,17 @@ QToolButton:on {
          </property>
          <property name="font">
           <font>
+           <pointsize>-1</pointsize>
            <weight>75</weight>
            <italic>false</italic>
            <bold>true</bold>
           </font>
          </property>
          <property name="whatsThis">
-          <string>0x20</string>
+          <string notr="true">0x20</string>
          </property>
          <property name="text">
-          <string> </string>
+          <string notr="true"/>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -1050,12 +1166,12 @@ QToolButton:on {
          </property>
          <property name="minimumSize">
           <size>
-           <width>40</width>
-           <height>25</height>
+           <width>160</width>
+           <height>57</height>
           </size>
          </property>
          <property name="text">
-          <string>  ↵  </string>
+          <string>OK</string>
          </property>
         </widget>
        </item>

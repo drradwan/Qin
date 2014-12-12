@@ -1,3 +1,25 @@
+/**
+ * Copyright (C) 2014 - Adam Radwan <adam@radwan.us>
+ * All rights reserved.
+ * 
+ * Copyright (C) 2013 - Wei-Ning Huang (AZ) <aitjcize@gmail.com>
+ * All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
 #ifndef __QIN_SRC_PLUGIN_QIN_PINYIN_H__
 #define __QIN_SRC_PLUGIN_QIN_PINYIN_H__
 
@@ -46,6 +68,7 @@ class QinPinyin: public QinIMBase {
     CHotkeyProfile* hotkey_profile;
     CSunpinyinSessionFactory::EPyScheme pinyin_scheme;
     QStringList candidates;
+    ICandidateList* currentCandidates;
 
     string preeditStr;
     string commitStr;
@@ -69,6 +92,7 @@ class QinPinyin: public QinIMBase {
     void update_commit_string(const string str);
 
     /** I/O related **/
+    virtual void chopPreEditString(int length);
     virtual char* getPreEditString(void);
     virtual char* getCommitString(void);
     virtual void reset(void);
@@ -84,6 +108,7 @@ class QinPinyin: public QinIMBase {
     virtual void handle_Right(void);
     
     virtual void handle_Candidate(int candNum);
+    virtual void commit_Default(void);
 };
 
 #endif /* __QIN_SRC_PLUGIN_QIN_PINYIN_H__ */

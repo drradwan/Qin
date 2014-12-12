@@ -1,9 +1,9 @@
 /**
- * @file   QinConfig.h
- * @author Wei-Ning Huang (AZ) <aitjcize@gmail.com>
- *
- * Copyright (C) 2013 -  Wei-Ning Huang (AZ) <aitjcize@gmail.com>
- * All Rights reserved.
+ * Copyright (C) 2014 - Adam Radwan <adam@radwan.us>
+ * All rights reserved.
+ * 
+ * Copyright (C) 2013 - Wei-Ning Huang (AZ) <aitjcize@gmail.com>
+ * All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

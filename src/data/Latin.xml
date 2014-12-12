@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (C) 2010 -  Wei-Ning Huang (AZ) <aitjcize@gmail.com>
- * All Rights reserved.
+ * Copyright (C) 2014 - Adam Radwan <adam@radwan.us>
+ * All rights reserved.
+ * 
+ * Copyright (C) 2013 - Wei-Ning Huang (AZ) <aitjcize@gmail.com>
+ * All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -83,6 +86,87 @@
     <key value="x">120</key>
     <key value="y">121</key>
     <key value="z">122</key>
+    <!--Danish-->
+    <key value="Å">197</key>
+    <key value="Æ">198</key>
+    <key value="Ø">216</key>
+    <key value="å">229</key>
+    <key value="æ">230</key>
+    <key value="ø">248</key>
+    <!--Finnish, Swedish-->
+    <key value="Ä">196</key>
+    <key value="Ö">214</key>
+    <key value="ä">228</key>
+    <key value="ö">246</key>
+    <!--Spanish-->
+    <key value="Ñ">209</key>
+    <key value="ñ">241</key>
+    <!--Turkish-->
+    <key value="İ">304</key>
+    <!--Russian-->
+    <key value="Й">1049</key>
+    <key value="Ц">1062</key>
+    <key value="У">1059</key>
+    <key value="К">1050</key>
+    <key value="Е">1045</key>
+    <key value="Н">1053</key>
+    <key value="Г">1043</key>
+    <key value="Ш">1064</key>
+    <key value="Щ">1065</key>
+    <key value="З">1047</key>
+    <key value="Х">1061</key>
+    <key value="Ф">1060</key>
+    <key value="Ы">1067</key>
+    <key value="В">0x0412</key>
+    <key value="А">0x0410</key>
+    <key value="П">0x041F</key>
+    <key value="Р">0x0420</key>
+    <key value="О">0x041E</key>
+    <key value="Л">0x041B</key>
+    <key value="Д">0x0414</key>
+    <key value="Ж">0x0416</key>
+    <key value="Э">0x042D</key>
+    <key value="Я">0x042F</key>
+    <key value="Ч">0x0427</key>
+    <key value="С">0x0421</key>
+    <key value="М">0x041C</key>
+    <key value="И">0x0418</key>
+    <key value="Т">0x0422</key>
+    <key value="Ь">0x042C</key>
+    <key value="Б">0x0411</key>
+    <key value="Ю">0x042E</key>
+    <key value="й">0x0439</key>
+    <key value="ц">0x0446</key>
+    <key value="у">0x0443</key>
+    <key value="к">0x043A</key>
+    <key value="е">0x0435</key>
+    <key value="н">0x043D</key>
+    <key value="г">0x0433</key>
+    <key value="ш">0x0448</key>
+    <key value="щ">0x0449</key>
+    <key value="з">0x0437</key>
+    <key value="х">0x0445</key>
+    <key value="ф">0x0444</key>
+    <key value="ы">0x044B</key>
+    <key value="в">0x0432</key>
+    <key value="а">0x0430</key>
+    <key value="п">0x043F</key>
+    <key value="р">0x0440</key>
+    <key value="о">0x043E</key>
+    <key value="л">0x043B</key>
+    <key value="д">0x0434</key>
+    <key value="ж">0x0436</key>
+    <key value="э">0x044D</key>
+    <key value="я">0x044F</key>
+    <key value="ч">0x0447</key>
+    <key value="с">0x0441</key>
+    <key value="м">0x043C</key>
+    <key value="и">0x0438</key>
+    <key value="т">0x0442</key>
+    <key value="ь">0x044C</key>
+    <key value="б">0x0431</key>
+    <key value="ю">0x044E</key>
+
     <key value=".">46</key>
     <key value=".">62</key>
   </keytransform>

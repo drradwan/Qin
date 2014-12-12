@@ -1,0 +1,24 @@
+QWidget {
+  /* Normal */
+  background: #808080;
+}
+
+QPushButton {
+  font: 30px;
+  margin: 0 0 0 0;
+
+  /* Normal */
+  color: #FFFFFF;
+  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #939393, stop: 1 #232323);
+  border-radius: 8px;
+  border: 3px solid #BBBBBB;
+  font-weight: bold;
+}
+
+QPushButton:pressed {
+  color: #FFFFFF;
+  background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #232323, stop: 1 #939393);
+  border-radius: 8px;
+  border: 3px solid #BBBBBB;
+  font-weight: normal;
+}

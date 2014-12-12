@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KeyboardLayout>
+<keymap>
+    <language value = "en">
+        <normal>
+            <key value="q">0x0071</key>
+            <key value="w">0x0077</key>
+            <key value="e">0x0065</key>
+            <key value="r">0x0072</key>
+            <key value="t">0x0074</key>
+            <key value="y">0x0079</key>
+            <key value="u">0x0075</key>
+            <key value="i">0x0069</key>
+            <key value="o">0x006F</key>
+            <key value="p">0x0070</key>
+            <key value="r1_11"></key>
+
+            <key value="a">0x0061</key>
+            <key value="s">0x0073</key>
+            <key value="d">0x0064</key>
+            <key value="f">0x0066</key>
+            <key value="g">0x0067</key>
+            <key value="h">0x0068</key>
+            <key value="j">0x006A</key>
+            <key value="k">0x006B</key>
+            <key value="l">0x006C</key>
+            <key value="r2_10"></key>
+            <key value="r2_11"></key>
+
+            <key value="z">0x007A</key>
+            <key value="x">0x0078</key>
+            <key value="c">0x0063</key>
+            <key value="v">0x0076</key>
+            <key value="b">0x0062</key>
+            <key value="n">0x006E</key>
+            <key value="m">0x006D</key>
+            <key value="r3_08"></key>
+            <key value="r3_09"></key>
+        </normal>
+        <shift>
+            <key value="q">0x0051</key>
+            <key value="w">0x0057</key>
+            <key value="e">0x0045</key>
+            <key value="r">0x0052</key>
+            <key value="t">0x0054</key>
+            <key value="y">0x0059</key>
+            <key value="u">0x0055</key>
+            <key value="i">0x0049</key>
+            <key value="o">0x004F</key>
+            <key value="p">0x0050</key>
+            <key value="r1_11"></key>
+
+            <key value="a">0x0041</key>
+            <key value="s">0x0053</key>
+            <key value="d">0x0044</key>
+            <key value="f">0x0046</key>
+            <key value="g">0x0047</key>
+            <key value="h">0x0048</key>
+            <key value="j">0x004A</key>
+            <key value="k">0x004B</key>
+            <key value="l">0x004C</key>
+            <key value="r2_10"></key>
+            <key value="r2_11"></key>
+
+            <key value="z">0x005A</key>
+            <key value="x">0x0058</key>
+            <key value="c">0x0043</key>
+            <key value="v">0x0056</key>
+            <key value="b">0x0042</key>
+            <key value="n">0x004E</key>
+            <key value="m">0x004D</key>
+            <key value="r3_08"></key>
+            <key value="r3_09"></key>
+        </shift>
+    </language>
+    <language value = "de">
+        <normal>
+            
+            <key value="y">0x007A</key>
+            
+            <key value="z">0x0079</key>
+        </normal>
+        <shift>
+            <key value="y">0x005A</key>
+        
+            <key value="z">0x0059</key>
+        
+        </shift>
+    </language>
+    <language value = "da">
+        <normal>            
+            <key value="r1_11">0x00E5</key>
+
+            <key value="r2_10">0x00E6</key>
+            <key value="r2_11">0x00F8</key>
+
+        </normal>
+        <shift>
+            <key value="r1_11">0x00C5</key>
+            
+            <key value="r2_10">0x00C6</key>
+            <key value="r2_11">0x00D8</key>
+        </shift>
+    </language>
+    <language value = "nb">
+        <normal>            
+            <key value="r1_11">0x00E5</key>
+
+            <key value="r2_10">0x00F8</key>
+            <key value="r2_11">0x00E6</key>
+
+        </normal>
+        <shift>
+            <key value="r1_11">0x00C5</key>
+            
+            <key value="r2_10">0x00D8</key>
+            <key value="r2_11">0x00C6</key>
+        </shift>
+    </language>
+    <language value = "sv">
+        <normal>            
+            <key value="r1_11">0x00E5</key>
+
+            <key value="r2_10">0x00F6</key>
+            <key value="r2_11">0x00E4</key>
+        </normal>
+        <shift>
+            <key value="r1_11">0x00C5</key>
+            
+            <key value="r2_10">0x00D6</key>
+            <key value="r2_11">0x00C4</key>
+        </shift>
+    </language>
+    <language value = "fi">
+        <normal>            
+            <key value="r1_11">0x00E5</key>
+
+            <key value="r2_10">0x00F6</key>
+            <key value="r2_11">0x00E4</key>
+        </normal>
+        <shift>
+            <key value="r1_11">0x00C5</key>
+            
+            <key value="r2_10">0x00D6</key>
+            <key value="r2_11">0x00C4</key>
+        </shift>
+    </language>
+    <language value = "fr">
+        <normal>
+            <key value="q">0x0061</key>
+            <key value="w">0x007A</key>
+
+            <key value="a">0x0071</key>
+            <key value="r2_10">0x006D</key>
+            
+            <key value="z">0x0077</key>            
+            <key value="m">0x0027</key>
+            
+        </normal>
+        <shift>
+            <key value="q">0x0041</key>
+            <key value="w">0x005A</key>
+
+            <key value="a">0x0051</key>
+            <key value="r2_10">0x004D</key>
+
+            <key value="z">0x0057</key>
+            <key value="m">0x003F</key>
+            
+        </shift>
+    </language>
+    <language value = "nl">
+        <normal>
+            <key value="q">0x0061</key>
+            <key value="w">0x007A</key>
+
+            <key value="a">0x0071</key>
+            <key value="r2_10">0x006D</key>
+            
+            <key value="z">0x0077</key>            
+                        
+        </normal>
+        <shift>
+            <key value="q">0x0041</key>
+            <key value="w">0x005A</key>
+
+            <key value="a">0x0051</key>
+            <key value="r2_10">0x004D</key>
+
+            <key value="z">0x0057</key>
+                        
+        </shift>
+    </language>
+    <language value = "tr">
+        <normal>
+            <key value="i">0x0069</key>
+        </normal>
+        <shift>
+            <key value="i">0x0130</key>
+        </shift>
+    </language>
+    <language value = "es">
+        <normal>
+            <key value="r2_10">0x00F1</key>
+        </normal>
+        <shift>
+            <key value="r2_10">0x00D1</key>
+        </shift>
+    </language>
+    <language value = "ru">
+        <normal>
+            <key value="q">0x0439</key>
+            <key value="w">0x0446</key>
+            <key value="e">0x0443</key>
+            <key value="r">0x043A</key>
+            <key value="t">0x0435</key>
+            <key value="y">0x043D</key>
+            <key value="u">0x0433</key>
+            <key value="i">0x0448</key>
+            <key value="o">0x0449</key>
+            <key value="p">0x0437</key>
+            <key value="r1_11">0x0445</key>
+
+            <key value="a">0x0444</key>
+            <key value="s">0x044B</key>
+            <key value="d">0x0432</key>
+            <key value="f">0x0430</key>
+            <key value="g">0x043F</key>
+            <key value="h">0x0440</key>
+            <key value="j">0x043E</key>
+            <key value="k">0x043B</key>
+            <key value="l">0x0434</key>
+            <key value="r2_10">0x0436</key>
+            <key value="r2_11">0x044D</key>
+
+            <key value="z">0x044F</key>
+            <key value="x">0x0447</key>
+            <key value="c">0x0441</key>
+            <key value="v">0x043C</key>
+            <key value="b">0x0438</key>
+            <key value="n">0x0442</key>
+            <key value="m">0x044C</key>
+            <key value="r3_08">0x0431</key>
+            <key value="r3_09">0x044E</key>
+        </normal>
+        <shift>
+            <key value="q">0x0419</key>
+            <key value="w">0x0426</key>
+            <key value="e">0x0423</key>
+            <key value="r">0x041A</key>
+            <key value="t">0x0415</key>
+            <key value="y">0x041D</key>
+            <key value="u">0x0413</key>
+            <key value="i">0x0428</key>
+            <key value="o">0x0429</key>
+            <key value="p">0x0417</key>
+            <key value="r1_11">0x0425</key>
+
+            <key value="a">0x0424</key>
+            <key value="s">0x042B</key>
+            <key value="d">0x0412</key>
+            <key value="f">0x0410</key>
+            <key value="g">0x041F</key>
+            <key value="h">0x0420</key>
+            <key value="j">0x041E</key>
+            <key value="k">0x041B</key>
+            <key value="l">0x0414</key>
+            <key value="r2_10">0x0416</key>
+            <key value="r2_11">0x042D</key>
+
+            <key value="z">0x042F</key>
+            <key value="x">0x0427</key>
+            <key value="c">0x0421</key>
+            <key value="v">0x041C</key>
+            <key value="b">0x0418</key>
+            <key value="n">0x0422</key>
+            <key value="m">0x042C</key>
+            <key value="r3_08">0x0411</key>
+            <key value="r3_09">0x042E</key>
+        </shift>
+    </language>
+</keymap>
+</KeyboardLayout>

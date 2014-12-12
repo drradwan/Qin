@@ -1,9 +1,9 @@
 /**
- * @file   QinEngine.h
- * @author Wei-Ning Huang (AZ) <aitjcize@gmail.com>
- *
- * Copyright (C) 2010 -  Wei-Ning Huang (AZ) <aitjcize@gmail.com>
- * All Rights reserved.
+ * Copyright (C) 2014 - Adam Radwan <adam@radwan.us>
+ * All rights reserved.
+ * 
+ * Copyright (C) 2013 - Wei-Ning Huang (AZ) <aitjcize@gmail.com>
+ * All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,42 +32,45 @@ class QVirtualKeyboard;
 QT_END_NAMESPACE
 
 class QinEngine: public QWSInputMethod {
-  Q_OBJECT
+    Q_OBJECT
 
-  friend class QVirtualKeyboard;
+    friend class QVirtualKeyboard;
 
-  public:
-    QinEngine(QString lang);
-    ~QinEngine();
-    void regInputMethod(QinIMBase* imb);
-    void setCurrentIM(int index);
+    public:
+        QinEngine(QString lang);
+        ~QinEngine();
+        void regInputMethod(QinIMBase* imb);
+        void setCurrentIM(int index);
+        void getLineEditFocus();
 
-  public slots:
-    void setShift(bool shifted, bool capsed);
-    void commitPreEdit();
-    void changeLanguage(QString oldLang, QString newLang);
-    
-  signals:
-    void keyboardFinished();
+    public slots:
+        void setShift(bool shifted, bool capsed);
+        void commitPreEdit();
+        void changeLanguage(QString oldLang, QString newLang);
 
-  protected:
-    QVirtualKeyboard* vkeyboard;
-    QString inputBuffer;
-    QVector<QinIMBase*> inputMethods;
-    QVector<QinIMBase*> activeInputMethods;
-    QinIMBase* defaultIM;
-    QinIMBase* currentIM;
-    QinIMBase* nextIM;
-    int selected;
-    QStringList numbers;
-    QString currentLanguage;
+    signals:
+        void keyboardFinished();
+        void keyPressed(int numChars);
 
-    bool filter(int uni, int keyId, int mod, bool isPress, bool autoRepeat);
-    void updateHandler(int type);
-    void mouseHandler(int offset, int state);
-    void updateCommitString();
-    void updatePreEditBuffer(void);
-    void selectPreEditWord(int index);
+    protected:
+        QVirtualKeyboard* vkeyboard;
+        QString inputBuffer;
+        QVector<QinIMBase*> inputMethods;
+        QVector<QinIMBase*> activeInputMethods;
+        QinIMBase* defaultIM;
+        QinIMBase* currentIM;
+        QinIMBase* nextIM;
+        int selected;
+        QStringList numbers;
+        QString currentLanguage;
+        bool pinyinEnabled;
+
+        bool filter(int uni, int keyId, int mod, bool isPress, bool autoRepeat);
+        void updateHandler(int type);
+        void mouseHandler(int offset, int state);
+        void updateCommitString();
+        void updatePreEditBuffer(void);
+        void selectPreEditWord(int index);
 };
 
 #endif /* __QIN_SRC_QIN_ENGINE_H__ */

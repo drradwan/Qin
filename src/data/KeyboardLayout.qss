@@ -1,0 +1,47 @@
+QWidget {
+    /* Normal */
+    background: #808080;
+}
+
+QPushButton {
+    min-height: 1.5em;
+    font: 30px;
+    font-weight: bold;
+    margin: 0 1px 0 1px;
+    color: #FFFFFF;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6A6A6A, stop: 0.7 #111111);
+    border-radius: 8px;
+    border: 3px solid #555555;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111111, stop: 1 #6A6A6A);
+}
+
+QToolButton {
+    font: 30px;
+    font-weight: bold;
+    margin: 0 1px 0 1px;
+
+    /* Normal */
+    color:#FFFFFF;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #939393, stop: 1 #232323);
+    border-radius: 8px;
+    border: 3px solid #555555;
+}
+
+QToolButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #232323, stop: 1 #939393);
+    color: #FFFFFF;
+    border: 3px solid #555555;
+}
+
+QToolButton#btnBackSpace {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #858585, stop: 0.7 #232323);
+}
+
+QPushButton#btnNext {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #11D222, stop: 1 #116222);
+    border: 3px solid #119222;
+}
+
